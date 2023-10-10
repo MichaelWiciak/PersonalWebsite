@@ -9,7 +9,7 @@ const Skills = () => {
     <section id="skills">
         <span className="skillsTitle">What I do</span>
         <span className="skillDesc">LOREM impus lorem ipsum. Loren Inpus lorem lorem lorem impus.LOREM impus lorem ipsum. Loren Inpus lorem lorem lorem impus.LOREM impus lorem ipsum. Loren Inpus lorem lorem lorem impus.</span>
-        <div className="skillsBars">
+        <div className="skillBars">
             <div className="skillBar">
                 <img src={UIDesign} alt="UI Design" className="skillBarImg" />
                 <div className="skillBarText">
