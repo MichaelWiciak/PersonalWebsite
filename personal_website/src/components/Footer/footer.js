@@ -1,12 +1,12 @@
-import React from 'react'
-import './footer.css'
+import React from 'react';
+import './footer.css';
 
 const Footer = () => {
   return (
-    <footer className='footer'> 
+    <footer className="footer"> 
         Copyright &#169; 2023 Michael Wiciak. All right reserved.
     </footer>
-  )
+  );
 }
 
 export default Footer
