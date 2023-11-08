@@ -47,3 +47,9 @@
     width: 1rem;
     margin: 1rem;
 }
+
+.active{
+    color: yellow;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid yellow;
+}
