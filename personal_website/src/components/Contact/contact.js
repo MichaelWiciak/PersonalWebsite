@@ -1,9 +1,8 @@
 import React, { useRef } from "react";
 import "./contact.css";
-import FacebookIcon from "../../assets/facebook-icon.png";
-import TwitterIcon from "../../assets/twitter.png";
-import YoutubeIcon from "../../assets/youtube.png";
-import InstagramIcon from "../../assets/instagram.png";
+import InstagramIcon from "../../assets/InstagramLogo.png";
+import LinkedIn from "../../assets/linkedin.png";
+import GitHubIcon from "../../assets/GitHub.png";
 import emailjs from "@emailjs/browser";
 
 export const Contact = () => {
@@ -28,6 +27,15 @@ export const Contact = () => {
           console.log(error.text);
         }
       );
+  };
+  const redirectGitHub = () => {
+    window.location.href = "https://github.com/MichaelWiciak";
+  };
+  const redirectLinkedIn = () => {
+    window.location.href = "https://www.linkedin.com/in/michael-wiciak1/";
+  };
+  const redirectInstagram = () => {
+    window.location.href = "https://www.instagram.com/wiciakmichael/";
   };
   return (
     <section id="contactPage">
@@ -59,10 +67,9 @@ export const Contact = () => {
             Submit
           </button>
           <div className="links">
-            <img src={FacebookIcon} alt="" className="link" />
-            <img src={TwitterIcon} alt="" className="link" />
-            <img src={YoutubeIcon} alt="" className="link" />
-            <img src={InstagramIcon} alt="" className="link" />
+            <img src={GitHubIcon} alt="" className="link"  onClick={redirectGitHub}/>
+            <img src={LinkedIn} alt="" className="link" onClick={redirectLinkedIn}/>
+            <img src={InstagramIcon} alt="" className="link" onClick={redirectInstagram}/>
           </div>
         </form>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import "./navbar.css";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/Michael Wiciak-logos_white.png";
 import contact from "../../assets/contact.png";
 import { Link } from "react-scroll";
 import menu from "../../assets/menu.png";
@@ -10,7 +10,9 @@ export const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <nav className="navbar">
-      <img src={logo} alt="logo" className="logo" />
+      <div className="LogoContainer">
+        <img src={logo} alt="logo" className="logo" />
+      </div>
       <div className="desktopMenu">
         <Link
           activeClass="active"
@@ -49,9 +51,14 @@ export const Navbar = () => {
       <button
         className="desktopMenuBtn"
         onClick={() => {
-          document
-            .getElementById("contact")
-            .scrollIntoView({ behavior: "smooth" });
+          const contactElement = document.getElementById("contact");
+          if (contactElement) {
+            contactElement.scrollIntoView({
+              block: "end",
+              behavior: "smooth",
+              offset: -50,
+            });
+          }
         }}
       >
         <img src={contact} alt="menu" className="desktopMenuImg" />
@@ -70,10 +77,7 @@ export const Navbar = () => {
           console.log("showMenu: ", showMenu);
         }}
       />
-      <div
-        className="navMenu"
-        style={{ display: showMenu ? "flex" : "none" }}
-      >
+      <div className="navMenu" style={{ display: showMenu ? "flex" : "none" }}>
         <Link
           activeClass="active"
           to="intro"
