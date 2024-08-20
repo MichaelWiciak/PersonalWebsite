@@ -47,6 +47,18 @@ export const Navbar = () => {
         >
           Portfolio
         </Link>
+        {/* A section about the Teams. It will take the user to a new page which will be about the Teams I am part of */}
+        <Link
+          activeClass="active"
+          to="teams"
+          spy={true}
+          smooth={true}
+          offset={-50}
+          duration={500}
+          className="desktopMenuButton"
+        >
+          Teams
+        </Link>
       </div>
       <button
         className="desktopMenuBtn"
