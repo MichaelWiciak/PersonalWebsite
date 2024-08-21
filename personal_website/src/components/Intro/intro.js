@@ -21,7 +21,7 @@ const Intro = () => {
           <br />
           with a strong grasp of both software and hardware,
           <br />
-          complemented by adept business management skills.
+          complemented by business management skills.
         </p>
         <Link>
           <button className="btn" onClick={redirectToWebsite}>
