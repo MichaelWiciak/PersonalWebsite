@@ -20,9 +20,9 @@ body {
 
 .particle {
   position: absolute;
-  width: 5px;
-  height: 5px;
-  background: white;
+  width: calc(2px + 1vmin);
+  height: calc(2px + 1vmin);
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 50%;
   opacity: 0.8;
   animation: moveParticles 10s linear infinite;

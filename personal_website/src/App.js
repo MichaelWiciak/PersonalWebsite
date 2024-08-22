@@ -27,7 +27,7 @@ function App() {
 
       particle.style.top = `${Math.random() * 100}vh`;
       particle.style.left = `${Math.random() * 100}vw`;
-      particle.style.animationDelay = `${Math.random() * 10}s`;
+      particle.style.animationDelay = `${Math.random() * 0}s`;
       particle.style.backgroundColor =
         colors[Math.floor(Math.random() * colors.length)];
       particle.style.borderRadius =
