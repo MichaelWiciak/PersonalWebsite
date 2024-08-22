@@ -9,6 +9,8 @@ import Teams from "./components/Teams/teams";
 import { useEffect } from "react";
 
 function App() {
+  // need to modularise it and separate it so I can add interval calling it
+
   useEffect(() => {
     const particles = window.innerWidth > 768 ? 100 : 50;
     // different shades of white for snowflakes
@@ -41,6 +43,7 @@ function App() {
         .forEach((particle) => particle.remove());
     };
   }, []);
+
   return (
     <div className="App">
       <Navbar />
