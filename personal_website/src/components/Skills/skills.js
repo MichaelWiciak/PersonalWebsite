@@ -13,8 +13,10 @@ const Skills = () => {
         founded in 2022. It hosts and maintains timetablex.com, a scheduler app
         for students but works for any events with ical link. It offers other
         services such as website and bot creation. An example of this is
-        sportsbooker.feli.page. MEng BSc Computer Science with Artificial
-        Intelligence at the University of Leeds. Graduating in 07/2025.
+        sportsbooker.feli.page. It allows for automated booking of courts for a
+        university gym (The Edge, Leeds) and allow for scheduled booking at
+        specified times. MEng BSc Computer Science with Artificial Intelligence
+        at the University of Leeds. Graduating in 07/2025.
       </span>
       <div className="skillBars">
         <div className="skillBar">
