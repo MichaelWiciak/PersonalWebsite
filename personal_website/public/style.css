@@ -13,6 +13,9 @@ body {
   color: white;
   overflow: hidden;
   overflow-y: scroll;
+  animation: bgShift 15s ease infinite;
+  background: linear-gradient(45deg, #1e1e1e, #282828);
+  background-size: 200% 200%;
 }
 
 .particle {
@@ -35,5 +38,14 @@ body {
   100% {
     transform: translateY(100vh) translateX(50vw);
     opacity: 0;
+  }
+}
+
+@keyframes bgShift {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
   }
 }
