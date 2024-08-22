@@ -24,5 +24,16 @@
     <div class="github-widget" data-user="MichaelWiciak"></div>
     <div id="root"></div>
     <script src="../github-widget/github-widget.min.js"></script>
+    <script>
+      const particles = 50; // Number of particles
+      for (let i = 0; i < particles; i++) {
+        const particle = document.createElement("div");
+        particle.className = "particle";
+        particle.style.top = `${Math.random() * 100}vh`;
+        particle.style.left = `${Math.random() * 100}vw`;
+        particle.style.animationDelay = `${Math.random() * 10}s`;
+        document.body.appendChild(particle);
+      }
+    </script>
   </body>
 </html>
