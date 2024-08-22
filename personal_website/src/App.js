@@ -14,11 +14,17 @@ function App() {
     // different shades of white for snowflakes
     const colors = ["#ffffff", "#f2f2f2", "#d9d9d9", "#bfbfbf", "#a6a6a6"];
     // different shapes for snowflakes
-    const shapes = ["50%", "0% 0%", "0% 50%", "50% 0%"];
+    const shapes = ["100%", "50% 50%", "25% 75%", "75% 25%"];
+
+    // different layers for snowflakes
+    const layers = ["particle-layer1", "particle-layer2"];
 
     for (let i = 0; i < particles; i++) {
       const particle = document.createElement("div");
-      particle.className = "particle";
+      particle.className = `particle ${
+        layers[Math.floor(Math.random() * layers.length)]
+      }`;
+
       particle.style.top = `${Math.random() * 100}vh`;
       particle.style.left = `${Math.random() * 100}vw`;
       particle.style.animationDelay = `${Math.random() * 10}s`;
