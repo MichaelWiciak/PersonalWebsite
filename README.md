@@ -1,5 +1,7 @@
 # PersonalWebsite
 
+Deployed at https://michaelwiciak.com/ using Vercel for automated deployment.
+
 This repository contains the code for my personal website, designed with a focus on responsive design, smooth animations, and interactive features. Below are some of the key features of the website:
 
 ## Features
