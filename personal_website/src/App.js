@@ -7,6 +7,8 @@ import Contact from "./components/Contact/contact";
 import Footer from "./components/Footer/footer";
 import Teams from "./components/Teams/teams";
 import { useEffect } from "react";
+import CV from "./components/CV/cv";
+import Art from "./components/Art/art";
 
 function App() {
   useEffect(() => {
@@ -117,6 +119,8 @@ function App() {
       <Skills />
       <Works />
       {/* <Teams /> */}
+      <Art />
+      <CV />
       <Contact />
       <Footer />
     </div>
