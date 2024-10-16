@@ -7,9 +7,10 @@ export const CV = () => {
     <section id="cvPage">
       <div id="cv">
         <h1 className="cvPageTitle">My CV</h1>
-        <span className="cvDesc">Download or view my CV below:</span>
-
-        {/* Embed the PDF */}
+        <span className="cvDesc">
+          Latest update: 01/10/2024 so could be out-of-date. Download or view my
+          CV below:
+        </span>
         <div className="pdfViewer">
           <iframe
             src={CVFile}
