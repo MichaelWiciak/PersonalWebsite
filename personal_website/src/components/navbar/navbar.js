@@ -150,6 +150,30 @@ export const Navbar = () => {
         >
           Contact
         </Link>
+        <Link
+          activeClass="active"
+          to="artworkPage"
+          spy={true}
+          smooth={true}
+          offset={-50}
+          duration={500}
+          className="listItem"
+          onClick={() => setShowMenu(false)}
+        >
+          Art
+        </Link>
+        <Link
+          activeClass="active"
+          to="cv"
+          spy={true}
+          smooth={true}
+          offset={-50}
+          duration={500}
+          className="listItem"
+          onClick={() => setShowMenu(false)}
+        >
+          CV
+        </Link>
       </div>
     </nav>
   );
