@@ -43,11 +43,11 @@ const Intro = () => {
           <span className="animatedTitle">{titles[currentTitle]}</span>
         </span>
         <p className="introPara">
-          I'm dedicated to excelling as a versatile software engineer,
+          I’m a software engineer who loves blending code, hardware, and a bit
           <br />
-          with a strong grasp of both software and hardware,
+          of business wizardry to create cool, practical solutions—whether it’s
           <br />
-          complemented by business management skills.
+          automating badminton bookings or making life easier for students.
         </p>
         <Link>
           <button className="btn" onClick={redirectToWebsite}>
