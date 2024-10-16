@@ -1,0 +1,110 @@
+/* General Section Styling */
+#artworkPage {
+  width: 100vw;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Artwork Container */
+#artwork {
+  width: 100%;
+  max-width: 60rem;
+  padding: 2rem;
+  background: rgb(50, 50, 50);
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styling */
+.artworkTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Description Text */
+.artworkDesc {
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Carousel Styling */
+.carousel .slick-slide img {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slick-dots {
+  bottom: -2rem;
+  color: yellow;
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 1;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  border-radius: 1rem;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  color: transparent;
+}
+
+/* Reddit Button Styling */
+.redditButton {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.redditButton button {
+  margin-top: 1rem;
+  background-color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.redditButton button:hover {
+  background-color: white;
+}
+
+/* Media Queries */
+@media screen and (max-width: 840px) {
+  .artworkTitle {
+    font-size: 2rem;
+  }
+
+  .artworkDesc {
+    font-size: 1rem;
+  }
+
+  .redditButton button {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .artworkTitle {
+    font-size: 1.75rem;
+  }
+
+  .artworkDesc {
+    font-size: 0.9rem;
+  }
+
+  .redditButton button {
+    font-size: 0.85rem;
+  }
+}

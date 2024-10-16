@@ -1,23 +1,24 @@
-import React from "react";
+import React, { useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "./art.css";
+
+import Img1 from "../../assets/carouselImages/img1.png";
+import Img2 from "../../assets/carouselImages/img2.png";
+import Img3 from "../../assets/carouselImages/img3.png";
+import Img4 from "../../assets/carouselImages/img4.png";
+import Img5 from "../../assets/carouselImages/img5.png";
+import Img6 from "../../assets/carouselImages/img6.png";
+import Img7 from "../../assets/carouselImages/img7.png";
+import Img8 from "../../assets/carouselImages/img8.png";
+import Img9 from "../../assets/carouselImages/img9.png";
+import Img10 from "../../assets/carouselImages/img10.png";
 
 export const Art = () => {
+  // Array of image paths
+  const images = [Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img9, Img10];
   // Replace with the actual paths to your images
-  const images = [
-    "../../assets/carouselImages/img1.png",
-    "../../assets/carouselImages/img2.png",
-    "../../assets/carouselImages/img3.png",
-    "../../assets/carouselImages/img4.png",
-    "../../assets/carouselImages/img5.png",
-    "../../assets/carouselImages/img6.png",
-    "../../assets/carouselImages/img7.png",
-    "../../assets/carouselImages/img8.png",
-    "../../assets/carouselImages/img9.png",
-    "../../assets/carouselImages/img10.png",
-  ];
-
   const settings = {
     dots: true,
     infinite: true,
