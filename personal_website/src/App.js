@@ -119,7 +119,7 @@ function App() {
       <Intro />
       <Skills />
       <Works />
-      {/* <Teams /> */}
+      <Teams />
       <Art />
       <CV />
       <Courses />

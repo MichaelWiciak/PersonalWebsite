@@ -82,6 +82,17 @@ export const Navbar = () => {
         >
           Courses
         </Link>
+        <Link
+          activeClass="active"
+          to="teams"
+          spy={true}
+          smooth={true}
+          offset={-50}
+          duration={500}
+          className="desktopMenuButton"
+        >
+          Teams
+        </Link>
       </div>
       <button
         className="desktopMenuBtn"
@@ -196,6 +207,18 @@ export const Navbar = () => {
           onClick={() => setShowMenu(false)}
         >
           Courses
+        </Link>
+        <Link
+          activeClass="active"
+          to="teams"
+          spy={true}
+          smooth={true}
+          offset={-50}
+          duration={500}
+          className="listItem"
+          onClick={() => setShowMenu(false)}
+        >
+          Teams
         </Link>
       </div>
     </nav>
