@@ -6,16 +6,16 @@ import "slick-carousel/slick/slick-theme.css";
 export const Art = () => {
   // Replace with the actual paths to your images
   const images = [
-    "/images/art1.jpg",
-    "/images/art2.jpg",
-    "/images/art3.jpg",
-    "/images/art4.jpg",
-    "/images/art5.jpg",
-    "/images/art6.jpg",
-    "/images/art7.jpg",
-    "/images/art8.jpg",
-    "/images/art9.jpg",
-    "/images/art10.jpg",
+    "../../assets/carouselImages/img1.png",
+    "../../assets/carouselImages/img2.png",
+    "../../assets/carouselImages/img3.png",
+    "../../assets/carouselImages/img4.png",
+    "../../assets/carouselImages/img5.png",
+    "../../assets/carouselImages/img6.png",
+    "../../assets/carouselImages/img7.png",
+    "../../assets/carouselImages/img8.png",
+    "../../assets/carouselImages/img9.png",
+    "../../assets/carouselImages/img10.png",
   ];
 
   const settings = {
