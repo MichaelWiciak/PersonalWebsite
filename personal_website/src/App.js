@@ -6,9 +6,9 @@ import Works from "./components/Works/works";
 import Contact from "./components/Contact/contact";
 import Footer from "./components/Footer/footer";
 import Teams from "./components/Teams/teams";
-import { useEffect } from "react";
 import CV from "./components/CV/cv";
 import Art from "./components/Art/art";
+import { useEffect } from "react";
 
 function App() {
   useEffect(() => {

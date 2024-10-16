@@ -41,8 +41,16 @@ export const Art = () => {
   return (
     <section id="artworkPage">
       <div id="artwork">
-        <h1 className="artworkTitle">My Artwork</h1>
-        <span className="artworkDesc">Check out my creations on Reddit!</span>
+        <h1 className="artworkTitle">Procedurally Generated Wallpapers</h1>
+        <span className="artworkDesc">
+          I wanted a way of generating high quality wallpapers for any
+          resolutions, so I made code that does that. Problem I always had was
+          that since the resolution of the wallpaper I wanted and the target
+          device didn't match exactly, the image because blurry and quality has
+          really decreased. I wanted high quality wallpapers so I could see the
+          crisp quality of the device screen to the max. So I made this.
+          Checkout the BackgroundMaker repo on my GitHub for details.
+        </span>
 
         {/* Carousel of images */}
         <div className="carousel">
