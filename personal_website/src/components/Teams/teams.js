@@ -1,12 +1,17 @@
 import React from "react";
 import "./teams.css"; // Ensure you create a corresponding CSS file for styling
 
+import HotTomatoIcon from "../../assets/TeamsData/hottomatodev.png";
+import RobotsIcon from "../../assets/TeamsData/robots.webp";
+import TimetableXIcon from "../../assets/TeamsData/timetableXLogo.png";
+import BadmintonIcon from "../../assets/TeamsData/badmintonLog.jpg";
+
 const teamsData = [
   {
     title: "Hot Tomato Dev Team",
     description:
       "A group of six University of Leeds students (now alumni) who collaborated on various projects, including coursework assignments and hackathons. Together, we created systems like the Sports Centre Management System and participated in hackathons, such as the Leaning Technologies Web Assembly Hackathon. We also enjoy working on fun, side projects.",
-    icon: "../../assets/TeamsData/hottomatodev.png", // Replace with your icon path
+    icon: HotTomatoIcon, // Replace with your icon path
     video: null, // Add video link or iframe source if available
     repoLink: "https://github.com/MichaelWiciak/SportsCentreManagementSystem", // Add GitHub repo link if available
   },
@@ -14,24 +19,24 @@ const teamsData = [
     title: "Group30",
     description:
       "This team of four students developed the TurtleBot project. In this project, a robot trapped in an exploding spaceship had to escape by identifying colored modules and calculating the distance between Earth and the Moon using data from spaceship windows. The robot had only five minutes to complete its mission before the ship exploded.",
-    icon: "../../assets/TeamsData/robots.webp", // Replace with your icon path
-    video: "https://www.youtube.com/watch?v=UU7TQqW6gh0", // Replace with actual demo video link
+    icon: RobotsIcon, // Replace with your icon path
+    video: "https://www.youtube.com/embed/UU7TQqW6gh0?si=GU9b9oqX-0pFp8y0", // Replace with actual demo video link
     repoLink: "https://github.com/MichaelWiciak/TurtleBotInAExploringSpaceship", // Replace with actual repo link
   },
   {
     title: "TimetableX",
     description:
       "Co-founded by two students, TimetableX is a business venture designed to optimize learning and scheduling for university students. We attracted 200 users, with 50 daily active users. Our platform allows students to publicly share assessments, automate reminders, and customize the UI with over 30 themes for both desktop and mobile.",
-    icon: "../../assets/TeamsData/timetableXLogo.png", // Replace with your icon path
-    video: "https://www.youtube.com/watch?v=AJMGprxFs4w", // Replace with actual demo video link
-    repoLink: "https://github.com/example/repo", // Replace with actual repo link
+    icon: TimetableXIcon, // Replace with your icon path
+    video: "https://www.youtube.com/embed/AJMGprxFs4w?si=TuTb7c3G_6C7i0Dz", // Replace with actual demo video link
+    repoLink: null, // Replace with actual repo link
   },
   {
     title: "Leeds Community Badminton Association",
     description:
       "As President, I manage advertising, social media (WeChat and Instagram), poster creation, member database management, and payments. We have a growing presence on Instagram—check us out here.",
-    icon: "../../assets/TeamsData/badmintonLog.jpg", // Replace with your icon path
-    video: "https://www.youtube.com/embed/example", // Replace with actual demo video link
+    icon: BadmintonIcon, // Replace with your icon path
+    video: "https://www.youtube.com/embed/bomcHVP_ZRc?si=x0k2DCV-ZTCgKQxd", // Replace with actual demo video link
     repoLink: null, // Add GitHub repo link if available
   },
 ];
@@ -53,12 +58,11 @@ export const Teams = () => {
             {team.video && (
               <div className="videoWrapper">
                 <iframe
-                  src={team.video}
                   width="100%"
                   height="315"
+                  src={team.video}
                   title={`${team.title} demo`}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                 ></iframe>
               </div>
