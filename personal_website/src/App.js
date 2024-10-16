@@ -9,6 +9,7 @@ import Teams from "./components/Teams/teams";
 import CV from "./components/CV/cv";
 import Art from "./components/Art/art";
 import { useEffect } from "react";
+import Courses from "./components/Courses/courses";
 
 function App() {
   useEffect(() => {
@@ -121,6 +122,7 @@ function App() {
       {/* <Teams /> */}
       <Art />
       <CV />
+      <Courses />
       <Contact />
       <Footer />
     </div>

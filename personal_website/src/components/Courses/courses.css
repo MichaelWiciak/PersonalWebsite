@@ -1,0 +1,115 @@
+/* General Section Styling */
+#courses {
+  width: 100vw;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Course List Styling */
+.courseList {
+  width: 100%;
+  max-width: 60rem;
+  padding: 2rem;
+  background: rgb(50, 50, 50);
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Course Item Styling */
+.courseItem {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.courseItem:last-child {
+  border-bottom: none;
+}
+
+/* Course Title (Section Header) Styling */
+.coursesTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: white;
+}
+
+/* Individual Course Title Styling */
+.courseTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: white;
+  text-align: center;
+}
+
+/* Course ID and Issue Date */
+.courseId,
+.courseIssued {
+  font-size: 1rem;
+  font-weight: 300;
+  color: lightgray;
+  display: block;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* Course Description */
+.courseDescription {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: white;
+  margin-top: 1rem;
+  margin-left: 1rem; /* Adds space to the left for better readability */
+  margin-right: 1rem; /* Adds space to the right for better readability */
+  text-align: justify;
+  line-height: 1.6; /* Improved line spacing for readability */
+}
+
+/* Media Queries */
+@media screen and (max-width: 840px) {
+  .coursesTitle {
+    font-size: 2rem;
+  }
+
+  .courseTitle {
+    font-size: 1.4rem;
+  }
+
+  .courseDescription {
+    font-size: 1rem;
+  }
+
+  .courseId,
+  .courseIssued {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .coursesTitle {
+    font-size: 1.75rem;
+  }
+
+  .courseTitle {
+    font-size: 1.25rem;
+  }
+
+  .courseDescription {
+    font-size: 0.9rem;
+  }
+
+  .courseId,
+  .courseIssued {
+    font-size: 0.85rem;
+  }
+}
