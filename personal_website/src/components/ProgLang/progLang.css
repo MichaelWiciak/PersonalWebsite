@@ -46,8 +46,6 @@
 .serverTechBar {
   display: flex;
   align-items: center;
-  background: rgb(50, 50, 50);
-  border-radius: 1rem;
   padding: 0.5rem;
   transition: transform 0.3s ease;
 }
@@ -89,6 +87,11 @@
   font-size: 1.2rem;
   color: #e0e0e0;
   text-align: center;
+}
+
+.languageBars {
+  background: rgb(50, 50, 50);
+  border-radius: 0.5rem;
 }
 
 @media screen and (max-width: 840px) {

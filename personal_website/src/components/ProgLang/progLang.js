@@ -30,48 +30,55 @@ const ProgLang = () => {
         {" "}
         <div className="languageSection">
           <h3>Languages</h3>
-          {languages.map((lang) => (
-            <div key={lang.name} className="languageBar">
-              <span className="languageName">{lang.name}</span>
-              <div className="barContainer">
-                <div
-                  className="bar"
-                  style={{ width: `${lang.level}%` }}
-                  title={`${lang.level}%`}
-                ></div>
+          <div className="languageBars">
+            {languages.map((lang) => (
+              <div key={lang.name} className="languageBar">
+                <span className="languageName">{lang.name}</span>
+
+                <div className="barContainer">
+                  <div
+                    className="bar"
+                    style={{ width: `${lang.level}%` }}
+                    title={`${lang.level}%`}
+                  ></div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
         <div className="databaseSection">
           <h3>Databases</h3>
-          {databases.map((db) => (
-            <div key={db.name} className="databaseBar">
-              <span className="databaseName">{db.name}</span>
-              <div className="barContainer">
-                <div
-                  className="bar"
-                  style={{ width: `${db.level}%` }}
-                  title={`${db.level}%`}
-                ></div>
+          <div className="languageBars">
+            {databases.map((db) => (
+              <div key={db.name} className="databaseBar">
+                <span className="databaseName">{db.name}</span>
+                <div className="barContainer">
+                  <div
+                    className="bar"
+                    style={{ width: `${db.level}%` }}
+                    title={`${db.level}%`}
+                  ></div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
         <div className="serverTechSection">
           <h3>Server-Side Technologies</h3>
-          {serverTechs.map((tech) => (
-            <div key={tech.name} className="serverTechBar">
-              <span className="serverTechName">{tech.name}</span>
-              <div className="barContainer">
-                <div
-                  className="bar"
-                  style={{ width: `${tech.level}%` }}
-                  title={`${tech.level}%`}
-                ></div>
+          <div className="languageBars">
+            {serverTechs.map((tech) => (
+              <div key={tech.name} className="serverTechBar">
+                <span className="serverTechName">{tech.name}</span>
+                <div className="barContainer">
+                  <div
+                    className="bar"
+                    style={{ width: `${tech.level}%` }}
+                    title={`${tech.level}%`}
+                  ></div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 
