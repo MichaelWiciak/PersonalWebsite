@@ -216,6 +216,10 @@ export const Projects = () => {
         {projectsData.map((project, index) => (
           <div className="projectBox" key={index}>
             <h2 className="projectTitle">{project.title}</h2>
+            {/* Display if project is individual or group */}
+            <p className="projectType">
+              {project.IndividualBool ? "Individual Project" : "Group Project"}
+            </p>
             <div className="projectDescription">
               {project.description.map((para, index) => (
                 <p key={index} className="projectDescriptionParagraph">
@@ -223,10 +227,6 @@ export const Projects = () => {
                 </p>
               ))}
             </div>
-            {/* Display if project is individual or group */}
-            <p className="projectType">
-              {project.IndividualBool ? "Individual Project" : "Group Project"}
-            </p>
 
             {/* Render video if available */}
             {project.video && (
