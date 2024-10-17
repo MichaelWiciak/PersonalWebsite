@@ -1,5 +1,5 @@
 import React from "react";
-import DissertationPDF from "../../assets/ProjectsData/dissertation.pdf";
+import DissertationPDF from "../../assets/ProjectsData/Dissertation.pdf";
 import DissertationGraph1 from "../../assets/ProjectsData/better.png";
 import DissertationGraph2 from "../../assets/ProjectsData/code_token_lengths_histogram.png";
 import DissertationGraph3 from "../../assets/ProjectsData/correctnessGraph.png";
@@ -12,13 +12,17 @@ import DissertationGraph9 from "../../assets/ProjectsData/timeSmoothed.png";
 
 import JackCompilerScreenshot1 from "../../assets/ProjectsData/jackcompiler.png";
 
+import Carousel from "./carousel";
+
+import "./projects.css";
+
 const individualProjectsData = [
   {
     title: "Dissertation",
     description:
       "An extensive study on code completion with Transformer architectures. View the full dissertation and explore results through the graph.",
     pdf: DissertationPDF,
-    graph: [
+    images: [
       DissertationGraph1,
       DissertationGraph2,
       DissertationGraph3,
@@ -43,83 +47,21 @@ const individualProjectsData = [
     description:
       "Developed FPV Racing algorithms and techniques. Check out the source code and course details.",
     repoLink: "https://github.com/MichaelWiciak/FPVRallyRacingModified",
+    images: [],
     courseLink: "https://www.techcamp.org.uk/courses/car-engineering-camp",
   },
   {
     title: "Stanford",
     description:
       "Stanford AI course projects, covering multiple AI topics with comprehensive implementations.",
-    images: [], // Add more images
-    repoLink: "https://github.com/MichaelWiciak/StanfordProjects",
+    images: [],
+    repoLink:
+      "https://github.com/MichaelWiciak/Machine_Learning_by_Stanford_University_Programming_Exercises_Solutions",
   },
   {
     title: "PGM",
     description: "Probabilistic Graphical Models implementation.",
-    images: [StanfordImage1], // Add more images
-    repoLink: "https://github.com/MichaelWiciak/PGM",
+    images: [],
+    repoLink: "https://github.com/MichaelWiciak/PGMFileManipulatorUtility",
   },
 ];
-
-const IndividualProjects = () => {
-  return (
-    <section>
-      <h2>Individual Projects</h2>
-      <div className="projectsContainer">
-        {individualProjectsData.map((project, index) => (
-          <div className="projectBox" key={index}>
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-
-            {project.pdf && (
-              <div className="pdfViewer">
-                <embed src={project.pdf} width="100%" height="400px" />
-              </div>
-            )}
-
-            {project.graph && (
-              <img
-                src={project.graph}
-                alt={`${project.title} graph`}
-                className="projectGraph"
-              />
-            )}
-
-            {project.images &&
-              project.images.map((image, i) => (
-                <img
-                  key={i}
-                  src={image}
-                  alt={`${project.title} screenshot ${i + 1}`}
-                  className="projectImage"
-                />
-              ))}
-
-            {project.repoLink && (
-              <a
-                href={project.repoLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="repoLink"
-              >
-                View GitHub Repo
-              </a>
-            )}
-
-            {project.courseLink && (
-              <a
-                href={project.courseLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="courseLink"
-              >
-                View Course
-              </a>
-            )}
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-};
-
-export default IndividualProjects;

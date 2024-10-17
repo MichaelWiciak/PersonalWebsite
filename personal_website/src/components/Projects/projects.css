@@ -1,0 +1,132 @@
+#projects {
+  overflow: hidden;
+  width: 100vw;
+  max-width: 65rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.projectsTitle {
+  font-size: 3rem;
+  font-weight: 600;
+  padding-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.projectsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projectBox {
+  width: 100%;
+  max-width: 80%;
+  margin: 1.5rem 0;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background: rgb(50, 50, 50);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.projectBox:hover {
+  transform: translateY(-5px);
+}
+
+.projectTitle {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+
+.projectDescription {
+  font-weight: 400;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.projectType {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #f0a500;
+  margin-bottom: 1rem;
+}
+
+.videoWrapper {
+  margin: 1rem 0;
+}
+
+iframe {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.carousel .slide img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.repoLink,
+.courseLink,
+.pdfLink {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #4caf50;
+  text-decoration: none;
+}
+
+.repoLink:hover,
+.courseLink:hover,
+.pdfLink:hover {
+  text-decoration: underline;
+}
+
+.pdfIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 720px) {
+  .projectTitle {
+    font-size: 2.5rem;
+  }
+
+  .projectDescription,
+  .projectType {
+    font-size: 0.9rem;
+  }
+
+  .projectBox {
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .projectsTitle {
+    font-size: 2.5rem;
+  }
+
+  .projectTitle {
+    font-size: 2rem;
+  }
+
+  .projectDescription,
+  .projectType {
+    font-size: 0.8rem;
+  }
+
+  .projectBox {
+    padding: 1rem;
+  }
+}
