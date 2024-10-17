@@ -46,7 +46,8 @@ export const Courses = () => {
         {courses.map((course, index) => (
           <li key={index} className="courseItem">
             <h2 className="courseTitle">{course.title}</h2>
-            <span className="courseId">ID: {course.id}</span> <br />
+            {/* if courseId is not null, display it, else dont */}
+            {course.id && <span className="courseId">ID: {course.id}</span>}
             <span className="courseIssued">Issued: {course.issued}</span>
             <p className="courseDescription">{course.description}</p>
           </li>
