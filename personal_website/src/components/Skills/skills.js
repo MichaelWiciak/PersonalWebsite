@@ -21,7 +21,7 @@ const Skills = () => {
         help students stay on top of deadlines.
         <br />
         <br />
-        Oh, and I co-founded TimetableX, a project that helped hundreds of
+        Oh, and I co-founded TimetableX, a project that around a hundred
         students keep their coursework organized while I flexed my React and
         TypeScript skills.
         <br />
