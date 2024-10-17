@@ -56,6 +56,15 @@
   transition: opacity 0.3s ease;
 }
 
+.links .link svg {
+  fill: white;
+  transition: fill 0.3s ease;
+}
+
+.links .link:hover svg {
+  fill: #f39c12;
+}
+
 .submitBtn:disabled {
   opacity: 0.1;
   cursor: not-allowed;
