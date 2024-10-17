@@ -40,11 +40,12 @@ export const Art = () => {
 
   return (
     <section id="artworkPage">
+      <div className="artworkPageTitle">Art</div>
       <div id="artwork">
-        <h1 className="artworkTitle">
+        <h2 className="artworkTitle">
           Procedurally Generated Wallpapers: A Splash of Color for Your Screens
           🎨✨
-        </h1>
+        </h2>
         <span className="artworkDesc">
           Ever wished for high-quality wallpapers that perfectly fit any
           resolution? Enter the Procedurally Generated Wallpapers project! Tired
