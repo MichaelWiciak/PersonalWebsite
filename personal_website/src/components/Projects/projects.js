@@ -3,6 +3,7 @@ import "./projects.css";
 import PDFIcon from "../../assets/ProjectsData/readthedocs.svg";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Slider from "react-slick";
+import JackCompilerScreenshot1 from "../../assets/ProjectsData/jackcompiler.png";
 
 import DissertationPDF from "../../assets/ProjectsData/Dissertation.pdf";
 import DissertationGraph1 from "../../assets/ProjectsData/better.png";
@@ -46,6 +47,82 @@ const projectsData = [
     courseLink: null,
     IndividualBool: true,
     pdf: DissertationPDF,
+  },
+  {
+    title: "Jack Compiler",
+    description:
+      "A Jack-to-VM compiler implemented from scratch, with examples and documentation.",
+    listOfImages: [],
+    repoLink: "https://github.com/MichaelWiciak/JACK_Compiler",
+    courseLink: null,
+    IndividualBool: true,
+    pdf: null,
+  },
+  {
+    title: "FPV Rally Racing",
+    description:
+      "Developed FPV Racing algorithms and techniques. Check out the source code and course details.",
+    repoLink: "https://github.com/MichaelWiciak/FPVRallyRacingModified",
+    listOfImages: [],
+    courseLink: "https://www.techcamp.org.uk/courses/car-engineering-camp",
+    IndividualBool: true,
+    pdf: null,
+  },
+  {
+    title: "Stanford",
+    description:
+      "Stanford AI course projects, covering multiple AI topics with comprehensive implementations.",
+    listOfImages: [],
+    repoLink:
+      "https://github.com/MichaelWiciak/Machine_Learning_by_Stanford_University_Programming_Exercises_Solutions",
+    IndividualBool: true,
+    pdf: null,
+    courseLink: null,
+  },
+  {
+    title: "PGM",
+    description: "Probabilistic Graphical Models implementation.",
+    images: [],
+    repoLink: "https://github.com/MichaelWiciak/PGMFileManipulatorUtility",
+    IndividualBool: true,
+    pdf: null,
+    courseLink: null,
+  },
+  {
+    title: "SportsBooker",
+    description: "An automated booking system for badminton courts.",
+    video: "https://www.youtube.com/embed/bomcHVP_ZRc?si=x0k2DCV-ZTCgKQxd",
+    listOfImages: [],
+    repoLink: null,
+    courseLink: null,
+    IndividualBool: false,
+  },
+  {
+    title: "Robotics",
+    description:
+      "A robot simulation project using ROS2. Watch the demo and see the results in images and graphs.",
+    video: "https://www.youtube.com/embed/UU7TQqW6gh0?si=GU9b9oqX-0pFp8y0",
+    images: [""],
+    repo: "https://github.com/MichaelWiciak/TurtleBotInAExploringSpaceship",
+    IndividualBool: false,
+    courseLink: null,
+    pdf: null,
+  },
+  {
+    title: "Sports Management Centre",
+    description: "An admin system for sports centers.",
+    images: [],
+    repo: "https://github.com/MichaelWiciak/SportsCentreManagementSystem",
+    IndividualBool: false,
+    courseLink: null,
+    pdf: null,
+  },
+  {
+    title: "Video Player",
+    description: "A multi-video player project with example videos.",
+    videos: "https://www.youtube.com/embed/sampleVideo1",
+    images: [],
+    repo: "https://github.com/MichaelWiciak/VideoPlayer",
   },
 ];
 
