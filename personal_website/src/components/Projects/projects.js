@@ -1,8 +1,19 @@
 import React from "react";
 import "./projects.css";
 import PDFIcon from "../../assets/ProjectsData/readthedocs.svg";
-import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Slider from "react-slick";
+
+import DissertationPDF from "../../assets/ProjectsData/Dissertation.pdf";
+import DissertationGraph1 from "../../assets/ProjectsData/better.png";
+import DissertationGraph2 from "../../assets/ProjectsData/code_token_lengths_histogram.png";
+import DissertationGraph3 from "../../assets/ProjectsData/correctnessGraph.png";
+import DissertationGraph4 from "../../assets/ProjectsData/lineraRegression.png";
+import DissertationGraph5 from "../../assets/ProjectsData/maskingSizeRation.png";
+import DissertationGraph6 from "../../assets/ProjectsData/notSmothedTime.png";
+import DissertationGraph7 from "../../assets/ProjectsData/pipeline.png";
+import DissertationGraph8 from "../../assets/ProjectsData/timedocstring.png";
+import DissertationGraph9 from "../../assets/ProjectsData/timeSmoothed.png";
 
 const projectsData = [
   {
@@ -14,22 +25,50 @@ const projectsData = [
     repoLink: null,
     courseLink: null,
     IndividualBool: false,
-    pdf: null, // Replace with actual path to PDF if available
+    pdf: null,
   },
   {
-    title: "Stanford PGM",
+    title: "Dissertation",
     description: "This project focuses on Probabilistic Graphical Models...",
     video: null,
-    listOfImages: ["path/to/image1.jpg", "path/to/image2.jpg"], // Replace with actual image paths
-    repoLink: "https://github.com/MichaelWiciak/Stanford-PGM",
-    courseLink: "https://coursera.org/some-course-link",
+    listOfImages: [
+      DissertationGraph1,
+      DissertationGraph2,
+      DissertationGraph3,
+      DissertationGraph4,
+      DissertationGraph5,
+      DissertationGraph6,
+      DissertationGraph7,
+      DissertationGraph8,
+      DissertationGraph9,
+    ],
+    repoLink: "https://github.com/MichaelWiciak/Dissertation",
+    courseLink: null,
     IndividualBool: true,
-    pdf: "path/to/pdf.pdf", // Replace with actual path to PDF if available
+    pdf: DissertationPDF,
   },
-  // Add more project data as needed
 ];
 
 export const Projects = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <section id="projects">
       <h1 className="projectsTitle">Projects</h1>
@@ -58,20 +97,21 @@ export const Projects = () => {
               </div>
             )}
 
-            {/* Carousel for images if available */}
             {project.listOfImages && project.listOfImages.length > 0 && (
-              <Carousel showThumbs={false} infiniteLoop>
-                {project.listOfImages.map((image, imgIndex) => (
-                  <div key={imgIndex}>
-                    <img
-                      src={image}
-                      alt={`${project.title} screenshot ${imgIndex + 1}`}
-                    />
-                  </div>
-                ))}
-              </Carousel>
+              <div className="carousel">
+                <Slider {...settings}>
+                  {project.listOfImages.map((image, imgIndex) => (
+                    <div key={imgIndex}>
+                      <img
+                        src={image}
+                        alt={`${project.title} screenshot ${imgIndex + 1}`}
+                        style={{ width: "100%", height: "auto" }}
+                      />
+                    </div>
+                  ))}
+                </Slider>
+              </div>
             )}
-
             {/* Render repo link if available */}
             {project.repoLink && (
               <a
@@ -95,7 +135,6 @@ export const Projects = () => {
                 Check out the course
               </a>
             )}
-
             {/* Render PDF link if available */}
             {project.pdf && (
               <a

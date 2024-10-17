@@ -1,14 +1,4 @@
 import React from "react";
-import DissertationPDF from "../../assets/ProjectsData/Dissertation.pdf";
-import DissertationGraph1 from "../../assets/ProjectsData/better.png";
-import DissertationGraph2 from "../../assets/ProjectsData/code_token_lengths_histogram.png";
-import DissertationGraph3 from "../../assets/ProjectsData/correctnessGraph.png";
-import DissertationGraph4 from "../../assets/ProjectsData/lineraRegression.png";
-import DissertationGraph5 from "../../assets/ProjectsData/maskingSizeRation.png";
-import DissertationGraph6 from "../../assets/ProjectsData/notSmothedTime.png";
-import DissertationGraph7 from "../../assets/ProjectsData/pipeline.png";
-import DissertationGraph8 from "../../assets/ProjectsData/timedocstring.png";
-import DissertationGraph9 from "../../assets/ProjectsData/timeSmoothed.png";
 
 import JackCompilerScreenshot1 from "../../assets/ProjectsData/jackcompiler.png";
 
