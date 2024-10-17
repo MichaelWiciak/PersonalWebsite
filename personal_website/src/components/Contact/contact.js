@@ -1,14 +1,27 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./contact.css";
 import InstagramIcon from "../../assets/InstagramLogo.png";
 import LinkedIn from "../../assets/linkedin.png";
 import GitHubIcon from "../../assets/GitHub.png";
 import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export const Contact = () => {
   const form = useRef();
+  const [captchaVerified, setCaptchaVerified] = useState(false);
+
+  const onCaptchaChange = (value) => {
+    console.log("Captcha value:", value);
+    setCaptchaVerified(!!value);
+  };
+
   const sendEmail = (e) => {
     e.preventDefault();
+
+    if (!captchaVerified) {
+      alert("Please verify you are not a robot!");
+      return;
+    }
 
     emailjs
       .sendForm(
@@ -28,6 +41,7 @@ export const Contact = () => {
         }
       );
   };
+
   const redirectGitHub = () => {
     window.location.href = "https://github.com/MichaelWiciak";
   };
@@ -37,6 +51,7 @@ export const Contact = () => {
   const redirectInstagram = () => {
     window.location.href = "https://www.instagram.com/wiciakmichael/";
   };
+
   return (
     <section id="contactPage">
       <div id="contact">
@@ -63,13 +78,40 @@ export const Contact = () => {
             rows="5"
             name="message"
           ></textarea>
-          <button type="submit" value="Send" className="submitBtn">
+
+          <ReCAPTCHA
+            sitekey="6LeIPmQqAAAAAHPfOb7Ob1a0uH2THiaTUrsvMbdr"
+            onChange={onCaptchaChange}
+          />
+
+          <button
+            type="submit"
+            value="Send"
+            className="submitBtn"
+            disabled={!captchaVerified}
+          >
             Submit
           </button>
+
           <div className="links">
-            <img src={GitHubIcon} alt="" className="link"  onClick={redirectGitHub}/>
-            <img src={LinkedIn} alt="" className="link" onClick={redirectLinkedIn}/>
-            <img src={InstagramIcon} alt="" className="link" onClick={redirectInstagram}/>
+            <img
+              src={GitHubIcon}
+              alt=""
+              className="link"
+              onClick={redirectGitHub}
+            />
+            <img
+              src={LinkedIn}
+              alt=""
+              className="link"
+              onClick={redirectLinkedIn}
+            />
+            <img
+              src={InstagramIcon}
+              alt=""
+              className="link"
+              onClick={redirectInstagram}
+            />
           </div>
         </form>
       </div>
