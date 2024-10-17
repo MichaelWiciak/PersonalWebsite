@@ -10,6 +10,7 @@ import CV from "./components/CV/cv";
 import Art from "./components/Art/art";
 import { useEffect } from "react";
 import Courses from "./components/Courses/courses";
+import Projects from "./components/Projects/projects";
 
 function App() {
   useEffect(() => {
@@ -119,6 +120,7 @@ function App() {
       <Intro />
       <Skills />
       <Works />
+      <Projects />
       <Teams />
       <Art />
       <CV />
