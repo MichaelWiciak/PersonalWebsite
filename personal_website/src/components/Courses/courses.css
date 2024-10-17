@@ -34,7 +34,10 @@
   border-bottom: none;
 }
 
-/* Course Title (Section Header) Styling */
+.courseItem:first-child {
+  margin-top: 1.5rem;
+}
+
 .coursesTitle {
   font-size: 2.5rem;
   font-weight: 700;
@@ -43,7 +46,6 @@
   color: white;
 }
 
-/* Individual Course Title Styling */
 .courseTitle {
   font-size: 1.5rem;
   font-weight: 600;
@@ -52,7 +54,6 @@
   text-align: center;
 }
 
-/* Course ID and Issue Date */
 .courseId,
 .courseIssued {
   font-size: 1rem;
@@ -63,19 +64,17 @@
   text-align: center;
 }
 
-/* Course Description */
 .courseDescription {
   font-size: 1.1rem;
   font-weight: 400;
   color: white;
   margin-top: 1rem;
-  margin-left: 1rem; /* Adds space to the left for better readability */
-  margin-right: 1rem; /* Adds space to the right for better readability */
+  margin-left: 1rem;
+  margin-right: 1rem;
   text-align: justify;
-  line-height: 1.6; /* Improved line spacing for readability */
+  line-height: 1.6;
 }
 
-/* Media Queries */
 @media screen and (max-width: 840px) {
   .coursesTitle {
     font-size: 2rem;
