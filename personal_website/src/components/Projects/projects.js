@@ -257,41 +257,43 @@ export const Projects = () => {
                 </Slider>
               </div>
             )}
-            {/* Render repo link if available */}
-            {project.repoLink && (
-              <a
-                href={project.repoLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="repoLink"
-              >
-                Check out the repo
-              </a>
-            )}
+            <div className="projectLinks">
+              {/* Render repo link if available */}
+              {project.repoLink && (
+                <a
+                  href={project.repoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="repoLink"
+                >
+                  Check out the repo
+                </a>
+              )}
 
-            {/* Render course link if available */}
-            {project.courseLink && (
-              <a
-                href={project.courseLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="courseLink"
-              >
-                Check out the course
-              </a>
-            )}
-            {/* Render PDF link if available */}
-            {project.pdf && (
-              <a
-                href={project.pdf}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="pdfLink"
-              >
-                <img src={PDFIcon} alt="Download PDF" className="pdfIcon" />
-                View PDF
-              </a>
-            )}
+              {/* Render course link if available */}
+              {project.courseLink && (
+                <a
+                  href={project.courseLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="courseLink"
+                >
+                  Check out the course
+                </a>
+              )}
+              {/* Render PDF link if available */}
+              {project.pdf && (
+                <a
+                  href={project.pdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="pdfLink"
+                >
+                  <img src={PDFIcon} alt="Download PDF" className="pdfIcon" />
+                  View PDF
+                </a>
+              )}
+            </div>
           </div>
         ))}
       </div>

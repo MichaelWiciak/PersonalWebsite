@@ -123,6 +123,13 @@ iframe {
   color: yellow;
 }
 
+.projectLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
 @media screen and (max-width: 720px) {
   .projectTitle {
     font-size: 2.5rem;
