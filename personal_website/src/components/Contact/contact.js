@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 import "./contact.css";
-import InstagramIcon from "../../assets/InstagramLogo.png";
-import LinkedIn from "../../assets/linkedin.png";
-import GitHubIcon from "../../assets/GitHub.png";
+import InstagramIcon from "../../assets/instagram.svg";
+import LinkedIn from "../../assets/linkedin.svg";
+import GitHubIcon from "../../assets/github.svg";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
 
