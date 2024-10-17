@@ -11,6 +11,7 @@ import Art from "./components/Art/art";
 import { useEffect } from "react";
 import Courses from "./components/Courses/courses";
 import Projects from "./components/Projects/projects";
+import ProgLang from "./components/ProgLang/progLang";
 
 function App() {
   useEffect(() => {
@@ -119,6 +120,7 @@ function App() {
       <Navbar />
       <Intro />
       <Skills />
+      <ProgLang />
       {/* <Works /> */}
       <Projects />
       <Teams />
