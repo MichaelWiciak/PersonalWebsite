@@ -8,7 +8,7 @@ const languages = [
   { name: "C++", level: 60 },
   { name: "Java", level: 60 },
   { name: "JavaScript", level: 70 },
-  { name: "TypeScript", level: 65 },
+  { name: "TypeScript", level: 0 },
 ];
 
 const databases = [
@@ -26,7 +26,8 @@ const ProgLang = () => {
   return (
     <section id="progLang">
       <h2>Programming Languages & Technologies</h2>
-      <div className="progLangContainer">
+      <div className="progLangBox">
+        {" "}
         <div className="languageSection">
           <h3>Languages</h3>
           {languages.map((lang) => (
@@ -42,7 +43,6 @@ const ProgLang = () => {
             </div>
           ))}
         </div>
-
         <div className="databaseSection">
           <h3>Databases</h3>
           {databases.map((db) => (
@@ -58,7 +58,6 @@ const ProgLang = () => {
             </div>
           ))}
         </div>
-
         <div className="serverTechSection">
           <h3>Server-Side Technologies</h3>
           {serverTechs.map((tech) => (
@@ -77,8 +76,11 @@ const ProgLang = () => {
       </div>
 
       <p className="skillNote">
-        * This is just a glimpse of my skills. I enjoy learning new tools and
-        technologies quickly!
+        * This list is just the tip of the iceberg—like any good software
+        engineer, I’m always picking up new tools and tech along the way
+        (sometimes so many, I forget half of them!). If it’s not listed here,
+        chances are I’ve used it in a project somewhere. And hey, I love diving
+        into new technologies, so the list is always growing!
       </p>
     </section>
   );
