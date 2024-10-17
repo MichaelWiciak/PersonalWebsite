@@ -109,6 +109,11 @@ iframe {
   color: yellow;
 }
 
+.projectDescriptionParagraph {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
 .slick-dots li button:before {
   color: yellow;
 }

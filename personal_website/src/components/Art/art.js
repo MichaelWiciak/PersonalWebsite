@@ -41,15 +41,20 @@ export const Art = () => {
   return (
     <section id="artworkPage">
       <div id="artwork">
-        <h1 className="artworkTitle">Procedurally Generated Wallpapers</h1>
+        <h1 className="artworkTitle">
+          Procedurally Generated Wallpapers: A Splash of Color for Your Screens
+          🎨✨
+        </h1>
         <span className="artworkDesc">
-          I wanted a way of generating high quality wallpapers for any
-          resolutions, so I made code that does that. Problem I always had was
-          that since the resolution of the wallpaper I wanted and the target
-          device didn't match exactly, the image because blurry and quality has
-          really decreased. I wanted high quality wallpapers so I could see the
-          crisp quality of the device screen to the max. So I made this.
-          Checkout the BackgroundMaker repo on my GitHub for details.
+          Ever wished for high-quality wallpapers that perfectly fit any
+          resolution? Enter the Procedurally Generated Wallpapers project! Tired
+          of blurry backgrounds that don’t do justice to your device’s stunning
+          display, I took matters into my own hands. With this code, you can
+          generate crisp, vibrant wallpapers tailored to your screen's
+          resolution. Plus, don’t forget to check out the fun over at my
+          Subreddit, r/randimageMW, where you can see the awesome creations from
+          myself and other enthusiasts. Get ready to level up your wallpaper
+          game!
         </span>
 
         {/* Carousel of images */}

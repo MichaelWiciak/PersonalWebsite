@@ -119,7 +119,7 @@ function App() {
       <Navbar />
       <Intro />
       <Skills />
-      <Works />
+      {/* <Works /> */}
       <Projects />
       <Teams />
       <Art />
