@@ -60,6 +60,18 @@
 
 .videoWrapper {
   margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.videoWrapper {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 iframe {
@@ -161,5 +173,15 @@ iframe {
 
   .projectBox {
     padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .videoWrapper {
+    flex-direction: column;
+  }
+
+  .videoWrapper iframe {
+    width: 100%;
   }
 }

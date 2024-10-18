@@ -32,7 +32,10 @@ const projectsData = [
 
       "Ready to see TimetableX in action? 🎥 Check out the demo video below to see how we can transform your academic life!,",
     ],
-    video: "https://www.youtube.com/embed/AJMGprxFs4w?si=TuTb7c3G_6C7i0Dz",
+    video: [
+      "https://www.youtube.com/embed/AJMGprxFs4w?si=TuTb7c3G_6C7i0Dz",
+      "https://www.youtube.com/embed/UzGAbXAKeFg?si=X8E65ogje3TQVI15",
+    ],
     listOfImages: [],
     repoLink: null,
     courseLink: null,
@@ -136,7 +139,7 @@ const projectsData = [
 
       "But wait, there’s more! Our handy Discord bot keeps users updated on booking statuses, and we’ve added a notification system on the website to ensure you’re always in the loop. Plus, a command-line interface (CLI) is available for direct bookings through the API. Ready to take control of your bookings? Check out the demo video and our repo to see Sports Booker in action!",
     ],
-    video: "https://www.youtube.com/embed/bomcHVP_ZRc?si=x0k2DCV-ZTCgKQxd",
+    video: ["https://www.youtube.com/embed/bomcHVP_ZRc?si=x0k2DCV-ZTCgKQxd"],
     listOfImages: [],
     repoLink: null,
     courseLink: null,
@@ -151,7 +154,7 @@ const projectsData = [
 
       "Using OpenCV, we implemented a Hough transform for star removal, applying masking and dilation to help our CNN identify planets. The highlight? Our robot had to escape an exploding spaceship by identifying colored modules and calculating the distance between Earth and the Moon, all within five minutes before the countdown hit zero! We achieved the highest mark of 90% among 45 groups—talk about pressure! Check out the demo video and links to the PDF and repository for a closer look at this exciting project!",
     ],
-    video: "https://www.youtube.com/embed/UU7TQqW6gh0?si=GU9b9oqX-0pFp8y0",
+    video: ["https://www.youtube.com/embed/UU7TQqW6gh0?si=GU9b9oqX-0pFp8y0"],
     images: [""],
     repo: "https://github.com/MichaelWiciak/TurtleBotInAExploringSpaceship",
     IndividualBool: false,
@@ -183,7 +186,7 @@ const projectsData = [
 
       "The player includes essential media controls and a clean design, providing users with an enjoyable viewing experience. The development process prioritized usability, ensuring that feedback influenced the final product. To see HTVP in action, check out the demo video, and explore the repository for further insights into the project’s functionalities and design.",
     ],
-    video: "https://www.youtube.com/embed/D2neMUvJ3T0?si=QxYdkEWlUYTloZrn",
+    video: ["https://www.youtube.com/embed/D2neMUvJ3T0?si=QxYdkEWlUYTloZrn"],
     images: [],
     repo: "https://github.com/MichaelWiciak/VideoPlayer",
   },
@@ -228,17 +231,19 @@ export const Projects = () => {
               ))}
             </div>
 
-            {/* Render video if available */}
-            {project.video && (
+            {project.video && project.video.length > 0 && (
               <div className="videoWrapper">
-                <iframe
-                  width="100%"
-                  height="315"
-                  src={project.video}
-                  title={`${project.title} demo`}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
+                {project.video.map((videoUrl, index) => (
+                  <iframe
+                    key={index}
+                    width="100%"
+                    height="315"
+                    src={videoUrl}
+                    title={`${project.title} demo ${index + 1}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                ))}
               </div>
             )}
 
