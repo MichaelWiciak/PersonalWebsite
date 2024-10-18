@@ -36,17 +36,6 @@ export const Navbar = () => {
         >
           About
         </Link>
-        <Link
-          activeClass="active"
-          to="works"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="desktopMenuButton"
-        >
-          Portfolio
-        </Link>
 
         <Link
           activeClass="active"
@@ -158,18 +147,6 @@ export const Navbar = () => {
           onClick={() => setShowMenu(false)}
         >
           About
-        </Link>
-        <Link
-          activeClass="active"
-          to="works"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="listItem"
-          onClick={() => setShowMenu(false)}
-        >
-          Portfolio
         </Link>
         <Link
           activeClass="active"
