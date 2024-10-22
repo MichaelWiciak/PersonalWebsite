@@ -36,6 +36,28 @@ export const Navbar = () => {
         >
           About
         </Link>
+        <Link
+          activeClass="active"
+          to="projects"
+          spy={true}
+          smooth={true}
+          offset={-50}
+          duration={500}
+          className="desktopMenuButton"
+        >
+          Projects
+        </Link>
+        <Link
+          activeClass="active"
+          to="teams"
+          spy={true}
+          smooth={true}
+          offset={-50}
+          duration={500}
+          className="desktopMenuButton"
+        >
+          Teams
+        </Link>
 
         <Link
           activeClass="active"
@@ -70,28 +92,6 @@ export const Navbar = () => {
           className="desktopMenuButton"
         >
           Courses
-        </Link>
-        <Link
-          activeClass="active"
-          to="teams"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="desktopMenuButton"
-        >
-          Teams
-        </Link>
-        <Link
-          activeClass="active"
-          to="projects"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="desktopMenuButton"
-        >
-          Projects
         </Link>
       </div>
       <button
@@ -148,9 +148,10 @@ export const Navbar = () => {
         >
           About
         </Link>
+
         <Link
           activeClass="active"
-          to="contact"
+          to="projects"
           spy={true}
           smooth={true}
           offset={-50}
@@ -158,44 +159,9 @@ export const Navbar = () => {
           className="listItem"
           onClick={() => setShowMenu(false)}
         >
-          Contact
+          Projects
         </Link>
-        <Link
-          activeClass="active"
-          to="artworkPage"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="listItem"
-          onClick={() => setShowMenu(false)}
-        >
-          Art
-        </Link>
-        <Link
-          activeClass="active"
-          to="cv"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="listItem"
-          onClick={() => setShowMenu(false)}
-        >
-          CV
-        </Link>
-        <Link
-          activeClass="active"
-          to="courses"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="listItem"
-          onClick={() => setShowMenu(false)}
-        >
-          Courses
-        </Link>
+
         <Link
           activeClass="active"
           to="teams"
@@ -208,9 +174,10 @@ export const Navbar = () => {
         >
           Teams
         </Link>
+
         <Link
           activeClass="active"
-          to="projects"
+          to="artworkPage"
           spy={true}
           smooth={true}
           offset={-50}
@@ -218,7 +185,46 @@ export const Navbar = () => {
           className="listItem"
           onClick={() => setShowMenu(false)}
         >
-          Projects
+          Art
+        </Link>
+
+        <Link
+          activeClass="active"
+          to="cv"
+          spy={true}
+          smooth={true}
+          offset={-50}
+          duration={500}
+          className="listItem"
+          onClick={() => setShowMenu(false)}
+        >
+          CV
+        </Link>
+
+        <Link
+          activeClass="active"
+          to="courses"
+          spy={true}
+          smooth={true}
+          offset={-50}
+          duration={500}
+          className="listItem"
+          onClick={() => setShowMenu(false)}
+        >
+          Courses
+        </Link>
+
+        <Link
+          activeClass="active"
+          to="contact"
+          spy={true}
+          smooth={true}
+          offset={-50}
+          duration={500}
+          className="listItem"
+          onClick={() => setShowMenu(false)}
+        >
+          Contact
         </Link>
       </div>
     </nav>
