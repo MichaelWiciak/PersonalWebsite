@@ -8,18 +8,26 @@ const languages = [
   { name: "C++", level: 60 },
   { name: "Java", level: 60 },
   { name: "JavaScript", level: 70 },
-  { name: "TypeScript", level: 0 },
+  { name: "Ruby", level: 10 },
+  { name: "MATLAB", level: 60 },
+  { name: "TypeScript", level: 10 },
 ];
 
 const databases = [
   { name: "MySQL", level: 70 },
   { name: "PostgreSQL", level: 75 },
   { name: "SQLite", level: 65 },
+  { name: "MongoDB", level: 50 },
 ];
 
 const serverTechs = [
-  { name: "Express.js", level: 70 },
-  { name: "Django", level: 75 },
+  { name: "Express.js", level: 50 },
+  { name: "Django", level: 50 },
+  { name: "Vercel", level: 65 },
+  { name: "Azure", level: 70 },
+  { name: "Next.js", level: 50 },
+  { name: "Docker", level: 60 },
+  { name: "Cloudflare", level: 65 },
 ];
 
 const ProgLang = () => {
