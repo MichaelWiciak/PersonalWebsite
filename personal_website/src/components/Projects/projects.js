@@ -139,7 +139,7 @@ const projectsData = [
 
       "But wait, there’s more! Our handy Discord bot keeps users updated on booking statuses, and we’ve added a notification system on the website to ensure you’re always in the loop. Plus, a command-line interface (CLI) is available for direct bookings through the API. Ready to take control of your bookings? Check out the demo video and our repo to see Sports Booker in action!",
     ],
-    video: ["https://www.youtube.com/embed/bomcHVP_ZRc?si=x0k2DCV-ZTCgKQxd"],
+    video: ["https://www.youtube.com/embed/Hm_4AjdkOA4?si=64MMZB33teRTnZH6"],
     listOfImages: [],
     repoLink: null,
     courseLink: null,
