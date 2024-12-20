@@ -16,6 +16,10 @@ import DissertationGraph7 from "../../assets/ProjectsData/pipeline.png";
 import DissertationGraph8 from "../../assets/ProjectsData/timedocstring.png";
 import DissertationGraph9 from "../../assets/ProjectsData/timeSmoothed.png";
 
+import fetchImages from "./fetchImages";
+
+// fetch every image in ../../assets/StanfordData and put it in the array below
+
 const projectsData = [
   {
     title: "TimetableX: Your Ultimate Study Buddy! 🎉",
@@ -102,18 +106,19 @@ const projectsData = [
     IndividualBool: true,
     pdf: null,
   },
-  // { // need to get screenshots from project
-  //   title: "Stanford",
-  //   description: [
-  //     "Stanford AI course projects, covering multiple AI topics with comprehensive implementations.",
-  //   ],
-  //   listOfImages: [],
-  //   repoLink:
-  //     "https://github.com/MichaelWiciak/Machine_Learning_by_Stanford_University_Programming_Exercises_Solutions",
-  //   IndividualBool: true,
-  //   pdf: null,
-  //   courseLink: null,
-  // },
+  {
+    // need to get screenshots from project
+    title: "Stanford",
+    description: [
+      "Stanford AI course projects, covering multiple AI topics with comprehensive implementations.",
+    ],
+    listOfImages: fetchImages(),
+    repoLink:
+      "https://github.com/MichaelWiciak/Machine_Learning_by_Stanford_University_Programming_Exercises_Solutions",
+    IndividualBool: true,
+    pdf: null,
+    courseLink: null,
+  },
   {
     title:
       "PGM Image Processing Tools: Unleash Your Creativity with Images! 🖼️✨",
@@ -211,6 +216,8 @@ export const Projects = () => {
       },
     ],
   };
+
+  // fetch every image in ../../assets/StanfordData and put it in the array below
 
   return (
     <section id="projects">
