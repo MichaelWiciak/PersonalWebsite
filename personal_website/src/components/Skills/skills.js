@@ -6,25 +6,33 @@ const Skills = () => {
     <section id="skills">
       <span className="skillsTitle">About Me</span>
       <span className="skillDesc">
-        I’m someone who loves diving into complex problems, whether it’s coding
-        up a solution, tuning a machine learning model, or hacking together
-        something cool for a group project.
+        I am a Graduate Software Engineer at Lloyds Banking Group with a
+        First-Class MEng BSc in Computer Science from the University of Leeds.
+        <br />
+        <br />I have co-founded the platforms{" "}
+        <a
+          href="https://uni.TimetableX.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="introName"
+        >
+          uni.TimetableX.com
+        </a>{" "}
+        and
+        <a
+          href="https://SportsBooker.timetablex.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="introName"
+        >
+          SportsBooker.timetablex.com
+        </a>
+        .
         <br />
         <br />
-        Right now, my playground is software engineering.
-        <br />
-        <br />
-        I’ve gotten hands-on with everything from developing an app to automate
-        badminton court bookings (because why not?) to creating a scheduler to
-        help students stay on top of deadlines.
-        <br />
-        <br />
-        I’m always chasing something new, whether it’s a coding challenge, a
-        cool project idea, or simply learning how to work smarter.
-        <br />
-        <br />
-        If you’re looking for someone who’s not afraid to roll up their sleeves
-        and get into the nitty-gritty of tech, I’m your person.
+        From systems programming in Rust and C++ to full-stack TypeScript and
+        Python, I build high-impact software that automates processes and
+        improves daily workflows for hundreds of users.
         <br />
       </span>
     </section>
