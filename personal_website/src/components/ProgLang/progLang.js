@@ -7,10 +7,11 @@ const languages = [
   { name: "C", level: 80 },
   { name: "C++", level: 60 },
   { name: "Java", level: 60 },
-  { name: "JavaScript", level: 70 },
+  { name: "TypeScript/JS", level: 70 },
   { name: "Ruby", level: 10 },
-  { name: "MATLAB", level: 60 },
-  { name: "TypeScript", level: 10 },
+  { name: "Go", level: 30 },
+  { name: "Rust", level: 40 },
+  { name: "MATLAB", level: 30 },
 ];
 
 const databases = [
@@ -21,13 +22,16 @@ const databases = [
 ];
 
 const serverTechs = [
-  { name: "Express.js", level: 50 },
-  { name: "Django", level: 50 },
+  { name: "GCP", level: 80 },
+  { name: "AWS", level: 30 },
   { name: "Vercel", level: 65 },
   { name: "Azure", level: 70 },
   { name: "Next.js", level: 50 },
   { name: "Docker", level: 60 },
   { name: "Cloudflare", level: 65 },
+  { name: "Kubernetes", level: 60 },
+  { name: "Terraform / IaaS", level: 50 },
+  { name: "IBM/Hashicorp Vault", level: 40 },
 ];
 
 const ProgLang = () => {
@@ -39,63 +43,67 @@ const ProgLang = () => {
         <div className="languageSection">
           <h3>Languages</h3>
           <div className="languageBars">
-            {languages.map((lang) => (
-              <div key={lang.name} className="languageBar">
-                <span className="languageName">{lang.name}</span>
+            {languages
+              .sort((a, b) => b.level - a.level)
+              .map((lang) => (
+                <div key={lang.name} className="languageBar">
+                  <span className="languageName">{lang.name}</span>
 
-                <div className="barContainer">
-                  <div
-                    className="bar"
-                    style={{ width: `${lang.level}%` }}
-                    title={`${lang.level}%`}
-                  ></div>
+                  <div className="barContainer">
+                    <div
+                      className="bar"
+                      style={{ width: `${lang.level}%` }}
+                      title={`${lang.level}%`}
+                    ></div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
         <div className="databaseSection">
           <h3>Databases</h3>
           <div className="languageBars">
-            {databases.map((db) => (
-              <div key={db.name} className="databaseBar">
-                <span className="databaseName">{db.name}</span>
-                <div className="barContainer">
-                  <div
-                    className="bar"
-                    style={{ width: `${db.level}%` }}
-                    title={`${db.level}%`}
-                  ></div>
+            {databases
+              .sort((a, b) => b.level - a.level)
+              .map((db) => (
+                <div key={db.name} className="databaseBar">
+                  <span className="databaseName">{db.name}</span>
+                  <div className="barContainer">
+                    <div
+                      className="bar"
+                      style={{ width: `${db.level}%` }}
+                      title={`${db.level}%`}
+                    ></div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
         <div className="serverTechSection">
           <h3>Server-Side Technologies</h3>
           <div className="languageBars">
-            {serverTechs.map((tech) => (
-              <div key={tech.name} className="serverTechBar">
-                <span className="serverTechName">{tech.name}</span>
-                <div className="barContainer">
-                  <div
-                    className="bar"
-                    style={{ width: `${tech.level}%` }}
-                    title={`${tech.level}%`}
-                  ></div>
+            {serverTechs
+              .sort((a, b) => b.level - a.level)
+              .map((tech) => (
+                <div key={tech.name} className="serverTechBar">
+                  <span className="serverTechName">{tech.name}</span>
+                  <div className="barContainer">
+                    <div
+                      className="bar"
+                      style={{ width: `${tech.level}%` }}
+                      title={`${tech.level}%`}
+                    ></div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </div>
 
       <p className="skillNote">
-        * This list is just the tip of the iceberg—like any good software
-        engineer, I’m always picking up new tools and tech along the way
-        (sometimes so many, I forget half of them!). If it’s not listed here,
-        chances are I’ve used it in a project somewhere. And hey, I love diving
-        into new technologies, so the list is always growing!
+        * This list isn't exhaustive. Like any good software engineer, I'm
+        always picking up new tools and tech along the way (sometimes so many, I
+        forget half of them...).
       </p>
     </section>
   );
