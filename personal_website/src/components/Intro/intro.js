@@ -30,10 +30,6 @@ const Intro = () => {
     return () => clearInterval(interval); // Clean up interval on component unmount
   }, []);
 
-  const redirectToWebsite = () => {
-    window.location.href = "https://www.linkedin.com/in/michael-wiciak1/";
-  };
-
   return (
     <section id="intro">
       <div className="introContent">
@@ -43,16 +39,16 @@ const Intro = () => {
           <span className="animatedTitle">{titles[currentTitle]}</span>
         </span>
         <p className="introPara">
-          I’m a software engineer who loves blending code, hardware, and a bit
+          I'm a software engineer who loves blending code, hardware, and a bit
           <br />
-          of business wizardry to create cool, practical solutions—whether it’s
+          of business wizardry to create cool, practical solutions—whether it's
           <br />
           automating badminton bookings or making life easier for students.
         </p>
-        <Link>
-          <button className="btn" onClick={redirectToWebsite}>
-            <img src={btnImg} alt="Hire Me Image" className="btnImg" />
-            Hire Me
+        <Link to="contact" smooth={true} duration={500}>
+          <button className="btn">
+            <img src={btnImg} alt="Contact me" className="btnImg" />
+            Contact me
           </button>{" "}
         </Link>
       </div>
