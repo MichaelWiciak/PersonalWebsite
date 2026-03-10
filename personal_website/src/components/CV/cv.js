@@ -1,4 +1,3 @@
-import React from "react";
 import "./cv.css";
 import CVFile from "../../assets/MichaelWiciakCVtext.pdf";
 
@@ -8,8 +7,7 @@ export const CV = () => {
       <div id="cv">
         <h1 className="cvPageTitle">My CV</h1>
         <span className="cvDesc">
-          Latest update: 01/10/2024 so could be out-of-date. Download or view my
-          CV below:
+          Latest update: 10/03/2026. Download or view my CV below:
         </span>
         <div className="pdfViewer">
           <iframe
@@ -20,7 +18,6 @@ export const CV = () => {
           ></iframe>
         </div>
 
-        {/* Download Button */}
         <div className="downloadCV">
           <a
             href={CVFile}

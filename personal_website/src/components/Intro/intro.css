@@ -35,6 +35,11 @@
 
 .introName {
   color: yellow;
+  transition: color 0.3s ease;
+}
+
+.introName:hover {
+  color: gold;
 }
 
 .introPara {

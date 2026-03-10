@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./intro.css";
 import bg from "../../assets/MW.JPG";
 import btnImg from "../../assets/hireme.png";
@@ -8,14 +8,19 @@ const titles = [
   "Software Engineer",
   "Amateur Photographer",
   "Competitive Badminton Player",
-  "Kind-of Artist",
+  "Climber",
   "Teacher",
-  "Student",
   "IT Support",
   "Web Developer",
   "Hardware Engineer",
-  "Business Owner",
-  "Project Manager",
+  "Infrastructure Engineer",
+  "DevOps Engineer",
+  "Backend Developer",
+  "Cloud Engineer",
+  "Data Engineer",
+  "Machine Learning Engineer",
+  "Product Owner",
+  "Solutions Architect",
   "Team Leader",
 ];
 
@@ -24,15 +29,11 @@ const Intro = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTitle((prevTitle) => (prevTitle + 1) % titles.length);
-    }, 3000); // Switch every 3 seconds
+      setCurrentTitle(Math.floor(Math.random() * titles.length));
+    }, 3000);
 
-    return () => clearInterval(interval); // Clean up interval on component unmount
+    return () => clearInterval(interval);
   }, []);
-
-  const redirectToWebsite = () => {
-    window.location.href = "https://www.linkedin.com/in/michael-wiciak1/";
-  };
 
   return (
     <section id="intro">
@@ -43,16 +44,16 @@ const Intro = () => {
           <span className="animatedTitle">{titles[currentTitle]}</span>
         </span>
         <p className="introPara">
-          I’m a software engineer who loves blending code, hardware, and a bit
+          I'm a software engineer who loves blending code, hardware, and a bit
           <br />
-          of business wizardry to create cool, practical solutions—whether it’s
-          <br />
-          automating badminton bookings or making life easier for students.
+          of customer-centricity to create cool, practical solutions. At the
+          same time,
+          <br />I dream of seeding spinach in Sweden so take it as you will (:
         </p>
-        <Link>
-          <button className="btn" onClick={redirectToWebsite}>
-            <img src={btnImg} alt="Hire Me Image" className="btnImg" />
-            Hire Me
+        <Link to="contact" smooth={true} duration={500}>
+          <button className="btn">
+            <img src={btnImg} alt="Contact me" className="btnImg" />
+            Contact me
           </button>{" "}
         </Link>
       </div>
