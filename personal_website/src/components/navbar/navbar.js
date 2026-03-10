@@ -1,4 +1,3 @@
-import React from "react";
 import "./navbar.css";
 import logo from "../../assets/Michael Wiciak-logos_white.png";
 import contact from "../../assets/contact.png";

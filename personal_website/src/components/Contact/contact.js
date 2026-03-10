@@ -1,8 +1,5 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import "./contact.css";
-import InstagramIcon from "../../assets/instagram.svg";
-import LinkedIn from "../../assets/linkedin.svg";
-import GitHubIcon from "../../assets/github.svg";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
 
@@ -28,7 +25,7 @@ export const Contact = () => {
         "service_k8z3buy",
         "template_tsw1dhp",
         form.current,
-        "_czlJoON27yt30HVF"
+        "_czlJoON27yt30HVF",
       )
       .then(
         (result) => {
@@ -38,7 +35,7 @@ export const Contact = () => {
         },
         (error) => {
           console.log(error.text);
-        }
+        },
       );
   };
 
@@ -105,7 +102,7 @@ export const Contact = () => {
               onClick={() =>
                 window.open(
                   "https://www.linkedin.com/in/michaelwiciak/",
-                  "_blank"
+                  "_blank",
                 )
               }
             >
@@ -121,7 +118,7 @@ export const Contact = () => {
               onClick={() =>
                 window.open(
                   "https://www.instagram.com/wiciakmichael/",
-                  "_blank"
+                  "_blank",
                 )
               }
             >

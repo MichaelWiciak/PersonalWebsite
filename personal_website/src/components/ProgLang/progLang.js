@@ -1,5 +1,4 @@
-import React from "react";
-import "./progLang.css"; // Ensure to create this CSS file for styles later
+import "./progLang.css";
 
 const languages = [
   { name: "Python", level: 100 },
