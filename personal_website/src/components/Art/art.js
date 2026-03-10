@@ -15,9 +15,7 @@ import Img9 from "../../assets/carouselImages/img9.png";
 import Img10 from "../../assets/carouselImages/img10.png";
 
 export const Art = () => {
-  // Array of image paths
   const images = [Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img9, Img10];
-  // Replace with the actual paths to your images
   const settings = {
     dots: true,
     infinite: true,
@@ -28,7 +26,7 @@ export const Art = () => {
     autoplaySpeed: 3000,
     responsive: [
       {
-        breakpoint: 768, // mobile breakpoint
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -48,16 +46,15 @@ export const Art = () => {
         <span className="artworkDesc">
           Ever wished for high-quality wallpapers that perfectly fit any
           resolution? Enter the Procedurally Generated Wallpapers project! Tired
-          of blurry backgrounds that don’t do justice to your device’s stunning
+          of blurry backgrounds that don't do justice to your device's stunning
           display, I took matters into my own hands. With this code, you can
           generate crisp, vibrant wallpapers tailored to your screen's
-          resolution. Plus, don’t forget to check out the fun over at my
+          resolution. Plus, don't forget to check out the fun over at my
           Subreddit, r/randimageMW, where you can see the awesome creations from
           myself and other enthusiasts. Get ready to level up your wallpaper
           game!
         </span>
 
-        {/* Carousel of images */}
         <div className="carousel">
           <Slider {...settings}>
             {images.map((imgSrc, index) => (
@@ -72,7 +69,6 @@ export const Art = () => {
           </Slider>
         </div>
 
-        {/* Button to redirect to Reddit */}
         <div className="redditButton">
           <button
             onClick={() =>
