@@ -4,6 +4,7 @@ import contact from "../../assets/contact.png";
 import { Link } from "react-scroll";
 import menu from "../../assets/menu.png";
 import { useState } from "react";
+import { navItems, contactNavItem } from "../../data/navItems";
 
 export const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -13,96 +14,20 @@ export const Navbar = () => {
         <img src={logo} alt="logo" className="logo" />
       </div>
       <div className="desktopMenu">
-        <Link
-          activeClass="active"
-          to="intro"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="desktopMenuButton"
-        >
-          Home
-        </Link>
-        <Link
-          activeClass="active"
-          to="skills"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="desktopMenuButton"
-        >
-          About
-        </Link>
-        <Link
-          activeClass="active"
-          to="progLang"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="desktopMenuButton"
-        >
-          Skills
-        </Link>
-        <Link
-          activeClass="active"
-          to="projects"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="desktopMenuButton"
-        >
-          Projects
-        </Link>
-        <Link
-          activeClass="active"
-          to="teams"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="desktopMenuButton"
-        >
-          Teams
-        </Link>
-
-        <Link
-          activeClass="active"
-          to="artworkPage"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="desktopMenuButton"
-        >
-          Art
-        </Link>
-
-        <Link
-          activeClass="active"
-          to="cv"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="desktopMenuButton"
-        >
-          CV
-        </Link>
-        <Link
-          activeClass="active"
-          to="courses"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="desktopMenuButton"
-        >
-          Courses
-        </Link>
+        {navItems.map((item) => (
+          <Link
+            key={item.id}
+            activeClass="active"
+            to={item.id}
+            spy={true}
+            smooth={true}
+            offset={-50}
+            duration={500}
+            className="desktopMenuButton"
+          >
+            {item.label}
+          </Link>
+        ))}
       </div>
       <button
         className="desktopMenuBtn"
@@ -125,18 +50,27 @@ export const Navbar = () => {
         src={menu}
         alt="logo"
         className="mobMenu"
-        onClick={() => {
-          console.log('Clicked "mobMenu" image');
-          console.log("showMenu: ", showMenu);
-          setShowMenu(!showMenu);
-          console.log("After setShowMenu(!showMenu)");
-          console.log("showMenu: ", showMenu);
-        }}
+        onClick={() => setShowMenu(!showMenu)}
       />
       <div className="navMenu" style={{ display: showMenu ? "flex" : "none" }}>
+        {navItems.map((item) => (
+          <Link
+            key={item.id}
+            activeClass="active"
+            to={item.id}
+            spy={true}
+            smooth={true}
+            offset={-50}
+            duration={500}
+            className="listItem"
+            onClick={() => setShowMenu(false)}
+          >
+            {item.label}
+          </Link>
+        ))}
         <Link
           activeClass="active"
-          to="intro"
+          to={contactNavItem.id}
           spy={true}
           smooth={true}
           offset={-50}
@@ -144,109 +78,7 @@ export const Navbar = () => {
           className="listItem"
           onClick={() => setShowMenu(false)}
         >
-          Home
-        </Link>
-        <Link
-          activeClass="active"
-          to="skills"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="listItem"
-          onClick={() => setShowMenu(false)}
-        >
-          About
-        </Link>
-        <Link
-          activeClass="active"
-          to="progLang"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="listItem"
-          onClick={() => setShowMenu(false)}
-        >
-          Skills
-        </Link>
-
-        <Link
-          activeClass="active"
-          to="projects"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="listItem"
-          onClick={() => setShowMenu(false)}
-        >
-          Projects
-        </Link>
-
-        <Link
-          activeClass="active"
-          to="teams"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="listItem"
-          onClick={() => setShowMenu(false)}
-        >
-          Teams
-        </Link>
-
-        <Link
-          activeClass="active"
-          to="artworkPage"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="listItem"
-          onClick={() => setShowMenu(false)}
-        >
-          Art
-        </Link>
-
-        <Link
-          activeClass="active"
-          to="cv"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="listItem"
-          onClick={() => setShowMenu(false)}
-        >
-          CV
-        </Link>
-
-        <Link
-          activeClass="active"
-          to="courses"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="listItem"
-          onClick={() => setShowMenu(false)}
-        >
-          Courses
-        </Link>
-
-        <Link
-          activeClass="active"
-          to="contact"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="listItem"
-          onClick={() => setShowMenu(false)}
-        >
-          Contact
+          {contactNavItem.label}
         </Link>
       </div>
     </nav>
