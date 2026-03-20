@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./intro.css";
 import bg from "../../assets/MW.JPG";
 import btnImg from "../../assets/hireme.png";
 import { Link } from "react-scroll";
 import { introTitles, introBio, introName } from "../../data/intro";
 
-const Intro = () => {
+const Intro: React.FC = () => {
   const [currentTitle, setCurrentTitle] = useState(0);
 
   useEffect(() => {

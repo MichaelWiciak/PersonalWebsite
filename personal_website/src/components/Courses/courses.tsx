@@ -1,7 +1,7 @@
 import "./courses.css";
 import { coursesData } from "../../data/courses";
 
-export const Courses = () => {
+const Courses: React.FC = () => {
   return (
     <section id="courses">
       <h1 className="coursesTitle">Courses</h1>

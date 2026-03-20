@@ -4,7 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Slider from "react-slick";
 import { projectsData } from "../../data/projects";
 
-export const Projects = () => {
+const Projects: React.FC = () => {
   const settings = {
     dots: true,
     infinite: true,

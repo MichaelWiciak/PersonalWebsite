@@ -1,7 +1,7 @@
 import "./teams.css";
 import { teamsData } from "../../data/teams";
 
-export const Teams = () => {
+const Teams: React.FC = () => {
   return (
     <section id="teams">
       <h1 className="teamsTitle">Teams I Am Part Of</h1>

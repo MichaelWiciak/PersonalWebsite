@@ -1,12 +1,12 @@
+import { useState } from "react";
 import "./navbar.css";
 import logo from "../../assets/Michael Wiciak-logos_white.png";
 import contact from "../../assets/contact.png";
 import { Link } from "react-scroll";
 import menu from "../../assets/menu.png";
-import { useState } from "react";
 import { navItems, contactNavItem } from "../../data/navItems";
 
-export const Navbar = () => {
+const Navbar: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <nav className="navbar">
@@ -37,8 +37,8 @@ export const Navbar = () => {
             contactElement.scrollIntoView({
               block: "end",
               behavior: "smooth",
-              offset: -50,
             });
+            window.scrollBy(0, -50);
           }
         }}
       >

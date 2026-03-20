@@ -21,6 +21,6 @@ export const introTitles: string[] = [
 export const introBio: string = `I'm a software engineer who loves blending code, hardware, and a bit
           of customer-centricity to create cool, practical solutions. At the
           same time,
-          I dream of seeding spinach in Sweden so take it as you will (:`;
+          I dream of seeding spinach in Sweden so take it as you will (`;
 
 export const introName: string = "Michael Wiciak";

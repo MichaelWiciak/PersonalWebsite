@@ -1,7 +1,7 @@
 import "./cv.css";
 import CVFile from "../../assets/MichaelWiciakCVtext.pdf";
 
-export const CV = () => {
+const CV: React.FC = () => {
   return (
     <section id="cvPage">
       <div id="cv">

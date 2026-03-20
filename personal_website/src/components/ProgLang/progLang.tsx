@@ -5,7 +5,7 @@ import {
   serverTechsData,
 } from "../../data/skills";
 
-const ProgLang = () => {
+const ProgLang: React.FC = () => {
   return (
     <section id="progLang">
       <h2>Programming Languages & Technologies</h2>

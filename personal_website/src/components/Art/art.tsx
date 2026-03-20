@@ -9,7 +9,7 @@ import {
   redditUrl,
 } from "../../data/art";
 
-export const Art = () => {
+const Art: React.FC = () => {
   const settings = {
     dots: true,
     infinite: true,

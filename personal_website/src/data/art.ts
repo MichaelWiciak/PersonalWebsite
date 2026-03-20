@@ -9,7 +9,12 @@ import Img8 from "../assets/carouselImages/img8.png";
 import Img9 from "../assets/carouselImages/img9.png";
 import Img10 from "../assets/carouselImages/img10.png";
 
-export const artImages = [
+export interface ArtImage {
+  src: string;
+  alt: string;
+}
+
+export const artImages: ArtImage[] = [
   { src: Img1, alt: "Artwork 1" },
   { src: Img2, alt: "Artwork 2" },
   { src: Img3, alt: "Artwork 3" },
@@ -22,7 +27,7 @@ export const artImages = [
   { src: Img10, alt: "Artwork 10" },
 ];
 
-export const artDescription = `Ever wished for high-quality wallpapers that perfectly fit any
+export const artDescription: string = `Ever wished for high-quality wallpapers that perfectly fit any
           resolution? Enter the Procedurally Generated Wallpapers project! Tired
           of blurry backgrounds that don't do justice to your device's stunning
           display, I took matters into my own hands. With this code, you can
@@ -32,7 +37,7 @@ export const artDescription = `Ever wished for high-quality wallpapers that perf
           myself and other enthusiasts. Get ready to level up your wallpaper
           game!`;
 
-export const artTitle =
+export const artTitle: string =
   "Procedurally Generated Wallpapers: A Splash of Color for Your Screens 🎨✨";
 
-export const redditUrl = "https://www.reddit.com/r/randimageMW";
+export const redditUrl: string = "https://www.reddit.com/r/randimageMW";

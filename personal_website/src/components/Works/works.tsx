@@ -6,7 +6,7 @@ import pgm from "../../assets/pgm.png";
 import sportcentre from "../../assets/sportcentre.png";
 import videoPlayer from "../../assets/videoPlayer.png";
 
-const Works = () => {
+const Works: React.FC = () => {
   const redirectStanford = () => {
     window.location.href =
       "https://github.com/MichaelWiciak/Machine_Learning_by_Stanford_University_Programming_Exercises_Solutions";

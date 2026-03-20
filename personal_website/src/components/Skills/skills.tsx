@@ -1,7 +1,7 @@
 import "./skills.css";
 import { aboutData, additionalSkills } from "../../data/about";
 
-const Skills = () => {
+const Skills: React.FC = () => {
   return (
     <section id="skills">
       <span className="skillsTitle">About Me</span>

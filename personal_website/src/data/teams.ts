@@ -3,7 +3,15 @@ import RobotsIcon from "../assets/TeamsData/robots.webp";
 import TimetableXIcon from "../assets/TeamsData/timetableXLogo.png";
 import BadmintonIcon from "../assets/TeamsData/badmintonLog.jpg";
 
-export const teamsData = [
+export interface Team {
+  title: string;
+  description: string;
+  icon: string;
+  video: string | null;
+  repoLink: string | null;
+}
+
+export const teamsData: Team[] = [
   {
     title: "Hot Tomato Dev Team",
     description:
