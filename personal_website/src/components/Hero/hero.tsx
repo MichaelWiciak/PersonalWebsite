@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "./hero.css";
 import bg from "../../assets/MW.JPG";
 import { introTitles, introBio, introName } from "../../data/intro";
 
@@ -15,16 +14,24 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="intro">
-      <div className="introContent">
-        <span className="hello">Hello,</span>
-        <span className="introText">
-          I'm <span className="introName">{introName}</span> <br />
-          <span className="animatedTitle">{introTitles[currentTitle]}</span>
-        </span>
-        <p className="introPara">{introBio}</p>
+    <section id="intro" className="h-[calc(100vh-5rem)] w-full max-w-container mx-auto relative overflow-hidden">
+      <div className="h-full w-full p-8 flex flex-col justify-center">
+        <span className="text-[1.75rem] font-light">Hello,</span>
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+          I'm <span className="text-accent transition-colors duration-300 hover:text-yellow-400">{introName}</span>
+          <br />
+          <span className="animated-title inline-block">{introTitles[currentTitle]}</span>
+        </h1>
+        <p className="text-base md:text-lg font-light tracking-wide mt-4 max-w-2xl">
+          {introBio}
+        </p>
       </div>
-      <img src={bg} alt="Profile" className="bg" />
+      <img
+        src={bg}
+        alt="Profile"
+        className="absolute top-0 right-0 w-auto h-full object-cover -z-10 rounded-full"
+        style={{ maxWidth: "60%", height: "100vh" }}
+      />
     </section>
   );
 };

@@ -1,7 +1,6 @@
 import { useState, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import "./art.css";
 import { artImages, artDescription, artTitle, redditUrl } from "../../data/art";
 import { LinkButton } from "../ui/Button";
 
@@ -11,7 +10,6 @@ const Art: React.FC = () => {
   ]);
 
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [totalSlides] = useState(artImages.length);
 
   const onDotClick = useCallback(
     (index: number) => {
@@ -29,31 +27,35 @@ const Art: React.FC = () => {
   });
 
   return (
-    <section id="artworkPage">
-      <div className="artworkPageTitle">Art</div>
-      <div id="artwork">
-        <h2 className="artworkTitle">{artTitle}</h2>
-        <span className="artworkDesc">{artDescription}</span>
+    <section id="artworkPage" className="w-full max-w-container mx-auto px-4 md:px-8 py-8 flex flex-col items-center">
+      <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Art</h1>
 
-        <div className="embla">
-          <div className="embla__viewport" ref={emblaRef}>
-            <div className="embla__container">
+      <div className="w-full max-w-[60rem] p-6 md:p-8 bg-surface-elevated rounded-xl shadow-card">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">{artTitle}</h2>
+        <p className="text-base md:text-lg font-light mb-6 text-center">{artDescription}</p>
+
+        <div className="w-full max-w-[65rem] mx-auto relative">
+          <div className="overflow-hidden w-full" ref={emblaRef}>
+            <div className="flex backface-hidden">
               {artImages.map((img, index) => (
-                <div className="embla__slide" key={index}>
+                <div className="flex-0-0-100% min-w-0 relative" key={index}>
                   <img
                     src={img.src}
                     alt={img.alt}
-                    style={{ width: "100%", height: "auto" }}
+                    className="w-full h-auto rounded-lg"
+                    style={{ boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)" }}
                   />
                 </div>
               ))}
             </div>
           </div>
-          <div className="embla__dots">
-            {Array.from({ length: totalSlides }).map((_, index) => (
+          <div className="flex justify-center items-center gap-2 mt-4">
+            {artImages.map((_, index) => (
               <button
                 key={index}
-                className={`embla__dot ${index === selectedIndex ? "embla__dot--selected" : ""}`}
+                className={`w-3 h-3 rounded-full bg-white/30 border-none cursor-pointer p-0 transition-colors duration-300 hover:bg-white/50 ${
+                  index === selectedIndex ? "bg-[#f0a500]" : ""
+                }`}
                 onClick={() => onDotClick(index)}
                 type="button"
               />
@@ -61,8 +63,10 @@ const Art: React.FC = () => {
           </div>
         </div>
 
-        <div className="redditButton">
-          <LinkButton href={redditUrl} external={true}>Visit Reddit Page</LinkButton>
+        <div className="text-center mt-8">
+          <LinkButton href={redditUrl} external={true} variant="secondary">
+            Visit Reddit Page
+          </LinkButton>
         </div>
       </div>
     </section>

@@ -1,7 +1,6 @@
 import { useState, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import "./projects.css";
 import PDFIcon from "../../assets/ProjectsData/readthedocs.svg";
 import { projectsData } from "../../data/projects";
 
@@ -16,7 +15,6 @@ const Carousel: React.FC<CarouselProps> = ({ images, title }) => {
   ]);
 
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [totalSlides] = useState(images.length);
 
   const onDotClick = useCallback(
     (index: number) => {
@@ -34,26 +32,28 @@ const Carousel: React.FC<CarouselProps> = ({ images, title }) => {
   });
 
   return (
-    <div className="carousel">
-      <div className="embla">
-        <div className="embla__viewport" ref={emblaRef}>
-          <div className="embla__container">
+    <div className="w-full max-w-card mx-auto my-8">
+      <div className="relative">
+        <div className="overflow-hidden w-full" ref={emblaRef}>
+          <div className="flex backface-hidden">
             {images.map((image, index) => (
-              <div className="embla__slide" key={index}>
+              <div className="flex-0-0-100% min-w-0 relative" key={index}>
                 <img
                   src={image}
                   alt={`${title} screenshot ${index + 1}`}
-                  style={{ width: "100%", height: "auto" }}
+                  className="w-full h-auto rounded-lg shadow-md"
                 />
               </div>
             ))}
           </div>
         </div>
-        <div className="embla__dots">
-          {Array.from({ length: totalSlides }).map((_, index) => (
+        <div className="flex justify-center items-center gap-2 mt-4">
+          {images.map((_, index) => (
             <button
               key={index}
-              className={`embla__dot ${index === selectedIndex ? "embla__dot--selected" : ""}`}
+              className={`w-3 h-3 rounded-full bg-white/30 border-none cursor-pointer p-0 transition-colors duration-300 hover:bg-white/50 ${
+                index === selectedIndex ? "bg-[#f0a500]" : ""
+              }`}
               onClick={() => onDotClick(index)}
               type="button"
             />
@@ -66,35 +66,39 @@ const Carousel: React.FC<CarouselProps> = ({ images, title }) => {
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects">
-      <h1 className="projectsTitle">Projects</h1>
-      <div className="projectsContainer">
+    <section id="projects" className="w-full max-w-card mx-auto flex flex-col items-center overflow-hidden">
+      <h1 className="text-4xl md:text-5xl font-semibold pt-12 mb-6">Projects</h1>
+
+      <div className="w-full flex flex-col items-center">
         {projectsData.map((project, index) => (
-          <div className="projectBox" key={index}>
-            <h2 className="projectTitle">{project.title}</h2>
-            <p className="projectType">
+          <div
+            key={index}
+            className="w-full max-w-[80%] mx-auto my-6 p-6 md:p-8 rounded-lg bg-surface-elevated shadow-card transition-all duration-300 hover:shadow-cardHover hover:-translate-y-1"
+          >
+            <h2 className="text-2xl md:text-3xl font-medium mb-2">{project.title}</h2>
+            <p className="font-semibold text-base mb-4 text-[#f0a500]">
               {project.IndividualBool ? "Individual Project" : "Group Project"}
             </p>
-            <div className="projectDescription">
-              {project.description.map((para, index) => (
-                <p key={index} className="projectDescriptionParagraph">
+            <div className="mb-4">
+              {project.description.map((para, idx) => (
+                <p key={idx} className="mb-4 text-base">
                   {para.trim()}
                 </p>
               ))}
             </div>
 
             {project.video && project.video.length > 0 && (
-              <div className="videoWrapper">
-                {project.video.map((videoUrl, index) => (
+              <div className="flex flex-wrap justify-center gap-4 my-4">
+                {project.video.map((videoUrl, idx) => (
                   <iframe
-                    key={index}
-                    width="100%"
+                    key={idx}
+                    className="w-full max-w-full border-none rounded-lg shadow-md"
                     height="315"
                     src={videoUrl}
-                    title={`${project.title} demo ${index + 1}`}
+                    title={`${project.title} demo ${idx + 1}`}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
-                  ></iframe>
+                  />
                 ))}
               </div>
             )}
@@ -102,13 +106,14 @@ const Projects: React.FC = () => {
             {project.listOfImages && project.listOfImages.length > 0 && (
               <Carousel images={project.listOfImages} title={project.title} />
             )}
-            <div className="projectLinks">
+
+            <div className="flex justify-center items-center gap-4 mt-4">
               {project.repoLink && (
                 <a
                   href={project.repoLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="repoLink"
+                  className="text-link hover:underline"
                 >
                   Check out the repo
                 </a>
@@ -119,7 +124,7 @@ const Projects: React.FC = () => {
                   href={project.courseLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="courseLink"
+                  className="text-link hover:underline"
                 >
                   Check out the course
                 </a>
@@ -129,9 +134,9 @@ const Projects: React.FC = () => {
                   href={project.pdf}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="pdfLink"
+                  className="text-link hover:underline inline-flex items-center"
                 >
-                  <img src={PDFIcon} alt="Download PDF" className="pdfIcon" />
+                  <img src={PDFIcon} alt="PDF" className="w-6 h-6 mr-2" />
                   View PDF
                 </a>
               )}

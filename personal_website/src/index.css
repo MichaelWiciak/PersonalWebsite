@@ -3,47 +3,152 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-background: 30 30 30;
+    --color-surface: 40 40 40;
+    --color-surface-elevated: 50 50 50;
+    --color-text-primary: 255 255 255;
+    --color-text-muted: 217 217 217;
+    --color-accent: 255 255 0;
+    --color-accent-hover: 230 230 0;
+    --color-border: 255 255 255;
+    --color-link: 76 175 80;
+    --font-family: "Poppins", system-ui, sans-serif;
+  }
+
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    background: transparent;
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-family);
   }
 
   body {
-    position: relative;
-    background-color: rgb(30, 30, 30);
-    color: white;
-    overflow: hidden;
-    overflow-y: scroll;
-    background: linear-gradient(45deg, #1e1e1e, #282828);
-    background-size: 200% 200%;
-    animation: bgShift 15s ease infinite;
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-text-primary));
+    overflow-x: hidden;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: rgb(var(--color-text-primary));
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-text {
+    background: linear-gradient(to right, rgb(var(--color-accent)), #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-background {
+    background-color: rgb(var(--color-background));
+  }
+
+  .bg-surface {
+    background-color: rgb(var(--color-surface));
+  }
+
+  .bg-surface-elevated {
+    background-color: rgb(var(--color-surface-elevated));
+  }
+
+  .text-text-primary {
+    color: rgb(var(--color-text-primary));
+  }
+
+  .text-text-muted {
+    color: rgb(var(--color-text-muted));
+  }
+
+  .text-accent {
+    color: rgb(var(--color-accent));
+  }
+
+  .text-accent-hover {
+    color: rgb(var(--color-accent-hover));
+  }
+
+  .text-link {
+    color: rgb(var(--color-link));
+  }
+
+  .fill-accent {
+    fill: rgb(var(--color-accent));
+  }
+
+  .border-accent {
+    border-color: rgb(var(--color-accent));
+  }
+
+  .bg-accent {
+    background-color: rgb(var(--color-accent));
+  }
+
+  .bg-accent-hover {
+    background-color: rgb(var(--color-accent-hover));
+  }
+
+  .shadow-accent {
+    box-shadow: 0 4px 16px rgba(var(--color-accent), 0.3);
+  }
+
+  .shadow-accentHover {
+    box-shadow: 0 6px 24px rgba(var(--color-accent), 0.4);
+  }
+
+  .shadow-card {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .shadow-cardHover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .border-surface-elevated {
+    border-color: rgb(var(--color-surface-elevated));
+  }
+
+  .bg-white\/30 {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .bg-white\/50 {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .bg-white\/10 {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .border-white\/10 {
+    border-color: rgba(255, 255, 255, 0.1);
   }
 }
 
 @keyframes bgShift {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 100% 100%;
-  }
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
 }
 
-.particle {
-  position: absolute;
-  width: calc(0.5px + 1vmin);
-  height: calc(0.5px + 1vmin);
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
-  opacity: 0.8;
-  animation: moveParticles 10s linear infinite;
-  box-shadow:
-    0 0 10px rgba(255, 255, 255, 0.5),
-    0 0 20px rgba(255, 255, 255, 0.2);
+@keyframes slideAnimation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fade {
+  0%, 100% { opacity: 0; }
+  20%, 80% { opacity: 1; }
 }
 
 @keyframes moveParticles {
@@ -60,43 +165,51 @@
   }
 }
 
-.particle-layer1 {
-  z-index: -1;
-  animation-duration: 10s;
+@keyframes particleFall {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) translateX(50vw);
+    opacity: 0;
+  }
 }
-.particle-layer2 {
-  z-index: -2;
-  animation-duration: 11s;
+
+body {
+  background: linear-gradient(45deg, #1e1e1e, #282828);
+  background-size: 200% 200%;
+  animation: bgShift 15s ease infinite;
 }
-.particle-layer3 {
-  z-index: -3;
-  animation-duration: 12s;
+
+.logo-spin {
+  animation: slideAnimation 5s linear infinite;
 }
-.particle-layer4 {
-  z-index: -4;
-  animation-duration: 13s;
+
+.animated-title {
+  animation: fade 3s infinite;
 }
-.particle-layer5 {
-  z-index: -5;
-  animation-duration: 14s;
+
+.particle {
+  position: absolute;
+  width: calc(0.5px + 1vmin);
+  height: calc(0.5px + 1vmin);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  opacity: 0.8;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
 }
-.particle-layer6 {
-  z-index: -6;
-  animation-duration: 15s;
-}
-.particle-layer7 {
-  z-index: -7;
-  animation-duration: 16s;
-}
-.particle-layer8 {
-  z-index: -8;
-  animation-duration: 17s;
-}
-.particle-layer9 {
-  z-index: -9;
-  animation-duration: 18s;
-}
-.particle-layer10 {
-  z-index: -10;
-  animation-duration: 19s;
-}
+
+.particle-layer1 { animation: particleFall 10s linear infinite; z-index: -1; }
+.particle-layer2 { animation: particleFall 11s linear infinite; z-index: -2; }
+.particle-layer3 { animation: particleFall 12s linear infinite; z-index: -3; }
+.particle-layer4 { animation: particleFall 13s linear infinite; z-index: -4; }
+.particle-layer5 { animation: particleFall 14s linear infinite; z-index: -5; }
+.particle-layer6 { animation: particleFall 15s linear infinite; z-index: -6; }
+.particle-layer7 { animation: particleFall 16s linear infinite; z-index: -7; }
+.particle-layer8 { animation: particleFall 17s linear infinite; z-index: -8; }
+.particle-layer9 { animation: particleFall 18s linear infinite; z-index: -9; }
+.particle-layer10 { animation: particleFall 19s linear infinite; z-index: -10; }
