@@ -4,18 +4,80 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "rgb(30, 30, 30)",
-        surface: "rgb(40, 40, 40)",
-        surfaceElevated: "rgb(50, 50, 50)",
-        text: "#ffffff",
-        textMuted: "#d9d9d9",
-        accent: "rgb(255, 255, 0)",
+        background: "rgb(var(--color-background) / <alpha-value>)",
+        surface: "rgb(var(--color-surface) / <alpha-value>)",
+        surfaceElevated: "rgb(var(--color-surface-elevated) / <alpha-value>)",
+        text: {
+          primary: "rgb(var(--color-text-primary) / <alpha-value>)",
+          muted: "rgb(var(--color-text-muted) / <alpha-value>)",
+        },
+        accent: {
+          DEFAULT: "rgb(var(--color-accent) / <alpha-value>)",
+          hover: "rgb(var(--color-accent-hover) / <alpha-value>)",
+        },
+        border: "rgb(var(--color-border) / <alpha-value>)",
+        link: "rgb(var(--color-link) / <alpha-value>)",
+      },
+      fontFamily: {
+        sans: ["var(--font-family)", "system-ui", "sans-serif"],
+      },
+      fontSize: {
+        "display-lg": ["3rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+        display: ["2.5rem", { lineHeight: "1.2", letterSpacing: "-0.02em" }],
+        "heading-lg": ["2rem", { lineHeight: "1.3" }],
+        heading: ["1.5rem", { lineHeight: "1.4" }],
+        body: ["1rem", { lineHeight: "1.6" }],
+        small: ["0.875rem", { lineHeight: "1.5" }],
+        xs: ["0.75rem", { lineHeight: "1.5" }],
+      },
+      spacing: {
+        section: "4rem",
+        container: "75rem",
+        card: "2rem",
+        button: { padding: "0.875rem 1.75rem", radius: "3rem" },
+      },
+      borderRadius: {
+        DEFAULT: "0.5rem",
+        card: "1rem",
+        button: "3rem",
+        full: "9999px",
+      },
+      boxShadow: {
+        card: "0 4px 12px rgba(0, 0, 0, 0.2)",
+        cardHover: "0 8px 24px rgba(0, 0, 0, 0.3)",
+        accent: "0 4px 16px rgba(var(--color-accent), 0.3)",
+        accentHover: "0 6px 24px rgba(var(--color-accent), 0.4)",
+      },
+      animation: {
+        "spin-slow": "spin 10s linear infinite",
+        "fade-in": "fadeIn 0.3s ease-out",
+        "slide-up": "slideUp 0.5s ease-out",
+        "particle-fall": "particleFall 10s linear infinite",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        slideUp: {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        particleFall: {
+          "0%": { transform: "translateY(0) translateX(0)", opacity: "0" },
+          "50%": { opacity: "1" },
+          "100%": { transform: "translateY(100vh) translateX(50vw)", opacity: "0" },
+        },
+      },
+      transitionTimingFunction: {
+        smooth: "cubic-bezier(0.4, 0, 0.2, 1)",
       },
       maxWidth: {
         container: "75rem",
+        card: "65rem",
       },
-      fontFamily: {
-        sans: ["Poppins", "sans-serif"],
+      zIndex: {
+        particle: "-10",
       },
     },
   },

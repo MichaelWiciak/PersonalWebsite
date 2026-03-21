@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./navbar.css";
 import logo from "../../assets/Michael Wiciak-logos_white.png";
 import { NavLink } from "react-router-dom";
 import menu from "../../assets/menu.png";
@@ -9,49 +8,76 @@ import { LinkButton } from "../ui/Button";
 const Navbar: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
 
-  const renderNavLink = (
-    item: { id: string; label: string },
-    isMobile = false,
-  ) => {
-    return (
-      <NavLink
-        to={item.id === "intro" ? "/" : `/${item.id}`}
-        className={({ isActive }) =>
-          `${isMobile ? "listItem" : "desktopMenuButton"} ${isActive ? "active" : ""}`
-        }
-        onClick={() => isMobile && setShowMenu(false)}
-      >
-        {item.label}
-      </NavLink>
-    );
-  };
+  const navLinkClass = ({ isActive }: { isActive: boolean }) =>
+    `hidden md:inline-block mx-4 cursor-pointer transition-all duration-300 ${
+      isActive
+        ? "text-accent border-b-4 border-accent pb-2"
+        : "text-text-primary hover:text-accent hover:border-b-4 hover:border-accent hover:pb-2"
+    }`;
+
+  const mobileNavLinkClass = ({ isActive }: { isActive: boolean }) =>
+    `text-white py-2 px-12 my-1 ${
+      isActive ? "bg-accent text-background" : "bg-surface"
+    } rounded-lg`;
 
   return (
-    <nav className="navbar">
-      <div className="LogoContainer">
-        <NavLink to="/">
-          <img src={logo} alt="logo" className="logo" />
-        </NavLink>
+    <nav className="sticky top-0 z-50 bg-background h-20 w-full max-w-container mx-auto px-6 md:px-8 flex items-center justify-between">
+      <NavLink to="/">
+        <img
+          src={logo}
+          alt="Michael Wiciak Logo"
+          className="w-16 h-auto object-cover logo-spin"
+        />
+      </NavLink>
+
+      <div className="hidden md:flex items-center">
+        {navItems.map((item) => (
+          <NavLink
+            key={item.id}
+            to={item.id === "intro" ? "/" : `/${item.id}`}
+            className={navLinkClass}
+          >
+            {item.label}
+          </NavLink>
+        ))}
       </div>
-      <div className="desktopMenu">
-        {navItems.map((item) => renderNavLink(item))}
+
+      <div className="hidden md:block">
+        <LinkButton href="/contact" external={false}>
+          Contact Me
+        </LinkButton>
       </div>
-      <LinkButton href="/contact" external={false}>
-        Contact Me
-      </LinkButton>
 
       <button
         type="button"
-        className="mobMenuButton"
+        className="md:hidden bg-transparent border-none cursor-pointer p-2"
         aria-label={showMenu ? "Close navigation menu" : "Open navigation menu"}
         onClick={() => setShowMenu((prev) => !prev)}
       >
-        <img src={menu} alt="logo" className="mobMenu" />
+        <img src={menu} alt="Menu" className="w-8 h-8 object-cover" />
       </button>
-      <div className="navMenu" style={{ display: showMenu ? "flex" : "none" }}>
-        {navItems.map((item) => renderNavLink(item, true))}
-        {renderNavLink(contactNavItem, true)}
-      </div>
+
+      {showMenu && (
+        <div className="absolute top-16 right-6 z-40 flex flex-col p-2 h-fit min-w-[15rem] bg-surface rounded-xl md:hidden">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.id}
+              to={item.id === "intro" ? "/" : `/${item.id}`}
+              className={mobileNavLinkClass}
+              onClick={() => setShowMenu(false)}
+            >
+              {item.label}
+            </NavLink>
+          ))}
+          <NavLink
+            to={`/${contactNavItem.id}`}
+            className={mobileNavLinkClass}
+            onClick={() => setShowMenu(false)}
+          >
+            {contactNavItem.label}
+          </NavLink>
+        </div>
+      )}
     </nav>
   );
 };
