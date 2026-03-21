@@ -46,12 +46,14 @@ const Navbar: React.FC = () => {
         Contact Me
       </button>
 
-      <img
-        src={menu}
-        alt="logo"
-        className="mobMenu"
-        onClick={() => setShowMenu(!showMenu)}
-      />
+      <button
+        type="button"
+        className="mobMenuButton"
+        aria-label={showMenu ? "Close navigation menu" : "Open navigation menu"}
+        onClick={() => setShowMenu((prev) => !prev)}
+      >
+        <img src={menu} alt="logo" className="mobMenu" />
+      </button>
       <div className="navMenu" style={{ display: showMenu ? "flex" : "none" }}>
         {navItems.map((item) => (
           <Link
