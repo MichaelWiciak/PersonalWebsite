@@ -109,30 +109,71 @@ iframe {
   width: 100%;
   max-width: 65rem;
   margin: 2rem auto;
+}
+
+.embla {
+  width: 100%;
   position: relative;
 }
 
-.carousel img {
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
 }
 
-.slick-dots {
-  bottom: -2rem;
-  color: yellow;
+.embla__container {
+  display: flex;
+  backface-visibility: hidden;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  position: relative;
+}
+
+.embla__slide img {
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.embla__dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.embla__dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.3s ease;
+}
+
+.embla__dot:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.embla__dot--selected {
+  background-color: #f0a500;
+}
+
+.embla__dot--selected:hover {
+  background-color: #f0a500;
 }
 
 .projectDescriptionParagraph {
   margin-bottom: 1rem;
   font-size: 1rem;
-}
-
-.slick-dots li button:before {
-  color: yellow;
-}
-
-.slick-dots li.slick-active button:before {
-  color: yellow;
 }
 
 .projectLinks {
