@@ -1,9 +1,9 @@
-import "./skills.css";
+import "./about.css";
 import { aboutData, additionalSkills } from "../../data/about";
 
-const Skills: React.FC = () => {
+const About: React.FC = () => {
   return (
-    <section id="skills">
+    <section id="about">
       <span className="skillsTitle">About Me</span>
       <span className="skillDesc">
         {aboutData.description}
@@ -17,7 +17,7 @@ const Skills: React.FC = () => {
         >
           {aboutData.links[0].text}
         </a>{" "}
-        and
+        and{" "}
         <a
           href={aboutData.links[1].url}
           target="_blank"
@@ -36,4 +36,4 @@ const Skills: React.FC = () => {
   );
 };
 
-export default Skills;
+export default About;

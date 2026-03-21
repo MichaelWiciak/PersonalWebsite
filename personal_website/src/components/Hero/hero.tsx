@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
-import "./intro.css";
+import "./hero.css";
 import bg from "../../assets/MW.JPG";
-import btnImg from "../../assets/hireme.png";
-import { Link } from "react-scroll";
 import { introTitles, introBio, introName } from "../../data/intro";
 
-const Intro: React.FC = () => {
+const Hero: React.FC = () => {
   const [currentTitle, setCurrentTitle] = useState(0);
 
   useEffect(() => {
@@ -25,16 +23,10 @@ const Intro: React.FC = () => {
           <span className="animatedTitle">{introTitles[currentTitle]}</span>
         </span>
         <p className="introPara">{introBio}</p>
-        <Link to="contact" smooth={true} duration={500}>
-          <button className="btn">
-            <img src={btnImg} alt="Contact me" className="btnImg" />
-            Contact me
-          </button>{" "}
-        </Link>
       </div>
       <img src={bg} alt="Profile" className="bg" />
     </section>
   );
 };
 
-export default Intro;
+export default Hero;
