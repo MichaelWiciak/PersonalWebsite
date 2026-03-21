@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
       <div className="desktopMenu">
         {navItems.map((item) => renderNavLink(item))}
       </div>
-      <LinkButton href="/contact">
+      <LinkButton href="/contact" external={false}>
         Contact Me
       </LinkButton>
 

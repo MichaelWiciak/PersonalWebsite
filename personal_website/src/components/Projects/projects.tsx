@@ -1,30 +1,70 @@
+import { useState, useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 import "./projects.css";
 import PDFIcon from "../../assets/ProjectsData/readthedocs.svg";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
 import { projectsData } from "../../data/projects";
 
-const Projects: React.FC = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+interface CarouselProps {
+  images: string[];
+  title: string;
+}
 
+const Carousel: React.FC<CarouselProps> = ({ images, title }) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ delay: 3000, stopOnInteraction: false }),
+  ]);
+
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [totalSlides] = useState(images.length);
+
+  const onDotClick = useCallback(
+    (index: number) => {
+      if (emblaApi) {
+        emblaApi.scrollTo(index);
+      }
+    },
+    [emblaApi]
+  );
+
+  emblaApi?.on("select", () => {
+    if (emblaApi) {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+    }
+  });
+
+  return (
+    <div className="carousel">
+      <div className="embla">
+        <div className="embla__viewport" ref={emblaRef}>
+          <div className="embla__container">
+            {images.map((image, index) => (
+              <div className="embla__slide" key={index}>
+                <img
+                  src={image}
+                  alt={`${title} screenshot ${index + 1}`}
+                  style={{ width: "100%", height: "auto" }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="embla__dots">
+          {Array.from({ length: totalSlides }).map((_, index) => (
+            <button
+              key={index}
+              className={`embla__dot ${index === selectedIndex ? "embla__dot--selected" : ""}`}
+              onClick={() => onDotClick(index)}
+              type="button"
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Projects: React.FC = () => {
   return (
     <section id="projects">
       <h1 className="projectsTitle">Projects</h1>
@@ -60,19 +100,7 @@ const Projects: React.FC = () => {
             )}
 
             {project.listOfImages && project.listOfImages.length > 0 && (
-              <div className="carousel">
-                <Slider {...settings}>
-                  {project.listOfImages.map((image, imgIndex) => (
-                    <div key={imgIndex}>
-                      <img
-                        src={image}
-                        alt={`${project.title} screenshot ${imgIndex + 1}`}
-                        style={{ width: "100%", height: "auto" }}
-                      />
-                    </div>
-                  ))}
-                </Slider>
-              </div>
+              <Carousel images={project.listOfImages} title={project.title} />
             )}
             <div className="projectLinks">
               {project.repoLink && (
