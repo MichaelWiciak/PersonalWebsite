@@ -1,11 +1,17 @@
-import "./teams.css";
+import HotTomatoIcon from "../assets/TeamsData/hottomatodev.png";
+import RobotsIcon from "../assets/TeamsData/robots.webp";
+import TimetableXIcon from "../assets/TeamsData/timetableXLogo.png";
+import BadmintonIcon from "../assets/TeamsData/badmintonLog.jpg";
 
-import HotTomatoIcon from "../../assets/TeamsData/hottomatodev.png";
-import RobotsIcon from "../../assets/TeamsData/robots.webp";
-import TimetableXIcon from "../../assets/TeamsData/timetableXLogo.png";
-import BadmintonIcon from "../../assets/TeamsData/badmintonLog.jpg";
+export interface Team {
+  title: string;
+  description: string;
+  icon: string;
+  video: string | null;
+  repoLink: string | null;
+}
 
-const teamsData = [
+export const teamsData: Team[] = [
   {
     title: "Hot Tomato Dev Team",
     description:
@@ -27,7 +33,7 @@ const teamsData = [
     description:
       "Co-founded by two students, TimetableX is a business venture designed to optimize learning and scheduling for university students. We attracted 200 users, with 50 daily active users. Our platform allows students to publicly share assessments, automate reminders, and customize the UI with over 30 themes for both desktop and mobile.",
     icon: TimetableXIcon,
-    video: "https://www.youtube.com/embed/AJMGprxFs4w?si=TuTb7c3G_6C7i0Dz", // Replace with actual demo video link
+    video: "https://www.youtube.com/embed/AJMGprxFs4w?si=TuTb7c3G_6C7i0Dz",
     repoLink: null,
   },
   {
@@ -39,48 +45,3 @@ const teamsData = [
     repoLink: null,
   },
 ];
-
-export const Teams = () => {
-  return (
-    <section id="teams">
-      <h1 className="teamsTitle">Teams I Am Part Of</h1>
-      <div className="teamsContainer">
-        {teamsData.map((team, index) => (
-          <div className="teamBox" key={index}>
-            <img
-              src={team.icon}
-              alt={`${team.title} icon`}
-              className="teamIcon"
-            />
-            <h2 className="teamTitle">{team.title}</h2>
-            <p className="teamDescription">{team.description}</p>
-            {team.video && (
-              <div className="videoWrapper">
-                <iframe
-                  width="100%"
-                  height="315"
-                  src={team.video}
-                  title={`${team.title} demo`}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            )}
-            {team.repoLink && (
-              <a
-                href={team.repoLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="repoLink"
-              >
-                Check out the repo
-              </a>
-            )}
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-};
-
-export default Teams;

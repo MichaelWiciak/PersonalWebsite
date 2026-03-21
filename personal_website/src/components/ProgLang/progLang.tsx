@@ -1,39 +1,11 @@
 import "./progLang.css";
+import {
+  languagesData,
+  databasesData,
+  serverTechsData,
+} from "../../data/skills";
 
-const languages = [
-  { name: "Python", level: 100 },
-  { name: "Bash", level: 75 },
-  { name: "C", level: 80 },
-  { name: "C++", level: 60 },
-  { name: "Java", level: 60 },
-  { name: "TypeScript/JS", level: 70 },
-  { name: "Ruby", level: 10 },
-  { name: "Go", level: 30 },
-  { name: "Rust", level: 40 },
-  { name: "MATLAB", level: 30 },
-];
-
-const databases = [
-  { name: "MySQL", level: 70 },
-  { name: "PostgreSQL", level: 75 },
-  { name: "SQLite", level: 65 },
-  { name: "MongoDB", level: 50 },
-];
-
-const serverTechs = [
-  { name: "GCP", level: 80 },
-  { name: "AWS", level: 30 },
-  { name: "Vercel", level: 65 },
-  { name: "Azure", level: 70 },
-  { name: "Next.js", level: 50 },
-  { name: "Docker", level: 60 },
-  { name: "Cloudflare", level: 65 },
-  { name: "Kubernetes", level: 60 },
-  { name: "Terraform / IaaS", level: 50 },
-  { name: "IBM/Hashicorp Vault", level: 40 },
-];
-
-const ProgLang = () => {
+const ProgLang: React.FC = () => {
   return (
     <section id="progLang">
       <h2>Programming Languages & Technologies</h2>
@@ -42,7 +14,7 @@ const ProgLang = () => {
         <div className="languageSection">
           <h3>Languages</h3>
           <div className="languageBars">
-            {languages
+            {languagesData
               .sort((a, b) => b.level - a.level)
               .map((lang) => (
                 <div key={lang.name} className="languageBar">
@@ -62,7 +34,7 @@ const ProgLang = () => {
         <div className="databaseSection">
           <h3>Databases</h3>
           <div className="languageBars">
-            {databases
+            {databasesData
               .sort((a, b) => b.level - a.level)
               .map((db) => (
                 <div key={db.name} className="databaseBar">
@@ -81,7 +53,7 @@ const ProgLang = () => {
         <div className="serverTechSection">
           <h3>Server-Side Technologies</h3>
           <div className="languageBars">
-            {serverTechs
+            {serverTechsData
               .sort((a, b) => b.level - a.level)
               .map((tech) => (
                 <div key={tech.name} className="serverTechBar">

@@ -1,37 +1,35 @@
 import "./skills.css";
+import { aboutData, additionalSkills } from "../../data/about";
 
-const Skills = () => {
+const Skills: React.FC = () => {
   return (
     <section id="skills">
       <span className="skillsTitle">About Me</span>
       <span className="skillDesc">
-        I am a Graduate Software Engineer at Lloyds Banking Group with a
-        First-Class MEng BSc in Computer Science from the University of Leeds.
+        {aboutData.description}
         <br />
         <br />I have co-founded the platforms{" "}
         <a
-          href="https://uni.TimetableX.com"
+          href={aboutData.links[0].url}
           target="_blank"
           rel="noopener noreferrer"
           className="introName"
         >
-          uni.TimetableX.com
+          {aboutData.links[0].text}
         </a>{" "}
         and
         <a
-          href="https://SportsBooker.timetablex.com"
+          href={aboutData.links[1].url}
           target="_blank"
           rel="noopener noreferrer"
           className="introName"
         >
-          SportsBooker.timetablex.com
+          {aboutData.links[1].text}
         </a>
         .
         <br />
         <br />
-        From systems programming in Rust and C++ to full-stack TypeScript and
-        Python, I build high-impact software that automates processes and
-        improves daily workflows for hundreds of users.
+        {additionalSkills}
         <br />
       </span>
     </section>

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Navbar from "./components/navbar/navbar";
 import Intro from "./components/Intro/intro";
 import Skills from "./components/Skills/skills";
@@ -6,18 +7,16 @@ import Footer from "./components/Footer/footer";
 import Teams from "./components/Teams/teams";
 import CV from "./components/CV/cv";
 import Art from "./components/Art/art";
-import { useEffect } from "react";
 import Courses from "./components/Courses/courses";
 import Projects from "./components/Projects/projects";
 import ProgLang from "./components/ProgLang/progLang";
 
-function App() {
+const App: React.FC = () => {
   useEffect(() => {
-    const spawnSnowflakes = (numSnowflakes) => {
+    const spawnSnowflakes = (numSnowflakes: number) => {
       const particles = numSnowflakes;
       const colors = ["#ffffff", "#f2f2f2", "#d9d9d9", "#bfbfbf", "#a6a6a6"];
       const shapes = ["100%", "50% 50%", "25% 75%", "75% 25%"];
-      // I added overrall 10 layers of snowflakes
       const layers = [
         "particle-layer1",
         "particle-layer2",
@@ -33,7 +32,6 @@ function App() {
 
       for (let i = 0; i < particles; i++) {
         const particle = document.createElement("div");
-        // Randomly select a layer
         const layer = layers[i % layers.length];
         particle.className = `particle ${layer}`;
 
@@ -46,14 +44,12 @@ function App() {
           shapes[Math.floor(Math.random() * shapes.length)];
         document.body.appendChild(particle);
 
-        // Remove particle when it goes off the screen
         particle.addEventListener("animationend", () => {
           particle.remove();
         });
       }
     };
 
-    // spawn them initially but 10 at a time so there is a delay
     spawnSnowflakes(100);
 
     const interval = setInterval(() => {
@@ -119,7 +115,6 @@ function App() {
       <Intro />
       <Skills />
       <ProgLang />
-      {/* <Works /> */}
       <Projects />
       <Teams />
       <Art />
@@ -129,6 +124,6 @@ function App() {
       <Footer />
     </div>
   );
-}
+};
 
 export default App;
