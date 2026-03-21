@@ -8,7 +8,7 @@ import DissertationGraph7 from "../assets/ProjectsData/pipeline.png";
 import DissertationGraph8 from "../assets/ProjectsData/timedocstring.png";
 import DissertationGraph9 from "../assets/ProjectsData/timeSmoothed.png";
 import DissertationPDF from "../assets/ProjectsData/Dissertation.pdf";
-import fetchImages from "../components/Projects/fetchImages";
+import fetchImages from "./utils/stanfordFetchImages";
 
 export interface Project {
   title: string;
@@ -51,7 +51,7 @@ export const projectsData: Project[] = [
       "But that's not all! I also crafted a general fine-tuning algorithm that can work across multiple Transformer-based models, making it a versatile tool for future projects. And the cherry on top? I received a First-Class mark for this work! 🎉",
       "Curious to learn more? You can download the full dissertation as a PDF by clicking the button below, or check out the project repository to see the code behind the magic!",
     ],
-    video: null,
+    video: [],
     listOfImages: [
       DissertationGraph1,
       DissertationGraph2,
@@ -74,6 +74,7 @@ export const projectsData: Project[] = [
       "In my Car Engineering course, I had the pleasure of teaching 50 under-18 students the exciting world of coding and robotics! I designed and implemented transmitter and receiver code using ESP-NOW, a cool connectionless protocol that lets ESP32 microcontrollers communicate with each other over Wi-Fi. We achieved a reliable communication range of 100 meters, making our projects truly mobile!",
       "But the fun didn't stop there! I refactored the code to allow students to customize their RC cars' behaviors based on button presses, and we even programmed animations for a monochrome display using u8g2. Throughout the course, I guided my students in soldering and assembling their custom Tamiya RC cars, along with programming two PCBs using C and C++. Watching them bring their creations to life was an absolute thrill!",
     ],
+    video: [],
     repoLink: "https://github.com/MichaelWiciak/FPVRallyRacingModified",
     listOfImages: [],
     courseLink: "https://www.techcamp.org.uk/courses/car-engineering-camp",
@@ -85,19 +86,23 @@ export const projectsData: Project[] = [
     description: [
       "Stanford AI course projects, covering multiple AI topics with comprehensive implementations.",
     ],
+    video: [],
     listOfImages: fetchImages(),
-    repoLink: "https://github.com/MichaelWiciak/Machine_Learning_by_Stanford_University_Programming_Exercises_Solutions",
+    repoLink:
+      "https://github.com/MichaelWiciak/Machine_Learning_by_Stanford_University_Programming_Exercises_Solutions",
     IndividualBool: true,
     pdf: null,
     courseLink: null,
   },
   {
-    title: "PGM Image Processing Tools: Unleash Your Creativity with Images! 🖼️✨",
+    title:
+      "PGM Image Processing Tools: Unleash Your Creativity with Images! 🖼️✨",
     description: [
       "Dive into the world of image manipulation with my PGM Image Processing Tools, a nifty collection of C programs designed to work with Portable Gray Map (PGM) files! These tools let you convert between ASCII and binary formats, reduce image sizes, and even split images into smaller tiles—all while maintaining simplicity and functionality.",
       "Each program performs a specific task: pgmReduce resizes images, pgmTile breaks them into smaller sections, and pgma2b/pgmb2a handle format conversions for efficiency. There's also pgmEcho for duplicating images and pgmCompare to check if two images are identical. Plus, the pgmCheckingValue module ensures everything is in tip-top shape, validating pixel values and file formats to keep errors at bay.",
       "Whether you're a developer or researcher, these tools are perfect for anyone working with image processing, especially in lightweight environments. Ready to transform your images? Let's get started!",
     ],
+    video: [],
     listOfImages: [],
     repoLink: "https://github.com/MichaelWiciak/PGMFileManipulatorUtility",
     IndividualBool: true,
@@ -133,7 +138,8 @@ export const projectsData: Project[] = [
     pdf: null,
   },
   {
-    title: "Sports Centre Management System: Your Fitness Hub, Simplified! 🏋️‍♀️🏊‍♂️",
+    title:
+      "Sports Centre Management System: Your Fitness Hub, Simplified! 🏋️‍♀️🏊‍♂️",
     description: [
       "Introducing the Sports Centre Management System, developed for GymCorp to revolutionize how customers book and manage their sports facilities. This comprehensive application allows users to create accounts and log in securely, access a clear pricing list for various activities, and book sessions up to two weeks in advance. Customers can enjoy the flexibility of single-session bookings or take advantage of a 15% discount for booking multiple sessions within a week.",
       "The system also supports membership management, enabling users to sign up and cancel memberships effortlessly. Payments are processed securely, and a faster checkout option saves users time during their bookings. Customers can view upcoming sessions and their booked activities, complete with an interactive calendar for easy scheduling.",
@@ -141,6 +147,7 @@ export const projectsData: Project[] = [
       "With a focus on responsiveness and accessibility, this Sports Management System ensures that everyone can enjoy the facilities, while robust security measures protect user data. Dive into our demo to see it in action, and check out the repository for all the technical details and images of the project!",
     ],
     listOfImages: [],
+    video: [],
     repoLink: "https://github.com/MichaelWiciak/SportsCentreManagementSystem",
     IndividualBool: false,
     courseLink: null,
