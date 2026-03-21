@@ -1,13 +1,15 @@
-#skills {
+#about {
   overflow: hidden;
   width: 100vw;
-  max-width: 65rem;
+  max-width: 75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
 }
 
 .skillsTitle {
@@ -21,7 +23,8 @@
   font-weight: 400;
   font-size: 1rem;
   max-width: 50rem;
-  padding: 0 2rem;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
 .skillBars{

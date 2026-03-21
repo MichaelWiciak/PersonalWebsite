@@ -1,104 +1,146 @@
-/* General Section Styling */
-#cvPage {
-  width: 100vw;
-  max-width: 75rem;
-  margin: 0 auto;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* CV Container */
-#cv {
+.cv-section {
   width: 100%;
-  max-width: 60rem;
-  padding: 2rem;
-  background: rgb(50, 50, 50);
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
 }
 
-/* Title Styling */
-.cvPageTitle {
+.cv-container {
+  width: 100%;
+  max-width: 48rem;
+  background: rgb(40, 40, 40);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.cv-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.cv-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(135deg, #ffff00 0%, #e6e600 100%);
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cv-icon {
+  font-size: 2rem;
+  color: rgb(30, 30, 30);
+}
+
+.cv-title {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 1rem;
-  text-align: center;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
 }
 
-/* Description Text */
-.cvDesc {
-  font-size: 1.1rem;
-  font-weight: 300;
-  margin-bottom: 1.5rem;
-  text-align: center;
+.cv-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #d9d9d9;
+  font-size: 0.9rem;
+  font-weight: 400;
 }
 
-.pdfViewer iframe {
+.meta-icon {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.cv-subtitle {
+  text-align: center;
+  color: #a6a6a6;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.pdf-wrapper {
   width: 100%;
-  height: 600px;
-  border: 1px solid rgb(50, 50, 50);
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgb(30, 30, 30);
 }
 
-.downloadCV {
-  text-align: center;
+.pdf-frame {
+  width: 100%;
+  height: 500px;
+  border: none;
+  display: block;
+}
+
+.cv-actions {
+  display: flex;
+  justify-content: center;
   margin-top: 2rem;
 }
 
-.downloadBtn {
-  background-color: white;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 2rem;
-  text-decoration: none;
-  color: rgb(50, 50, 50);
+.download-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #ffff00;
+  color: rgb(30, 30, 30);
+  padding: 1rem 2rem;
+  border-radius: 3rem;
   font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(255, 255, 0, 0.3);
 }
 
-.downloadBtn:hover {
-  background-color: white;
+.download-button:hover {
+  background: #e6e600;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 255, 0, 0.4);
 }
 
-/* Media Queries */
-@media screen and (max-width: 840px) {
-  .cvPageTitle {
-    font-size: 2rem;
-  }
-
-  .cvDesc {
-    font-size: 1rem;
-  }
-
-  .pdfViewer iframe {
-    height: 500px;
-  }
-
-  .downloadBtn {
-    font-size: 0.9rem;
-  }
+.button-icon {
+  font-size: 1.1rem;
 }
 
-@media screen and (max-width: 480px) {
-  .cvPageTitle {
+@media (max-width: 640px) {
+  .cv-section {
+    padding: 2rem 1rem;
+  }
+
+  .cv-container {
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .cv-title {
     font-size: 1.75rem;
   }
 
-  .cvDesc {
-    font-size: 0.9rem;
+  .cv-icon-wrapper {
+    width: 3rem;
+    height: 3rem;
   }
 
-  .pdfViewer iframe {
+  .cv-icon {
+    font-size: 1.5rem;
+  }
+
+  .pdf-frame {
     height: 400px;
   }
 
-  .downloadBtn {
-    font-size: 0.85rem;
+  .download-button {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
   }
 }

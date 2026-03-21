@@ -1,13 +1,13 @@
 #teams {
-  overflow: hidden;
   width: 100vw;
-  max-width: 65rem;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 0 auto;
 }
 
 .teamsTitle {
@@ -32,7 +32,6 @@
   border-radius: 0.5rem;
   background: rgb(50, 50, 50);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s;
 }
 
 .teamBox:hover {
@@ -45,6 +44,9 @@
   object-fit: cover;
   margin-bottom: 1rem;
   border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .teamTitle {
@@ -65,16 +67,16 @@
 
 video {
   width: 100%;
-  max-width: 100%; /* Ensures video does not exceed box width */
-  border-radius: 0.5rem; /* Matches box style */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for the video */
+  max-width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .repoLink {
   display: inline-block;
   margin-top: 1rem;
   font-size: 1rem;
-  color: #4caf50; /* Change color to fit your theme */
+  color: #4caf50;
   text-decoration: none;
 }
 

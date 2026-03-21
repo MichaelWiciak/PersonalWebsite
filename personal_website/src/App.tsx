@@ -1,15 +1,11 @@
 import { useEffect } from "react";
-import Navbar from "./components/navbar/navbar";
-import Intro from "./components/Intro/intro";
-import Skills from "./components/Skills/skills";
-import Contact from "./components/Contact/contact";
-import Footer from "./components/Footer/footer";
-import Teams from "./components/Teams/teams";
-import CV from "./components/CV/cv";
-import Art from "./components/Art/art";
-import Courses from "./components/Courses/courses";
-import Projects from "./components/Projects/projects";
-import ProgLang from "./components/ProgLang/progLang";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./layouts/Layout";
+import Home from "./pages/Home";
+import ProjectsPage from "./pages/ProjectsPage";
+import ArtPage from "./pages/ArtPage";
+import CVPage from "./pages/CVPage";
+import ContactPage from "./pages/ContactPage";
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -110,19 +106,17 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="App">
-      <Navbar />
-      <Intro />
-      <Skills />
-      <ProgLang />
-      <Projects />
-      <Teams />
-      <Art />
-      <CV />
-      <Courses />
-      <Contact />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="projects" element={<ProjectsPage />} />
+          <Route path="art" element={<ArtPage />} />
+          <Route path="cv" element={<CVPage />} />
+          <Route path="contact" element={<ContactPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 };
 

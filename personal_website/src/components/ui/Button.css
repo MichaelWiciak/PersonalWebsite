@@ -1,0 +1,82 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-family: "Poppins", sans-serif;
+}
+
+.btn-icon {
+  font-size: 1.1rem;
+}
+
+/* Primary - Yellow background, dark text */
+.btn-primary {
+  background: #ffff00;
+  color: rgb(30, 30, 30);
+  box-shadow: 0 4px 16px rgba(255, 255, 0, 0.3);
+}
+
+.btn-primary:hover {
+  background: #e6e600;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 255, 0, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Secondary - Dark background, light text */
+.btn-secondary {
+  background: rgb(50, 50, 50);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary:hover {
+  background: rgb(60, 60, 60);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Outline - Transparent with border */
+.btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgb(50, 50, 50);
+}
+
+.btn-outline:hover {
+  border-color: #ffff00;
+  color: #ffff00;
+  transform: translateY(-2px);
+}
+
+/* Disabled state */
+.btn:disabled,
+.btn.btn-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Sizes */
+.btn-sm {
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+.btn-lg {
+  padding: 1.125rem 2.25rem;
+  font-size: 1.125rem;
+}
