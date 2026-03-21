@@ -1,6 +1,7 @@
 import "./projects.css";
 import PDFIcon from "../../assets/ProjectsData/readthedocs.svg";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { projectsData } from "../../data/projects";
 
