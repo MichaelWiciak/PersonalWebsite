@@ -14,7 +14,7 @@ const ProgLang: React.FC = () => {
         <div className="languageSection">
           <h3>Languages</h3>
           <div className="languageBars">
-            {languagesData
+            {...languagesData
               .sort((a, b) => b.level - a.level)
               .map((lang) => (
                 <div key={lang.name} className="languageBar">
@@ -34,7 +34,7 @@ const ProgLang: React.FC = () => {
         <div className="databaseSection">
           <h3>Databases</h3>
           <div className="languageBars">
-            {databasesData
+            {...databasesData
               .sort((a, b) => b.level - a.level)
               .map((db) => (
                 <div key={db.name} className="databaseBar">
@@ -53,7 +53,7 @@ const ProgLang: React.FC = () => {
         <div className="serverTechSection">
           <h3>Server-Side Technologies</h3>
           <div className="languageBars">
-            {serverTechsData
+            {...serverTechsData
               .sort((a, b) => b.level - a.level)
               .map((tech) => (
                 <div key={tech.name} className="serverTechBar">
