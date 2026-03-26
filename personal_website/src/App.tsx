@@ -33,7 +33,7 @@ const App: React.FC = () => {
         const layer = layers[i % layers.length];
         particle.className = `particle ${layer}`;
 
-        particle.style.top = `${-10 + Math.random() * 80}vh`;
+        particle.style.top = `${-10 + Math.random() * 40}vh`;
         particle.style.left = `${Math.random() * 100}vw`;
         particle.style.animationDelay = `${Math.random() * 0}s`;
         particle.style.backgroundColor =
