@@ -38,11 +38,11 @@ const Art: React.FC = () => {
           <div className="overflow-hidden w-full" ref={emblaRef}>
             <div className="flex backface-hidden">
               {artImages.map((img, index) => (
-                <div className="flex-0-0-100% min-w-0 relative" key={index}>
+                <div className="flex-none basis-full min-w-0 relative h-[400px]" key={index}>
                   <img
                     src={img.src}
                     alt={img.alt}
-                    className="w-full h-auto rounded-lg"
+                    className="w-full h-full object-contain rounded-lg"
                     style={{ boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)" }}
                   />
                 </div>

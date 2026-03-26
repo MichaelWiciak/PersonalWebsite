@@ -16,12 +16,12 @@ const Navbar: React.FC = () => {
     }`;
 
   const mobileNavLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `text-white py-2 px-12 my-1 ${
-      isActive ? "bg-accent text-background" : "bg-surface"
-    } rounded-lg`;
+    `py-2 px-12 my-1 rounded-lg transition-colors duration-200 ${
+      isActive ? "text-accent font-semibold" : "text-text-primary hover:text-accent"
+    }`;
 
   return (
-    <nav className="sticky top-0 z-50 bg-background h-20 w-full max-w-container mx-auto px-6 md:px-8 flex items-center justify-between">
+    <nav className="sticky top-0 z-50 bg-background/50 backdrop-blur-lg border-b border-white/10 h-20 w-full px-6 md:px-8 flex items-center justify-between">
       <NavLink to="/">
         <img
           src={logo}
@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
       </button>
 
       {showMenu && (
-        <div className="absolute top-16 right-6 z-40 flex flex-col p-2 h-fit min-w-[15rem] bg-surface rounded-xl md:hidden">
+        <div className="absolute top-16 right-6 z-40 flex flex-col p-2 h-fit min-w-[15rem] bg-background/95 backdrop-blur-md rounded-xl md:hidden border border-white/10">
           {navItems.map((item) => (
             <NavLink
               key={item.id}

@@ -136,11 +136,6 @@
   }
 }
 
-@keyframes bgShift {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 100% 100%; }
-}
-
 @keyframes slideAnimation {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -180,9 +175,7 @@
 }
 
 body {
-  background: linear-gradient(45deg, #1e1e1e, #282828);
-  background-size: 200% 200%;
-  animation: bgShift 15s ease infinite;
+  background-color: #1e1e1e;
 }
 
 .logo-spin {

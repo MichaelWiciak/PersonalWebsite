@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
           I'm <span className="text-accent transition-colors duration-300 hover:text-yellow-400">{introName}</span>
           <br />
-          <span className="animated-title inline-block">{introTitles[currentTitle]}</span>
+          <span className="animated-title inline-block md:min-w-[25ch]">{introTitles[currentTitle]}</span>
         </h1>
         <p className="text-base md:text-lg font-light tracking-wide mt-4 max-w-2xl">
           {introBio}
