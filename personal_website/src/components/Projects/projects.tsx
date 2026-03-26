@@ -37,11 +37,11 @@ const Carousel: React.FC<CarouselProps> = ({ images, title }) => {
         <div className="overflow-hidden w-full" ref={emblaRef}>
           <div className="flex backface-hidden">
             {images.map((image, index) => (
-              <div className="flex-0-0-100% min-w-0 relative" key={index}>
+              <div className="flex-none basis-full min-w-0 relative h-[400px]" key={index}>
                 <img
                   src={image}
                   alt={`${title} screenshot ${index + 1}`}
-                  className="w-full h-auto rounded-lg shadow-md"
+                  className="w-full h-full object-contain rounded-lg shadow-md"
                 />
               </div>
             ))}
