@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import bg from "../../assets/MW.JPG";
 import { introTitles, introBio, introName } from "../../data/intro";
+import SocialIcons from "../SocialIcons/SocialIcons";
 
 const Hero: React.FC = () => {
   const [currentTitle, setCurrentTitle] = useState(0);
@@ -25,6 +26,7 @@ const Hero: React.FC = () => {
         <p className="text-base md:text-lg font-light tracking-wide mt-4 max-w-2xl">
           {introBio}
         </p>
+        <SocialIcons size={28} gap={16} className="mt-6" />
       </div>
       <img
         src={bg}
