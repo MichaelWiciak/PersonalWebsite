@@ -1,11 +1,12 @@
 import { socialLinks, SocialLink } from "../../data/socialLinks";
-import { FaGithub, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { SiCodewars } from "react-icons/si";
 import { IconType } from "react-icons";
 
 const iconMap: Record<SocialLink["icon"], IconType> = {
   github: FaGithub,
   linkedin: FaLinkedinIn,
-  instagram: FaInstagram,
+  codewars: SiCodewars,
 };
 
 interface SocialIconsProps {
@@ -20,7 +21,10 @@ const SocialIcons: React.FC<SocialIconsProps> = ({
   className = "",
 }) => {
   return (
-    <div className={`flex items-center justify-center ${className}`} style={{ gap: `${gap}px` }}>
+    <div
+      className={`flex items-center justify-center ${className}`}
+      style={{ gap: `${gap}px` }}
+    >
       {socialLinks.map((link) => {
         const Icon = iconMap[link.icon];
         return (
