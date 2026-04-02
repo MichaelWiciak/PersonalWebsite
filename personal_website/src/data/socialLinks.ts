@@ -1,7 +1,7 @@
 export interface SocialLink {
   name: string;
   url: string;
-  icon: "github" | "linkedin" | "instagram";
+  icon: "github" | "linkedin" | "codewars";
 }
 
 export const socialLinks: SocialLink[] = [
@@ -16,8 +16,8 @@ export const socialLinks: SocialLink[] = [
     icon: "linkedin",
   },
   {
-    name: "Instagram",
-    url: "https://www.instagram.com/wiciakmichael/",
-    icon: "instagram",
+    name: "CodeWars",
+    url: "https://www.codewars.com/users/MichaelWiciak",
+    icon: "codewars",
   },
 ];
