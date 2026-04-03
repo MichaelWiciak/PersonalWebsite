@@ -1,6 +1,15 @@
 import { useState } from "react";
-import { FiCalendar, FiExternalLink, FiDownload, FiAward } from "react-icons/fi";
-import { coursesData, categoryLabels, CourseCategory } from "../../data/courses";
+import {
+  FiCalendar,
+  FiExternalLink,
+  FiDownload,
+  FiAward,
+} from "react-icons/fi";
+import {
+  coursesData,
+  categoryLabels,
+  CourseCategory,
+} from "../../data/courses";
 
 const Courses: React.FC = () => {
   const [activeTab, setActiveTab] = useState<CourseCategory | "all">("all");
@@ -22,7 +31,9 @@ const Courses: React.FC = () => {
       id="courses"
       className="w-full max-w-card mx-auto px-4 md:px-8 py-12 flex flex-col items-center"
     >
-      <h1 className="text-4xl md:text-5xl font-semibold mb-8">Courses & Certifications</h1>
+      <h1 className="text-4xl md:text-5xl font-semibold mb-8">
+        Courses & Certifications
+      </h1>
 
       <div className="flex flex-wrap justify-center gap-2 mb-12">
         {tabs.map((tab) => (
@@ -104,9 +115,7 @@ const Courses: React.FC = () => {
                   Download <FiDownload className="w-3.5 h-3.5" />
                 </a>
               ) : (
-                <span className="inline-flex items-center gap-1.5 text-sm text-text-muted/50 italic">
-                  PDF pending
-                </span>
+                <span className="inline-flex items-center gap-1.5 text-sm text-text-muted/50 italic"></span>
               )}
             </div>
           </div>

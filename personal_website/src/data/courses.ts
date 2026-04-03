@@ -1,3 +1,12 @@
+import azureFunCert from "../assets/certificates/azureFun.jpeg";
+import azureFunAICert from "../assets/certificates/azureFunAI.jpeg";
+import cirlCert from "../assets/certificates/circl.jpeg";
+import commonPurposeInclusiveLeardershipCert from "../assets/certificates/InclusiveLeadership.jpeg";
+import commonPurposeGlobalFuturesCert from "../assets/certificates/KualaLumpur.jpeg";
+import leedsMentoringCert from "../assets/certificates/UoLMentoring.jpeg";
+import InformationSecurityCert from "../assets/certificates/Information Security_Certificate.pdf";
+import DataProtectionCert from "../assets/certificates/Data Protection_Certificate.pdf";
+
 export type CourseCategory = "cloud" | "technical" | "leadership";
 
 export interface Course {
@@ -19,9 +28,22 @@ export const coursesData: Course[] = [
     issued: "Mar 2026",
     expires: "Mar 2029",
     category: "cloud",
-    credentialUrl: "https://www.credential.net/",
-    pdfUrl: "/assets/certificates/google-associate-cloud-engineer.pdf",
-    skills: ["Google Cloud Platform (GCP)"],
+    credentialUrl:
+      "https://www.credly.com/badges/a2874739-d81f-4095-be29-0edeeb7b5e86/public_url",
+    skills: [
+      "Cloud Architecture",
+      "Cloud Computing",
+      "Cloud Security",
+      "Cloud Storage",
+      "Compute Engine",
+      "GKE",
+      "Google Cloud Platform (GCP)",
+      "Identity And Access Management (IAM)",
+      "Infrastructure as Code (IaC)",
+      "Networking",
+      "Pub/sub",
+      "SQL",
+    ],
   },
   {
     title: "Cloud Digital Leader Certification",
@@ -29,27 +51,64 @@ export const coursesData: Course[] = [
     issued: "Jan 2026",
     expires: "Jan 2029",
     category: "cloud",
-    credentialUrl: "https://www.credential.net/",
-    pdfUrl: "/assets/certificates/google-cloud-digital-leader.pdf",
-    skills: ["Google Cloud Platform (GCP)"],
+    credentialUrl:
+      "https://www.credly.com/badges/64135c97-17ba-4e93-800a-b0deb6e0d47e/public_url",
+    skills: [
+      "Google Cloud Platform (GCP)",
+      "Artificial Intelligence (AI)",
+      "Cloud Computing",
+      "Cloud Digital Leader",
+      "Cloud Security",
+      "Data Governance",
+      "Google Cloud",
+      "IT Digital Transformation",
+      "Security and Trust",
+    ],
   },
   {
     title: "Microsoft Certified: Azure AI Fundamentals",
     provider: "Microsoft",
     issued: "Jun 2024",
     category: "cloud",
-    credentialUrl: "https://learn.microsoft.com/en-us/credentials/certifications/",
-    pdfUrl: "/assets/certificates/azure-ai-fundamentals.pdf",
-    skills: ["Microsoft Azure Machine Learning", "Microsoft Azure Bot Services"],
+    credentialUrl:
+      "https://www.certiport.com/portal/pages/credentialverification.aspx",
+    pdfUrl: azureFunAICert,
+    skills: [
+      "Responsible AI",
+      "Model Evaluation",
+      "Machine Learning",
+      "Text Mining",
+      "Applied Machine Learning",
+      "Artificial Intelligence",
+      "Image Analysis",
+      "Natural Language Processing",
+      "Data Ethics",
+      "Computer Vision",
+    ],
   },
   {
     title: "Microsoft Certified: Azure Fundamentals",
     provider: "Microsoft",
     issued: "Jun 2024",
     category: "cloud",
-    credentialUrl: "https://learn.microsoft.com/en-us/credentials/certifications/",
-    pdfUrl: "/assets/certificates/azure-fundamentals.pdf",
-    skills: ["Microsoft Azure", "Cloud Data"],
+    credentialUrl:
+      "https://www.certiport.com/portal/pages/credentialverification.aspx",
+    pdfUrl: azureFunCert,
+    skills: [
+      "Cloud Computing",
+      "Cloud Computing Architecture",
+      "Cloud Deployment",
+      "Cloud Infrastructure",
+      "Load Balancing",
+      "Cloud Management",
+      "Cloud Platforms",
+      "Cloud Services",
+      "Disaster Recovery",
+      "Identity and Access Management",
+      "Infrastructure as Code (IaC)",
+      "Patch Management",
+      "System Monitoring",
+    ],
   },
 
   // Technical Courses
@@ -58,25 +117,52 @@ export const coursesData: Course[] = [
     provider: "Stanford Online",
     issued: "Aug 2021",
     category: "technical",
-    credentialUrl: "https://www.coursera.org/programs/stanford-online",
-    pdfUrl: "/assets/certificates/stanford-machine-learning.pdf",
-    skills: ["Machine Learning"],
+    credentialUrl:
+      "https://www.coursera.org/account/accomplishments/certificate/37CUBRF9V95Y",
+    skills: [
+      "Applied Machine Learning",
+      "Artificial Intelligence",
+      "Data Ethics",
+      "Data Preprocessing",
+      "Decision Tree Learning",
+      "Deep Learning",
+      "Feature Engineering",
+      "Machine Learning",
+      "Model Evaluation",
+      "Predictive Modeling",
+      "Random Forest Algorithm",
+      "Reinforcement Learning",
+      "Supervised Learning",
+      "Transfer Learning",
+      "Unsupervised Learning",
+    ],
   },
   {
     title: "Cryptography",
     provider: "Stanford Online",
     issued: "Sep 2021",
     category: "technical",
-    credentialUrl: "https://www.coursera.org/programs/stanford-online",
-    pdfUrl: "/assets/certificates/stanford-cryptography.pdf",
-    skills: ["Cryptography"],
+    credentialUrl:
+      "https://www.coursera.org/account/accomplishments/certificate/YYJPBKBMXYGY",
+    skills: [
+      "Authentications",
+      "Cybersecurity",
+      "Public Key Cryptography Standards (PKCS)",
+      "Key Management",
+      "Computational Thinking",
+      "Encryption",
+      "Secure Coding",
+      "Algorithms",
+      "Data Integrity",
+      "Cryptography",
+      "Advanced Encryption Standard (AES)",
+    ],
   },
   {
     title: "Amateur Radio Examination Foundation Level",
     provider: "Radio Society of Great Britain",
     issued: "Feb 2025",
     category: "technical",
-    pdfUrl: "/assets/certificates/rsgb-amatuer-radio.pdf",
     skills: ["Radio Communications"],
   },
 
@@ -86,7 +172,7 @@ export const coursesData: Course[] = [
     provider: "Circl",
     issued: "Mar 2024",
     category: "leadership",
-    pdfUrl: "/assets/certificates/circl-leader-as-coach.pdf",
+    pdfUrl: cirlCert,
     skills: ["Team Leadership", "Management", "Coaching"],
   },
   {
@@ -94,7 +180,7 @@ export const coursesData: Course[] = [
     provider: "Common Purpose",
     issued: "May 2025",
     category: "leadership",
-    pdfUrl: "/assets/certificates/common-purpose-inclusive-leadership.pdf",
+    pdfUrl: commonPurposeInclusiveLeardershipCert,
     skills: ["Inclusive Leadership", "Public Speaking"],
   },
   {
@@ -102,7 +188,6 @@ export const coursesData: Course[] = [
     provider: "University of Leeds",
     issued: "Oct 2024",
     category: "leadership",
-    pdfUrl: "/assets/certificates/leeds-odpl-foundations.pdf",
     skills: ["Teaching", "University Lecturing"],
   },
   {
@@ -110,7 +195,7 @@ export const coursesData: Course[] = [
     provider: "Common Purpose",
     issued: "Aug 2025",
     category: "leadership",
-    pdfUrl: "/assets/certificates/common-purpose-global-futures.pdf",
+    pdfUrl: commonPurposeGlobalFuturesCert,
     skills: ["Cross-cultural Leadership", "Global Perspective"],
   },
   {
@@ -118,8 +203,24 @@ export const coursesData: Course[] = [
     provider: "University of Leeds",
     issued: "Jun 2025",
     category: "leadership",
-    pdfUrl: "/assets/certificates/leeds-ementoring.pdf",
+    pdfUrl: leedsMentoringCert,
     skills: ["Mentoring"],
+  },
+  {
+    title: "Information Security",
+    provider: "University of Leeds",
+    issued: "Oct 2024",
+    category: "technical",
+    pdfUrl: InformationSecurityCert,
+    skills: ["Information Security", "Cybersecurity", "Risk Management"],
+  },
+  {
+    title: "Data Protection",
+    provider: "University of Leeds",
+    issued: "Oct 2024",
+    category: "technical",
+    pdfUrl: DataProtectionCert,
+    skills: ["Data Protection", "GDPR"],
   },
 ];
 
