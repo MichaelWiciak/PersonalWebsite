@@ -7,7 +7,6 @@ import { pinnedProjects, GITHUB_PROFILE_URL } from "../../data/pinnedProjects";
 interface ProjectMediaProps {
   images?: { src: string; alt: string }[];
   videoUrl?: string;
-  thumbnail?: string;
   title: string;
 }
 
@@ -28,7 +27,7 @@ const ProjectMedia: React.FC<ProjectMediaProps> = ({
         emblaApi.scrollTo(index);
       }
     },
-    [emblaApi],
+    [emblaApi]
   );
 
   useEffect(() => {
@@ -126,7 +125,7 @@ const Projects: React.FC = () => {
     const fetchRepoCount = async () => {
       try {
         const response = await fetch(
-          "https://api.github.com/users/MichaelWiciak",
+          "https://api.github.com/users/MichaelWiciak"
         );
         if (response.ok) {
           const data = await response.json();
@@ -144,7 +143,7 @@ const Projects: React.FC = () => {
       id="projects"
       className="w-full max-w-card mx-auto px-4 md:px-8 py-12 flex flex-col items-center"
     >
-      <h1 className="text-4xl md:text-5xl font-semibold mb-8">Projects</h1>
+      <h1 className="text-4xl md:text-5xl font-semibold mb-8">Public Projects</h1>
 
       <div className="w-full max-w-[900px] mx-auto mb-12 p-6 md:p-8 bg-surface-elevated rounded-xl shadow-card text-center">
         <p className="text-lg md:text-xl mb-4">
@@ -187,7 +186,6 @@ const Projects: React.FC = () => {
                 <ProjectMedia
                   images={project.images}
                   videoUrl={project.videoUrl}
-                  thumbnail={project.thumbnail}
                   title={project.title}
                 />
               </div>
