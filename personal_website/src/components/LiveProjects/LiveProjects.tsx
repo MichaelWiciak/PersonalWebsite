@@ -15,7 +15,8 @@ const LiveProjects: React.FC = () => {
           Commercial projects I have built and currently maintain.
         </p>
         <p className="text-base text-text-muted">
-          Code is not public for these, but feel free to explore the live deployments.
+          Code is not public for these, but feel free to explore the live
+          deployments. All these projects have active users.
         </p>
       </div>
 
