@@ -1,5 +1,6 @@
 import { FiExternalLink, FiGlobe } from "react-icons/fi";
 import { liveProjects } from "../../data/liveProjects";
+import TechBadge from "../ui/TechBadge";
 
 const LiveProjects: React.FC = () => {
   return (
@@ -14,67 +15,77 @@ const LiveProjects: React.FC = () => {
           Commercial projects I have built and currently maintain.
         </p>
         <p className="text-base text-text-muted">
-          Code is not public for these projects, but feel free to explore the live
-          deployments.
+          Code is not public for these, but feel free to explore the live deployments.
         </p>
       </div>
 
-      <div className="w-full flex flex-col gap-8">
-        {liveProjects.map((project) => (
+      <div className="w-full flex flex-col gap-12">
+        {liveProjects.map((project, index) => (
           <div
             key={project.id}
             className="w-full max-w-[900px] mx-auto p-6 md:p-8 bg-surface-elevated rounded-xl shadow-card transition-all duration-300 hover:shadow-cardHover hover:-translate-y-1"
           >
-            <div className="flex flex-col gap-6">
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                <div className="flex-1">
-                  <h2 className="text-2xl md:text-3xl font-medium mb-2">
+            <div
+              className={`flex flex-col md:flex-row gap-6 md:gap-8 ${
+                index % 2 === 1 ? "md:flex-row-reverse" : ""
+              }`}
+            >
+              <div className="w-full md:w-1/2">
+                {project.videoUrls && project.videoUrls.length > 0 && (
+                  <div className="flex flex-col gap-4">
+                    {project.videoUrls.map((videoUrl, idx) => (
+                      <div
+                        key={idx}
+                        className="aspect-video rounded-lg overflow-hidden"
+                      >
+                        <iframe
+                          className="w-full h-full"
+                          src={videoUrl}
+                          title={`${project.title} demo ${idx + 1}`}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {!project.videoUrls && (
+                  <div className="w-full h-[250px] md:h-[300px] bg-surface flex items-center justify-center rounded-lg">
+                    <div className="text-center text-text-muted">
+                      <FiGlobe className="w-16 h-16 mx-auto mb-2 opacity-50" />
+                      <p className="text-sm">Visit site for live demo</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              <div className="w-full md:w-1/2 flex flex-col justify-between">
+                <div>
+                  <h2 className="text-2xl md:text-3xl font-medium mb-3">
                     {project.title}
                   </h2>
                   <p className="text-base text-text-muted mb-4">
                     {project.tagline}
                   </p>
+                  {project.techStack && project.techStack.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.techStack.map((tech) => (
+                        <TechBadge key={tech} tech={tech} />
+                      ))}
+                    </div>
+                  )}
                 </div>
+
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#f0a500] text-black font-medium rounded-lg hover:bg-[#f0b800] transition-colors duration-300 whitespace-nowrap"
+                  className="inline-flex items-center gap-2 text-link hover:underline"
                 >
-                  <FiGlobe className="w-5 h-5" />
                   Visit Site
                   <FiExternalLink className="w-4 h-4" />
                 </a>
               </div>
-
-              {project.videoUrls && project.videoUrls.length > 0 && (
-                <div className="flex flex-col md:flex-row gap-4">
-                  {project.videoUrls.map((videoUrl, index) => (
-                    <div
-                      key={index}
-                      className="flex-1 aspect-video rounded-lg overflow-hidden"
-                    >
-                      <iframe
-                        className="w-full h-full"
-                        src={videoUrl}
-                        title={`${project.title} demo ${index + 1}`}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {project.description && project.description.length > 0 && (
-                <div className="border-t border-white/10 pt-4">
-                  {project.description.map((para, idx) => (
-                    <p key={idx} className="text-base text-text-muted mb-3">
-                      {para}
-                    </p>
-                  ))}
-                </div>
-              )}
             </div>
           </div>
         ))}

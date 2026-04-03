@@ -3,6 +3,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 import { pinnedProjects, GITHUB_PROFILE_URL } from "../../data/pinnedProjects";
+import TechBadge from "../ui/TechBadge";
 
 interface ProjectMediaProps {
   images?: { src: string; alt: string }[];
@@ -200,12 +201,7 @@ const Projects: React.FC = () => {
                   </p>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.techStack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 text-sm bg-surface rounded-full text-text-muted"
-                      >
-                        {tech}
-                      </span>
+                      <TechBadge key={tech} tech={tech} />
                     ))}
                   </div>
                 </div>
