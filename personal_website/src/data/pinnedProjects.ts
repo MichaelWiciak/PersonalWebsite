@@ -12,6 +12,8 @@ import PlayingWithBashImage2 from "../assets/ProjectsData/PlayingWithBash/image-
 import PlayingWithBashImage3 from "../assets/ProjectsData/PlayingWithBash/image-2.png";
 import PlayingWithBashImage4 from "../assets/ProjectsData/PlayingWithBash/image.png";
 
+import SpaceSpongeImage1 from "../assets/ProjectsData/spaceSpongeProject/window4.png";
+
 export interface ProjectImage {
   src: string;
   alt: string;
@@ -62,6 +64,7 @@ export const pinnedProjects: PinnedProject[] = [
       "Computer vision pipeline for planet classification using Hough Circle Transform and MobileNetV2 transfer learning.",
     techStack: ["Python", "PyTorch", "OpenCV", "CNN", "MobileNetV2"],
     repoUrl: "https://github.com/MichaelWiciak/SpaceSponge",
+    images: [{ src: SpaceSpongeImage1, alt: "Space Sponge Results" }],
   },
   {
     id: "transformer-code-completion",
