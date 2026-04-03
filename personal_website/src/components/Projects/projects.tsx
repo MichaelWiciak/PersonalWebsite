@@ -3,11 +3,11 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 import { pinnedProjects, GITHUB_PROFILE_URL } from "../../data/pinnedProjects";
+import TechBadge from "../ui/TechBadge";
 
 interface ProjectMediaProps {
   images?: { src: string; alt: string }[];
   videoUrl?: string;
-  thumbnail?: string;
   title: string;
 }
 
@@ -28,7 +28,7 @@ const ProjectMedia: React.FC<ProjectMediaProps> = ({
         emblaApi.scrollTo(index);
       }
     },
-    [emblaApi],
+    [emblaApi]
   );
 
   useEffect(() => {
@@ -126,7 +126,7 @@ const Projects: React.FC = () => {
     const fetchRepoCount = async () => {
       try {
         const response = await fetch(
-          "https://api.github.com/users/MichaelWiciak",
+          "https://api.github.com/users/MichaelWiciak"
         );
         if (response.ok) {
           const data = await response.json();
@@ -144,7 +144,7 @@ const Projects: React.FC = () => {
       id="projects"
       className="w-full max-w-card mx-auto px-4 md:px-8 py-12 flex flex-col items-center"
     >
-      <h1 className="text-4xl md:text-5xl font-semibold mb-8">Projects</h1>
+      <h1 className="text-4xl md:text-5xl font-semibold mb-8">Public Projects</h1>
 
       <div className="w-full max-w-[900px] mx-auto mb-12 p-6 md:p-8 bg-surface-elevated rounded-xl shadow-card text-center">
         <p className="text-lg md:text-xl mb-4">
@@ -187,7 +187,6 @@ const Projects: React.FC = () => {
                 <ProjectMedia
                   images={project.images}
                   videoUrl={project.videoUrl}
-                  thumbnail={project.thumbnail}
                   title={project.title}
                 />
               </div>
@@ -202,12 +201,7 @@ const Projects: React.FC = () => {
                   </p>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.techStack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 text-sm bg-surface rounded-full text-text-muted"
-                      >
-                        {tech}
-                      </span>
+                      <TechBadge key={tech} tech={tech} />
                     ))}
                   </div>
                 </div>
