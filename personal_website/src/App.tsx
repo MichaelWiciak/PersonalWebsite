@@ -8,7 +8,6 @@ import ArtPage from "./pages/ArtPage";
 import CVPage from "./pages/CVPage";
 import ContactPage from "./pages/ContactPage";
 import CoursesPage from "./pages/CoursesPage";
-import TeamsPage from "./pages/TeamsPage";
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -118,7 +117,6 @@ const App: React.FC = () => {
           <Route path="art" element={<ArtPage />} />
           <Route path="cv" element={<CVPage />} />
           <Route path="courses" element={<CoursesPage />} />
-          <Route path="teams" element={<TeamsPage />} />
           <Route path="contact" element={<ContactPage />} />
         </Route>
       </Routes>
