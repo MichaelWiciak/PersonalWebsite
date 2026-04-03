@@ -1,4 +1,4 @@
-import Projects from "../components/Projects/Projects";
+import Projects from "../components/Projects/projects";
 
 const ProjectsPage: React.FC = () => {
   return (
