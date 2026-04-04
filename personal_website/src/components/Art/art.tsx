@@ -8,10 +8,6 @@ import ArtBlogList from "./ArtBlogList";
 const Art: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<ArtFilter>("all");
 
-  const featuredProjects = artProjects
-    .filter((project) => project.isFeatured)
-    .sort((a, b) => a.sortOrder - b.sortOrder);
-
   const filteredProjects =
     activeFilter === "all"
       ? artProjects

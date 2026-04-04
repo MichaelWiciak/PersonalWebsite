@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import ProjectsPage from "./pages/ProjectsPage";
 import LiveProjectsPage from "./pages/LiveProjectsPage";
 import ArtPage from "./pages/ArtPage";
+import ArtBlogPostPage from "./pages/ArtBlogPostPage";
 import CVPage from "./pages/CVPage";
 import ContactPage from "./pages/ContactPage";
 import CoursesPage from "./pages/CoursesPage";
@@ -115,6 +116,7 @@ const App: React.FC = () => {
           <Route path="projects" element={<ProjectsPage />} />
           <Route path="live-projects" element={<LiveProjectsPage />} />
           <Route path="art" element={<ArtPage />} />
+          <Route path="art/blog/:slug" element={<ArtBlogPostPage />} />
           <Route path="cv" element={<CVPage />} />
           <Route path="courses" element={<CoursesPage />} />
           <Route path="contact" element={<ContactPage />} />
