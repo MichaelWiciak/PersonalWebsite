@@ -11,22 +11,32 @@ const iconMap: Record<SocialLink["icon"], IconType> = {
 
 interface SocialIconsProps {
   size?: number;
+  md?: number;
+  lg?: number;
   gap?: number;
   className?: string;
 }
 
 const SocialIcons: React.FC<SocialIconsProps> = ({
   size = 32,
+  md,
+  lg,
   gap = 12,
   className = "",
 }) => {
+  const mdSize = md ?? size;
+  const lgSize = lg ?? mdSize;
+
   return (
     <div
       className={`flex items-center justify-center ${className}`}
-      style={{ gap: `${gap}px` }}
+      style={{
+        gap: `${gap}px`,
+      }}
     >
       {socialLinks.map((link) => {
         const Icon = iconMap[link.icon];
+        const iconSize = lg ? lgSize : md ? mdSize : size;
         return (
           <a
             key={link.name}
@@ -35,9 +45,9 @@ const SocialIcons: React.FC<SocialIconsProps> = ({
             rel="noopener noreferrer"
             className="cursor-pointer transition-colors duration-300 hover:text-accent"
             aria-label={link.name}
-            style={{ width: size, height: size }}
+            style={{ width: iconSize, height: iconSize }}
           >
-            <Icon size={size} />
+            <Icon size={iconSize} />
           </a>
         );
       })}
