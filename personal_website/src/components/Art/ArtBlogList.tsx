@@ -1,8 +1,11 @@
 import { FiCalendar, FiClock } from "react-icons/fi";
 import { blogPosts } from "../../data/artBlog";
 import { FiArrowRight } from "react-icons/fi";
+import { usePostHog } from "@posthog/react";
 
 const ArtBlogList: React.FC = () => {
+  const posthog = usePostHog();
+
   if (blogPosts.length === 0) {
     return null;
   }
@@ -18,6 +21,7 @@ const ArtBlogList: React.FC = () => {
             key={post.id}
             href={`/art/blog/${post.slug}`}
             className="group p-6 bg-surface-elevated rounded-xl shadow-card hover:shadow-cardHover transition-all duration-300 hover:-translate-y-1 flex flex-col h-full"
+            onClick={() => posthog?.capture('art_blog_post_opened', { post_title: post.title, post_slug: post.slug })}
           >
             <h3 className="text-xl font-semibold mb-2 group-hover:text-accent transition-colors">
               {post.title}

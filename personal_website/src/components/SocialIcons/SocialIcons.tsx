@@ -2,6 +2,7 @@ import { socialLinks, SocialLink } from "../../data/socialLinks";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { SiCodewars } from "react-icons/si";
 import { IconType } from "react-icons";
+import { usePostHog } from "@posthog/react";
 
 const iconMap: Record<SocialLink["icon"], IconType> = {
   github: FaGithub,
@@ -28,6 +29,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({
 }) => {
   const mdSize = md ?? size;
   const lgSize = lg ?? mdSize;
+  const posthog = usePostHog();
 
   return (
     <div
@@ -50,6 +52,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({
             className="cursor-pointer transition-colors duration-300 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background rounded-full"
             aria-label={link.name}
             style={{ width: iconSize, height: iconSize }}
+            onClick={() => posthog?.capture('social_icon_clicked', { platform: link.name })}
           >
             <Icon size={iconSize} aria-hidden="true" />
           </a>

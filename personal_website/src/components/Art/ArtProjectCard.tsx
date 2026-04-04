@@ -2,6 +2,7 @@ import { FiGithub, FiExternalLink } from "react-icons/fi";
 import { ArtProject } from "../../data/artProjects";
 import TechBadge from "../ui/TechBadge";
 import ProjectMedia from "../ui/ProjectMedia";
+import { usePostHog } from "@posthog/react";
 
 interface ArtProjectCardProps {
   project: ArtProject;
@@ -12,6 +13,8 @@ const ArtProjectCard: React.FC<ArtProjectCardProps> = ({
   project,
   reverse = false,
 }) => {
+  const posthog = usePostHog();
+
   return (
     <div
       className={`w-full max-w-[900px] mx-auto p-6 md:p-8 bg-surface-elevated rounded-xl shadow-card transition-all duration-300 hover:shadow-cardHover hover:-translate-y-1`}
@@ -53,6 +56,7 @@ const ArtProjectCard: React.FC<ArtProjectCardProps> = ({
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-link hover:underline"
+              onClick={() => posthog?.capture('art_project_github_clicked', { project_title: project.title })}
             >
               <FiGithub className="w-4 h-4" />
               View on GitHub
@@ -63,6 +67,7 @@ const ArtProjectCard: React.FC<ArtProjectCardProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-link hover:underline"
+                onClick={() => posthog?.capture('art_project_live_demo_clicked', { project_title: project.title })}
               >
                 <FiExternalLink className="w-4 h-4" />
                 Live Demo

@@ -1,8 +1,11 @@
 import { FiExternalLink, FiGlobe } from "react-icons/fi";
 import { liveProjects } from "../../data/liveProjects";
 import TechBadge from "../ui/TechBadge";
+import { usePostHog } from "@posthog/react";
 
 const LiveProjects: React.FC = () => {
+  const posthog = usePostHog();
+
   return (
     <section
       id="live-projects"
@@ -83,6 +86,7 @@ const LiveProjects: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-link hover:underline"
+                  onClick={() => posthog?.capture('live_project_site_visited', { project_title: project.title })}
                 >
                   Visit Site
                   <FiExternalLink className="w-4 h-4" />
