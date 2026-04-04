@@ -21,12 +21,16 @@ const Hero: React.FC = () => {
         alt="Profile"
         className="hidden md:block absolute top-0 right-0 w-auto h-full object-cover -z-10 rounded-full"
         style={{ maxWidth: "55%", height: "100vh" }}
+        loading="eager"
+        decoding="async"
       />
       <div className="w-full p-6 md:p-8 lg:p-12 flex flex-col justify-center">
         <img
           src={bg}
           alt="Profile"
           className="w-40 h-40 sm:w-48 sm:h-48 object-cover rounded-full mx-auto shadow-card mb-6 md:hidden"
+          loading="eager"
+          decoding="async"
         />
         <div className="md:pr-[45%] lg:pr-[50%] text-center md:text-left">
           <span className="text-lg md:text-xl lg:text-2xl font-light">Hello,</span>

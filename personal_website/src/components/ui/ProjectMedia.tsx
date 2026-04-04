@@ -66,6 +66,7 @@ const ProjectMedia: React.FC<ProjectMediaProps> = ({
           className="w-full h-full min-h-[250px] rounded-lg"
           src={videoUrl}
           title={`${title} demo`}
+          loading="lazy"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         />
@@ -89,6 +90,7 @@ const ProjectMedia: React.FC<ProjectMediaProps> = ({
                   className="w-full h-full min-h-[250px] rounded-lg"
                   src={item.src}
                   title={`${title} demo`}
+                  loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                 />
@@ -97,6 +99,8 @@ const ProjectMedia: React.FC<ProjectMediaProps> = ({
                   src={item.src}
                   alt={item.alt || `${title} preview ${index + 1}`}
                   className="w-full h-full object-contain rounded-lg"
+                  loading="lazy"
+                  decoding="async"
                 />
               )}
             </div>

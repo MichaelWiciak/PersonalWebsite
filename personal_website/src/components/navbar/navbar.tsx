@@ -27,6 +27,8 @@ const Navbar: React.FC = () => {
           src={logo}
           alt="Michael Wiciak Logo"
           className="w-16 h-auto object-cover logo-spin"
+          loading="eager"
+          decoding="async"
         />
       </NavLink>
 
@@ -54,7 +56,7 @@ const Navbar: React.FC = () => {
         aria-label={showMenu ? "Close navigation menu" : "Open navigation menu"}
         onClick={() => setShowMenu((prev) => !prev)}
       >
-        <img src={menu} alt="Menu" className="w-8 h-8 object-cover" />
+        <img src={menu} alt="Menu" className="w-8 h-8 object-cover" loading="lazy" decoding="async" />
       </button>
 
       {showMenu && (
