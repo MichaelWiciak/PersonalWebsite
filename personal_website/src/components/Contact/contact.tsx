@@ -2,6 +2,7 @@ import { useRef, FormEvent, useState } from "react";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
 import SocialIcons from "../SocialIcons/SocialIcons";
+import { usePostHog } from "@posthog/react";
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -12,6 +13,7 @@ const Contact: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
   const [captchaVerified, setCaptchaVerified] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const posthog = usePostHog();
 
   const onCaptchaChange = (value: string | null) => {
     setCaptchaVerified(!!value);
@@ -43,9 +45,12 @@ const Contact: React.FC = () => {
           () => {
             form.current?.reset();
             setCaptchaVerified(false);
+            posthog?.capture('contact_form_submitted');
             alert("Message sent! I'll get back to you shortly.");
           },
-          () => {
+          (err) => {
+            posthog?.capture('contact_form_failed');
+            posthog?.captureException(err);
             alert("Failed to send message. Please try again.");
           },
         )

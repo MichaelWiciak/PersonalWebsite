@@ -3,9 +3,11 @@ import { FiGithub, FiExternalLink } from "react-icons/fi";
 import { pinnedProjects, GITHUB_PROFILE_URL } from "../../data/pinnedProjects";
 import TechBadge from "../ui/TechBadge";
 import ProjectMedia from "../ui/ProjectMedia";
+import { usePostHog } from "@posthog/react";
 
 const Projects: React.FC = () => {
   const [repoCount, setRepoCount] = useState<number | null>(null);
+  const posthog = usePostHog();
 
   useEffect(() => {
     const fetchRepoCount = async () => {
@@ -52,6 +54,7 @@ const Projects: React.FC = () => {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-black font-medium rounded-lg hover:bg-accent-hover transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background"
           aria-label="View all repositories on GitHub (opens in new tab)"
+          onClick={() => posthog?.capture('github_all_repos_clicked')}
         >
           <FiGithub className="w-5 h-5" aria-hidden="true" />
           View all repos on GitHub
@@ -100,6 +103,7 @@ const Projects: React.FC = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-link hover:underline focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-surface-elevated rounded-lg"
                   aria-label={`View ${project.title} on GitHub (opens in new tab)`}
+                  onClick={() => posthog?.capture('project_github_link_clicked', { project_title: project.title })}
                 >
                   View on GitHub
                   <FiExternalLink className="w-4 h-4" aria-hidden="true" />

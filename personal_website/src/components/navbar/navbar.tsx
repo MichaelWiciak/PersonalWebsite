@@ -3,9 +3,11 @@ import logo from "../../assets/Michael Wiciak-logos_white.png";
 import { NavLink } from "react-router-dom";
 import menu from "../../assets/menu.png";
 import { navItems, contactNavItem } from "../../data/navItems";
+import { usePostHog } from "@posthog/react";
 
 const Navbar: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const posthog = usePostHog();
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
     `hidden md:inline-block mx-4 cursor-pointer transition-all duration-300 ${
@@ -63,7 +65,11 @@ const Navbar: React.FC = () => {
         aria-label={showMenu ? "Close navigation menu" : "Open navigation menu"}
         aria-expanded={showMenu}
         aria-controls="mobile-menu"
-        onClick={() => setShowMenu((prev) => !prev)}
+        onClick={() => {
+          const next = !showMenu;
+          setShowMenu(next);
+          if (next) posthog?.capture('mobile_menu_opened');
+        }}
       >
         <img src={menu} alt="Menu" className="w-8 h-8 object-cover" loading="lazy" decoding="async" />
       </button>

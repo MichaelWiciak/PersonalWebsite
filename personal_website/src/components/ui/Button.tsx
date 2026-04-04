@@ -41,6 +41,7 @@ interface LinkButtonProps {
   download?: boolean;
   className?: string;
   external?: boolean;
+  onClick?: () => void;
 }
 
 export const LinkButton: React.FC<LinkButtonProps> = ({
@@ -51,6 +52,7 @@ export const LinkButton: React.FC<LinkButtonProps> = ({
   download = false,
   className = "",
   external = false,
+  onClick,
 }) => {
   const IconComponent = iconMap[icon];
 
@@ -61,6 +63,7 @@ export const LinkButton: React.FC<LinkButtonProps> = ({
       download={download}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
+      onClick={onClick}
     >
       {IconComponent && <IconComponent className="btn-icon" />}
       {children}

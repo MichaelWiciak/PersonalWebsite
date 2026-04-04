@@ -1,9 +1,11 @@
 import CVFile from "../../assets/MichaelWiciakCVtext.pdf";
 import { FiFileText, FiCalendar } from "react-icons/fi";
 import { LinkButton } from "../ui/Button";
+import { usePostHog } from "@posthog/react";
 
 const CV: React.FC = () => {
   const lastUpdated = "10/03/2026";
+  const posthog = usePostHog();
 
   return (
     <section className="w-full flex items-center justify-center p-8 md:p-16 box-border">
@@ -38,6 +40,7 @@ const CV: React.FC = () => {
             href={CVFile}
             icon="download"
             download
+            onClick={() => posthog?.capture('cv_downloaded')}
           >
             Download CV
           </LinkButton>
