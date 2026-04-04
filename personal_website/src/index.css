@@ -146,36 +146,21 @@
   20%, 80% { opacity: 1; }
 }
 
-@keyframes moveParticles {
-  0% {
-    transform: translateY(0) translateX(0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh) translateX(50vw);
-    opacity: 0;
-  }
-}
-
 @keyframes particleFall {
   0% {
     transform: translateY(0) translateX(0);
     opacity: 0;
   }
-  50% {
-    opacity: 1;
+  5% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.8;
   }
   100% {
-    transform: translateY(100vh) translateX(50vw);
+    transform: translateY(100vh) translateX(var(--drift-x, 100vw));
     opacity: 0;
   }
-}
-
-body {
-  background-color: #1e1e1e;
 }
 
 .logo-spin {
@@ -188,21 +173,20 @@ body {
 
 .particle {
   position: absolute;
-  width: calc(0.5px + 1vmin);
-  height: calc(0.5px + 1vmin);
+  pointer-events: none;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 50%;
   opacity: 0.8;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
-.particle-layer1 { animation: particleFall 10s linear infinite; z-index: -1; }
-.particle-layer2 { animation: particleFall 11s linear infinite; z-index: -2; }
-.particle-layer3 { animation: particleFall 12s linear infinite; z-index: -3; }
-.particle-layer4 { animation: particleFall 13s linear infinite; z-index: -4; }
-.particle-layer5 { animation: particleFall 14s linear infinite; z-index: -5; }
-.particle-layer6 { animation: particleFall 15s linear infinite; z-index: -6; }
-.particle-layer7 { animation: particleFall 16s linear infinite; z-index: -7; }
-.particle-layer8 { animation: particleFall 17s linear infinite; z-index: -8; }
-.particle-layer9 { animation: particleFall 18s linear infinite; z-index: -9; }
-.particle-layer10 { animation: particleFall 19s linear infinite; z-index: -10; }
+.particle-layer1 { animation: particleFall 10s linear infinite; }
+.particle-layer2 { animation: particleFall 11s linear infinite; }
+.particle-layer3 { animation: particleFall 12s linear infinite; }
+.particle-layer4 { animation: particleFall 13s linear infinite; }
+.particle-layer5 { animation: particleFall 14s linear infinite; }
+.particle-layer6 { animation: particleFall 15s linear infinite; }
+.particle-layer7 { animation: particleFall 16s linear infinite; }
+.particle-layer8 { animation: particleFall 17s linear infinite; }
+.particle-layer9 { animation: particleFall 18s linear infinite; }
+.particle-layer10 { animation: particleFall 19s linear infinite; }
