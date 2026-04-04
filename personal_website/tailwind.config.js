@@ -52,7 +52,6 @@ export default {
         "spin-slow": "spin 10s linear infinite",
         "fade-in": "fadeIn 0.3s ease-out",
         "slide-up": "slideUp 0.5s ease-out",
-        "particle-fall": "particleFall 10s linear infinite",
       },
       keyframes: {
         fadeIn: {
@@ -62,11 +61,6 @@ export default {
         slideUp: {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        particleFall: {
-          "0%": { transform: "translateY(0) translateX(0)", opacity: "0" },
-          "50%": { opacity: "1" },
-          "100%": { transform: "translateY(100vh) translateX(50vw)", opacity: "0" },
         },
       },
       transitionTimingFunction: {
