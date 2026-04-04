@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
 import { FiHome, FiArrowLeft } from "react-icons/fi";
+import { useSEO } from "../hooks/useSEO";
 
 const NotFound: React.FC = () => {
+  useSEO({
+    title: "404: Page Not Found | Michael Wiciak",
+    description: "Page not found. The page you're looking for doesn't exist or has been moved.",
+  });
+
   return (
     <section className="min-h-[calc(100vh-5rem)] w-full max-w-container mx-auto px-4 md:px-8 py-12 flex flex-col items-center justify-center text-center">
       <div className="w-full max-w-[600px] mx-auto p-8 md:p-12 bg-surface-elevated rounded-xl shadow-card">
