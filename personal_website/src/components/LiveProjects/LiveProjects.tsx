@@ -43,6 +43,7 @@ const LiveProjects: React.FC = () => {
                           className="w-full h-full"
                           src={videoUrl}
                           title={`${project.title} demo ${idx + 1}`}
+                          loading="lazy"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                           allowFullScreen
                         />

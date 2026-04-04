@@ -50,9 +50,9 @@ const ProjectMedia: React.FC<ProjectMediaProps> = ({
 
   if (!hasMedia) {
     return (
-      <div className="w-full h-full min-h-[250px] bg-surface flex items-center justify-center rounded-lg">
+      <div className="w-full h-full min-h-[250px] bg-surface flex items-center justify-center rounded-lg" role="img" aria-label="No preview available">
         <div className="text-center text-text-muted">
-          <FiGithub className="w-16 h-16 mx-auto mb-2 opacity-50" />
+          <FiGithub className="w-16 h-16 mx-auto mb-2 opacity-50" aria-hidden="true" />
           <p className="text-sm">No preview available</p>
         </div>
       </div>
@@ -66,6 +66,7 @@ const ProjectMedia: React.FC<ProjectMediaProps> = ({
           className="w-full h-full min-h-[250px] rounded-lg"
           src={videoUrl}
           title={`${title} demo`}
+          loading="lazy"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         />
@@ -79,16 +80,17 @@ const ProjectMedia: React.FC<ProjectMediaProps> = ({
   ];
 
   return (
-    <div className="w-full h-full relative">
+    <div className="w-full h-full relative" role="region" aria-label={`${title} media carousel`}>
       <div className="overflow-hidden w-full h-full" ref={emblaRef}>
-        <div className="flex h-full">
+        <div className="flex h-full" role="list">
           {mediaItems.map((item, index) => (
-            <div className="flex-none basis-full min-w-0 h-full" key={index}>
+            <div className="flex-none basis-full min-w-0 h-full" key={index} role="listitem">
               {item.type === "video" ? (
                 <iframe
                   className="w-full h-full min-h-[250px] rounded-lg"
                   src={item.src}
                   title={`${title} demo`}
+                  loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                 />
@@ -97,6 +99,8 @@ const ProjectMedia: React.FC<ProjectMediaProps> = ({
                   src={item.src}
                   alt={item.alt || `${title} preview ${index + 1}`}
                   className="w-full h-full object-contain rounded-lg"
+                  loading="lazy"
+                  decoding="async"
                 />
               )}
             </div>
@@ -104,8 +108,8 @@ const ProjectMedia: React.FC<ProjectMediaProps> = ({
         </div>
       </div>
       {hasMultipleMedia && (
-        <div className="flex justify-center items-center gap-2 mb-4">
-          {mediaItems.map((_, index) => (
+        <div className="flex justify-center items-center gap-2 mb-4" role="tablist" aria-label="Carousel navigation">
+          {mediaItems.map((item, index) => (
             <button
               key={index}
               className={`w-3 h-3 rounded-full bg-white/30 border-none cursor-pointer p-0 transition-colors duration-300 hover:bg-white/50 ${
@@ -113,6 +117,9 @@ const ProjectMedia: React.FC<ProjectMediaProps> = ({
               }`}
               onClick={() => onDotClick(index)}
               type="button"
+              role="tab"
+              aria-selected={index === selectedIndex}
+              aria-label={`View ${item.type === "video" ? "video" : `image ${index + 1}`}`}
             />
           ))}
         </div>

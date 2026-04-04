@@ -67,30 +67,40 @@ const Contact: React.FC = () => {
         ref={form}
         onSubmit={sendEmail}
         className="m-4 flex flex-col items-center justify-center w-[90vw] max-w-[60rem]"
+        aria-label="Contact form"
       >
+        <label htmlFor="your_name" className="sr-only">Your Name</label>
         <input
+          id="your_name"
           type="text"
           placeholder="Your Name..."
           className="text-base w-full max-w-[40rem] mx-auto my-2 px-4 py-2 text-text-primary bg-surface border-none rounded-lg"
           name="your_name"
+          aria-required="true"
           required
         />
+        <label htmlFor="your_email" className="sr-only">Your Email</label>
         <input
+          id="your_email"
           type="email"
           placeholder="Your Email..."
           className="text-base w-full max-w-[40rem] mx-auto my-2 px-4 py-2 text-text-primary bg-surface border-none rounded-lg"
           name="your_email"
+          aria-required="true"
           required
         />
+        <label htmlFor="message" className="sr-only">Your Message</label>
         <textarea
+          id="message"
           placeholder="Your Message..."
           className="text-base w-full max-w-[40rem] mx-auto my-2 px-4 py-2 text-text-primary bg-surface border-none rounded-lg resize-none"
           rows={5}
           name="message"
+          aria-required="true"
           required
         />
 
-        <div className="my-4">
+        <div className="my-4" role="group" aria-label="reCAPTCHA verification">
           <ReCAPTCHA
             sitekey={RECAPTCHA_SITE_KEY || ""}
             onChange={onCaptchaChange}
@@ -102,6 +112,7 @@ const Contact: React.FC = () => {
           value="Send"
           className="bg-white text-background border-none rounded-lg mx-auto my-8 px-14 py-3 cursor-pointer opacity-100 transition-opacity duration-300 hover:opacity-90 disabled:opacity-10 disabled:cursor-not-allowed"
           disabled={!captchaVerified || isSubmitting}
+          aria-disabled={!captchaVerified || isSubmitting}
         >
           {isSubmitting ? "Sending..." : "Submit"}
         </button>

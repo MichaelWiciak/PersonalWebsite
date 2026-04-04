@@ -15,6 +15,7 @@ interface SocialIconsProps {
   lg?: number;
   gap?: number;
   className?: string;
+  label?: string;
 }
 
 const SocialIcons: React.FC<SocialIconsProps> = ({
@@ -23,6 +24,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({
   lg,
   gap = 12,
   className = "",
+  label = "Social media links",
 }) => {
   const mdSize = md ?? size;
   const lgSize = lg ?? mdSize;
@@ -33,6 +35,8 @@ const SocialIcons: React.FC<SocialIconsProps> = ({
       style={{
         gap: `${gap}px`,
       }}
+      role="list"
+      aria-label={label}
     >
       {socialLinks.map((link) => {
         const Icon = iconMap[link.icon];
@@ -43,11 +47,11 @@ const SocialIcons: React.FC<SocialIconsProps> = ({
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="cursor-pointer transition-colors duration-300 hover:text-accent"
+            className="cursor-pointer transition-colors duration-300 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background rounded-full"
             aria-label={link.name}
             style={{ width: iconSize, height: iconSize }}
           >
-            <Icon size={iconSize} />
+            <Icon size={iconSize} aria-hidden="true" />
           </a>
         );
       })}

@@ -8,13 +8,16 @@ import ArtBlogPostPage from "./pages/ArtBlogPostPage";
 import CVPage from "./pages/CVPage";
 import ContactPage from "./pages/ContactPage";
 import CoursesPage from "./pages/CoursesPage";
+import NotFound from "./pages/NotFound";
 import Particles from "./components/ui/Particles";
+import ScrollToTop from "./components/ui/ScrollToTop";
 
 const App: React.FC = () => {
   return (
     <>
       <Particles />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -25,6 +28,7 @@ const App: React.FC = () => {
             <Route path="cv" element={<CVPage />} />
             <Route path="courses" element={<CoursesPage />} />
             <Route path="contact" element={<ContactPage />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>

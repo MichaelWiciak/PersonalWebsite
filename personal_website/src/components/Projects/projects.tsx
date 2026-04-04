@@ -28,13 +28,14 @@ const Projects: React.FC = () => {
     <section
       id="projects"
       className="w-full max-w-card mx-auto px-4 md:px-8 py-12 flex flex-col items-center"
+      aria-labelledby="projects-heading"
     >
-      <h1 className="text-4xl md:text-5xl font-semibold mb-8">Public Projects</h1>
+      <h1 id="projects-heading" className="text-4xl md:text-5xl font-semibold mb-8">Public Projects</h1>
 
       <div className="w-full max-w-[900px] mx-auto mb-12 p-6 md:p-8 bg-surface-elevated rounded-xl shadow-card text-center">
         <p className="text-lg md:text-xl mb-4">
           I have{" "}
-          <span className="font-semibold text-[#f0a500]">
+          <span className="font-semibold text-accent">
             {repoCount !== null
               ? `${repoCount} public repos`
               : "many public repos"}
@@ -49,19 +50,21 @@ const Projects: React.FC = () => {
           href={GITHUB_PROFILE_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-[#f0a500] text-black font-medium rounded-lg hover:bg-[#f0b800] transition-colors duration-300"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-black font-medium rounded-lg hover:bg-accent-hover transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background"
+          aria-label="View all repositories on GitHub (opens in new tab)"
         >
-          <FiGithub className="w-5 h-5" />
+          <FiGithub className="w-5 h-5" aria-hidden="true" />
           View all repos on GitHub
-          <FiExternalLink className="w-4 h-4" />
+          <FiExternalLink className="w-4 h-4" aria-hidden="true" />
         </a>
       </div>
 
-      <div className="w-full flex flex-col gap-12">
+      <div className="w-full flex flex-col gap-12" role="list" aria-label="Featured projects">
         {pinnedProjects.map((project, index) => (
-          <div
+          <article
             key={project.id}
             className={`w-full max-w-[900px] mx-auto p-6 md:p-8 bg-surface-elevated rounded-xl shadow-card transition-all duration-300 hover:shadow-cardHover hover:-translate-y-1`}
+            role="listitem"
           >
             <div
               className={`flex flex-col md:flex-row gap-6 md:gap-8 ${
@@ -84,7 +87,7 @@ const Projects: React.FC = () => {
                   <p className="text-base text-text-muted mb-4">
                     {project.tagline}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-2 mb-6" role="list" aria-label="Technologies used">
                     {project.techStack.map((tech) => (
                       <TechBadge key={tech} tech={tech} />
                     ))}
@@ -95,14 +98,15 @@ const Projects: React.FC = () => {
                   href={project.repoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-link hover:underline"
+                  className="inline-flex items-center gap-2 text-link hover:underline focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-surface-elevated rounded-lg"
+                  aria-label={`View ${project.title} on GitHub (opens in new tab)`}
                 >
                   View on GitHub
-                  <FiExternalLink className="w-4 h-4" />
+                  <FiExternalLink className="w-4 h-4" aria-hidden="true" />
                 </a>
               </div>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>
