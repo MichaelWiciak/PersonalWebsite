@@ -32,7 +32,7 @@ const ProjectMedia: React.FC<ProjectMediaProps> = ({
         emblaApi.scrollTo(index);
       }
     },
-    [emblaApi]
+    [emblaApi],
   );
 
   useEffect(() => {
@@ -104,7 +104,7 @@ const ProjectMedia: React.FC<ProjectMediaProps> = ({
         </div>
       </div>
       {hasMultipleMedia && (
-        <div className="flex justify-center items-center gap-2 mt-4">
+        <div className="flex justify-center items-center gap-2 mb-4">
           {mediaItems.map((_, index) => (
             <button
               key={index}
