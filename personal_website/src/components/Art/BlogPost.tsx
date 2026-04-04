@@ -1,7 +1,9 @@
+import { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import { blogPosts } from "../../data/artBlog";
 import { useParams, Link } from "react-router-dom";
 import { FiArrowLeft, FiCalendar, FiClock } from "react-icons/fi";
+import { usePostHog } from "@posthog/react";
 
 import physarumMathematicsMd from "../../content/blog/physarum-mathematics.md?raw";
 
@@ -13,6 +15,18 @@ const BlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = blogPosts.find((p) => p.slug === slug);
   const markdownContent = slug ? blogContentMap[slug] : null;
+  const posthog = usePostHog();
+
+  useEffect(() => {
+    if (post) {
+      posthog?.capture('art_blog_post_read', {
+        post_title: post.title,
+        post_slug: post.slug,
+        reading_time: post.readingTime,
+        tags: post.tags,
+      });
+    }
+  }, [post?.slug]);
 
   if (!post || !markdownContent) {
     return (
