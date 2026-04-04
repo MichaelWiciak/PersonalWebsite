@@ -8,6 +8,7 @@ import ArtBlogPostPage from "./pages/ArtBlogPostPage";
 import CVPage from "./pages/CVPage";
 import ContactPage from "./pages/ContactPage";
 import CoursesPage from "./pages/CoursesPage";
+import NotFound from "./pages/NotFound";
 import Particles from "./components/ui/Particles";
 
 const App: React.FC = () => {
@@ -25,6 +26,7 @@ const App: React.FC = () => {
             <Route path="cv" element={<CVPage />} />
             <Route path="courses" element={<CoursesPage />} />
             <Route path="contact" element={<ContactPage />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>
