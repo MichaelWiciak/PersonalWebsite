@@ -14,8 +14,6 @@ export interface ProjectImage {
   alt: string;
 }
 
-export type ArtProjectTag = "background-maker" | "physarum";
-
 export interface ArtProject {
   id: string;
   title: string;
@@ -25,10 +23,7 @@ export interface ArtProject {
   repoUrl: string;
   liveUrl?: string;
   images?: ProjectImage[];
-  gifUrl?: string;
-  tags: ArtProjectTag[];
-  isFeatured: boolean;
-  sortOrder: number;
+  videoUrl?: string;
 }
 
 export const artProjects: ArtProject[] = [
@@ -53,9 +48,6 @@ export const artProjects: ArtProject[] = [
       { src: BackgroundMakerImage9, alt: "Procedural wallpaper 9" },
       { src: BackgroundMakerImage10, alt: "Procedural wallpaper 10" },
     ],
-    tags: ["background-maker"],
-    isFeatured: true,
-    sortOrder: 1,
   },
   {
     id: "physarum",
@@ -65,9 +57,6 @@ export const artProjects: ArtProject[] = [
       "A computational biology project simulating the behaviour of Physarum polycephalum (slime mold) using agent-based modeling. Implements sensor arrays, pheromone deposition, and diffusion kernels to replicate the emergent maze-solving and network optimisation behaviours observed in nature.",
     techStack: ["Python", "NumPy", "OpenCV", "Numba"],
     repoUrl: "https://github.com/MichaelWiciak/Physarum",
-    gifUrl: "https://github.com/MichaelWiciak/Physarum/raw/main/simulation.gif",
-    tags: ["physarum"],
-    isFeatured: true,
-    sortOrder: 2,
+    videoUrl: "https://youtu.be/7ZkC3MxK37Q",
   },
 ];

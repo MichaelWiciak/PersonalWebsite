@@ -7,13 +7,13 @@ import TechBadge from "../ui/TechBadge";
 
 interface ProjectMediaProps {
   images?: ProjectImage[];
-  gifUrl?: string;
+  videoUrl?: string;
   title: string;
 }
 
 const ProjectMedia: React.FC<ProjectMediaProps> = ({
   images,
-  gifUrl,
+  videoUrl,
   title,
 }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
@@ -41,7 +41,7 @@ const ProjectMedia: React.FC<ProjectMediaProps> = ({
   const hasImages = images && images.length > 0;
   const hasMultipleImages = images && images.length > 1;
 
-  if (!hasImages && !gifUrl) {
+  if (!hasImages && !videoUrl) {
     return (
       <div className="w-full h-full min-h-[250px] bg-surface flex items-center justify-center rounded-lg">
         <div className="text-center text-text-muted">
@@ -52,13 +52,15 @@ const ProjectMedia: React.FC<ProjectMediaProps> = ({
     );
   }
 
-  if (gifUrl && !hasMultipleImages) {
+  if (videoUrl && !hasMultipleImages) {
     return (
-      <div className="w-full h-full flex items-center justify-center rounded-lg overflow-hidden">
-        <img
-          src={gifUrl}
-          alt={`${title} simulation`}
-          className="w-full h-full object-contain"
+      <div className="w-full h-full">
+        <iframe
+          className="w-full h-full min-h-[250px] rounded-lg"
+          src={videoUrl}
+          title={`${title} demo`}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
         />
       </div>
     );
@@ -121,7 +123,7 @@ const ArtProjectCard: React.FC<ArtProjectCardProps> = ({
         <div className="w-full md:w-1/2 h-[250px] md:h-[300px]">
           <ProjectMedia
             images={project.images}
-            gifUrl={project.gifUrl}
+            videoUrl={project.videoUrl}
             title={project.title}
           />
         </div>

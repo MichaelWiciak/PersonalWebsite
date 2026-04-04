@@ -1,18 +1,8 @@
-import { useState } from "react";
 import { artProjects } from "../../data/artProjects";
-import { ArtFilter } from "../../data/artFilters";
-import ArtFilters from "./ArtFilters";
 import ArtProjectCard from "./ArtProjectCard";
 import ArtBlogList from "./ArtBlogList";
 
 const Art: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState<ArtFilter>("all");
-
-  const filteredProjects =
-    activeFilter === "all"
-      ? artProjects
-      : artProjects.filter((project) => project.tags.includes(activeFilter));
-
   return (
     <section
       id="artworkPage"
@@ -27,23 +17,14 @@ const Art: React.FC = () => {
         simulations.
       </p>
 
-      <div className="w-full flex flex-col gap-16">
-        <div className="w-full">
-          <ArtFilters
-            activeFilter={activeFilter}
-            onFilterChange={setActiveFilter}
-          />
+      <div className="w-full flex flex-col gap-12">
+        {artProjects.map((project) => (
+          <ArtProjectCard key={project.id} project={project} />
+        ))}
+      </div>
 
-          <div className="flex flex-col gap-12">
-            {filteredProjects.map((project) => (
-              <ArtProjectCard key={project.id} project={project} />
-            ))}
-          </div>
-        </div>
-
-        <div className="w-full max-w-[900px] mx-auto">
-          <ArtBlogList />
-        </div>
+      <div className="w-full max-w-[900px] mx-auto mt-16">
+        <ArtBlogList />
       </div>
     </section>
   );

@@ -6,7 +6,7 @@ import { FiArrowLeft, FiCalendar, FiClock } from "react-icons/fi";
 import physarumMathematicsMd from "../../content/blog/physarum-mathematics.md?raw";
 
 const blogContentMap: Record<string, string> = {
-  // "physarum-mathematics": physarumMathematicsMd,
+  "physarum-mathematics": physarumMathematicsMd,
 };
 
 const BlogPost: React.FC = () => {
