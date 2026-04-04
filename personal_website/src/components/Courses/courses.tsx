@@ -114,9 +114,7 @@ const Courses: React.FC = () => {
                 >
                   Download <FiDownload className="w-3.5 h-3.5" />
                 </a>
-              ) : (
-                <span className="inline-flex items-center gap-1.5 text-sm text-text-muted/50 italic"></span>
-              )}
+              ) : null}
             </div>
           </div>
         ))}
