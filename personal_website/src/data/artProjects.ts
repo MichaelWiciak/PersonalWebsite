@@ -57,6 +57,6 @@ export const artProjects: ArtProject[] = [
       "A computational biology project simulating the behaviour of Physarum polycephalum (slime mold) using agent-based modeling. Implements sensor arrays, pheromone deposition, and diffusion kernels to replicate the emergent maze-solving and network optimisation behaviours observed in nature.",
     techStack: ["Python", "NumPy", "OpenCV", "Numba"],
     repoUrl: "https://github.com/MichaelWiciak/Physarum",
-    videoUrl: "https://youtu.be/7ZkC3MxK37Q",
+    videoUrl: "https://www.youtube.com/embed/7ZkC3MxK37Q",
   },
 ];

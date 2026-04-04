@@ -9,12 +9,13 @@ const Art: React.FC = () => {
       className="w-full max-w-container mx-auto px-4 md:px-8 py-8 flex flex-col items-center"
     >
       <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">
-        Generative Art & Simulations
+        Patterns out of Chaos (:
       </h1>
       <p className="text-base md:text-lg text-text-muted text-center mb-8 max-w-2xl">
-        Exploring the intersection of mathematics, algorithms, and visual art.
-        From procedurally generated patterns to biologically inspired
-        simulations.
+        I really enjoy very detailed art, where something beautiful comes out
+        of, seemingly, chaos. The maths behind these projects is usually not
+        complex but the effects are really unimaginable from looking at the
+        formulas.
       </p>
 
       <div className="w-full flex flex-col gap-12">
