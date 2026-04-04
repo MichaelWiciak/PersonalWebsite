@@ -10,9 +10,11 @@ import {
   categoryLabels,
   CourseCategory,
 } from "../../data/courses";
+import { usePostHog } from "@posthog/react";
 
 const Courses: React.FC = () => {
   const [activeTab, setActiveTab] = useState<CourseCategory | "all">("all");
+  const posthog = usePostHog();
 
   const filteredCourses =
     activeTab === "all"
@@ -39,7 +41,10 @@ const Courses: React.FC = () => {
         {tabs.map((tab) => (
           <button
             key={tab.value}
-            onClick={() => setActiveTab(tab.value)}
+            onClick={() => {
+              setActiveTab(tab.value);
+              posthog?.capture('courses_tab_changed', { tab: tab.value, tab_label: tab.label });
+            }}
             className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
               activeTab === tab.value
                 ? "bg-accent text-black shadow-accent"
@@ -101,6 +106,7 @@ const Courses: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-sm text-link hover:underline"
+                  onClick={() => posthog?.capture('course_credential_verified', { course_title: course.title, provider: course.provider })}
                 >
                   Verify <FiExternalLink className="w-3.5 h-3.5" />
                 </a>
@@ -111,6 +117,7 @@ const Courses: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-sm text-text-muted hover:text-accent transition-colors"
+                  onClick={() => posthog?.capture('course_pdf_downloaded', { course_title: course.title, provider: course.provider })}
                 >
                   Download <FiDownload className="w-3.5 h-3.5" />
                 </a>
