@@ -10,12 +10,14 @@ import ContactPage from "./pages/ContactPage";
 import CoursesPage from "./pages/CoursesPage";
 import NotFound from "./pages/NotFound";
 import Particles from "./components/ui/Particles";
+import ScrollToTop from "./components/ui/ScrollToTop";
 
 const App: React.FC = () => {
   return (
     <>
       <Particles />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
