@@ -1,7 +1,8 @@
 export const introTitles: string[] = [
   "Software Engineer",
-  "Amateur Photographer",
+  "Photographer",
   "Badminton Player",
+  "Nvim4life",
   "Climber",
   "Tutor",
   "IT Support ):",

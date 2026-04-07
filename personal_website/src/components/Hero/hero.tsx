@@ -1,17 +1,68 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import bg from "../../assets/MW.JPG";
 import { introTitles, introBio, introName } from "../../data/intro";
 import SocialIcons from "../SocialIcons/SocialIcons";
 
 const Hero: React.FC = () => {
   const [currentTitle, setCurrentTitle] = useState(0);
+  const [isFading, setIsFading] = useState(false);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const getNextTitle = () => {
+    let next = Math.floor(Math.random() * introTitles.length);
+    while (next === currentTitle && introTitles.length > 1) {
+      next = Math.floor(Math.random() * introTitles.length);
+    }
+    return next;
+  };
+
+  const cycleTitle = () => {
+    setIsFading(true);
+    timeoutRef.current = setTimeout(() => {
+      setCurrentTitle(getNextTitle());
+      setIsFading(false);
+    }, 300);
+  };
+
+  const startInterval = () => {
+    if (intervalRef.current) return;
+    intervalRef.current = setInterval(cycleTitle, 3000);
+  };
+
+  const stopInterval = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
+
+  const stopTimeout = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+  };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTitle(Math.floor(Math.random() * introTitles.length));
-    }, 3000);
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        startInterval();
+      } else {
+        stopInterval();
+        stopTimeout();
+        setIsFading(false);
+      }
+    };
 
-    return () => clearInterval(interval);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    startInterval();
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      stopInterval();
+      stopTimeout();
+    };
   }, []);
 
   return (
@@ -37,7 +88,7 @@ const Hero: React.FC = () => {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mt-1 md:mt-2">
             I'm <span className="text-accent transition-colors duration-300 hover:text-yellow-400">{introName}</span>
             <br />
-            <span className="animated-title inline-block min-w-[15ch] md:min-w-[25ch] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">{introTitles[currentTitle]}</span>
+            <span className="animated-title inline-block min-w-[15ch] md:min-w-[25ch] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl" style={{ opacity: isFading ? 0 : 1 }}>{introTitles[currentTitle]}</span>
           </h1>
           <p className="text-sm sm:text-base md:text-lg font-light tracking-wide mt-3 md:mt-4 max-w-lg mx-auto md:mx-0">
             {introBio}

@@ -141,11 +141,6 @@
   100% { transform: rotate(360deg); }
 }
 
-@keyframes fade {
-  0%, 100% { opacity: 0; }
-  20%, 80% { opacity: 1; }
-}
-
 @keyframes particleFall {
   0% {
     transform: translateY(0) translateX(0);
@@ -168,7 +163,7 @@
 }
 
 .animated-title {
-  animation: fade 3s infinite;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .particle {
