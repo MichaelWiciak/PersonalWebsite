@@ -14,7 +14,15 @@ export const liveProjects: LiveProject[] = [
     title: "TimetableX",
     tagline:
       "Calendar app for university students. All lectures, assessments, and coursework in one place. 100+ users, 1000+ assessments tracked.",
-    techStack: ["React", "TypeScript", "Tailwind", "Python", "MongoDB", "Prisma", "tRPC"],
+    techStack: [
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "Python",
+      "MongoDB",
+      "Prisma",
+      "tRPC",
+    ],
     videoUrls: [
       "https://www.youtube.com/embed/AJMGprxFs4w",
       "https://www.youtube.com/embed/UzGAbXAKeFg",
@@ -26,7 +34,14 @@ export const liveProjects: LiveProject[] = [
     title: "Sports Booker",
     tagline:
       "Automated booking system for badminton courts. 6,000+ bookings facilitated, serving 50+ users across two private clubs.",
-    techStack: ["Next.js", "TypeScript", "Docker", "PostgreSQL", "Discord API", "Chromium"],
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Docker",
+      "PostgreSQL",
+      "Discord API",
+      "Chromium",
+    ],
     videoUrls: ["https://www.youtube.com/embed/Hm_4AjdkOA4"],
     link: "https://sportsbooker.timetablex.com",
   },
@@ -36,6 +51,10 @@ export const liveProjects: LiveProject[] = [
     tagline:
       "WordPress site with custom booking system. #1 on Google for Chinese Physio-Massage Therapy in Leeds. 100+ bookings in first month.",
     techStack: ["WordPress", "PHP", "Amelia Plugin", "SEO"],
+    videoUrls: [
+      "https://www.youtube.com/embed/_wDb1yCKetY",
+      "https://www.youtube.com/embed/mU3bTyA-u9g",
+    ],
     link: "https://directd-stress.co.uk",
   },
 ];
