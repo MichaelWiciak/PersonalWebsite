@@ -69,13 +69,14 @@ export const useSEO = (customSEO?: Partial<SEOData>) => {
       content: string,
       isName = false,
     ) => {
-      const selector = isName
+      const useNameAttribute = isName || property.startsWith("twitter:");
+      const selector = useNameAttribute
         ? `meta[name="${property}"]`
         : `meta[property="${property}"]`;
       let element = document.querySelector(selector) as HTMLMetaElement | null;
       if (!element) {
         element = document.createElement("meta");
-        if (isName) {
+        if (useNameAttribute) {
           element.name = property;
         } else {
           element.setAttribute("property", property);
