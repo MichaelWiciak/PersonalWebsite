@@ -4,6 +4,16 @@ Deployed at https://michaelwiciak.com/ using Vercel for automated deployment.
 
 This repository contains the code for my personal website, built with React, TypeScript, and Vite. The website features a modern dark theme, smooth animations, and interactive features.
 
+It is a Single-Page Application (SPA) website. It loads a single HTML page and dynamically updates content as the user interacts with it, without reloading the entire page.
+
+Pros:
+
+- Fast loading times and smooth user experience (hopefully)
+
+Cons:
+
+- Initial load time may be longer due to larger bundle sizes
+
 ## Tech Stack
 
 - **React 18** with TypeScript
@@ -92,9 +102,3 @@ To deploy:
 2. Import the project into Vercel
 3. Configure environment variables in Vercel dashboard
 4. Deploy
-
-## Contributions
-
-I'm actively working on improving this project and welcome any suggestions or contributions. If you have ideas on how to enhance the website or want to collaborate, feel free to open an issue or submit a pull request.
-
-Thanks for checking out my website project!
