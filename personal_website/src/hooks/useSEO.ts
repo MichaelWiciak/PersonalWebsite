@@ -9,47 +9,42 @@ interface SEOData {
 }
 
 const defaultSEO: SEOData = {
-  title: "Michael Wiciak | Software Engineer & Developer",
-  description:
-    "Michael Wiciak - Software Engineer & Developer. Specializing in ROS2, PyTorch, Python, C++, and creative coding projects.",
+  title: "Michael Wiciak | Software Engineer",
+  description: "Michael Wiciak - Software Engineer",
   image: "https://michaelwiciak.com/logo.jpeg",
 };
 
 const pageSEO: Record<string, SEOData> = {
   "/": {
-    title: "Michael Wiciak | Software Engineer & Developer",
-    description:
-      "Michael Wiciak - Software Engineer & Developer. Specializing in ROS2, PyTorch, Python, C++, and creative coding projects.",
+    title: "Michael Wiciak | Software Engineer",
+    description: "Michael Wiciak - Software Engineer",
   },
   "/projects": {
     title: "Projects | Michael Wiciak",
-    description:
-      "Explore Michael Wiciak's public projects on GitHub. Featuring ROS2, PyTorch, Computer Vision, and more open-source work.",
+    description: "Explore my public projects on GitHub.",
   },
   "/live-projects": {
     title: "Live Projects | Michael Wiciak",
     description:
-      "Commercial projects built and maintained by Michael Wiciak. Real-world applications with active users.",
+      "Commercial projects built and maintained by me. Real-world applications with active users.",
   },
   "/art": {
-    title: "Art & Generative Projects | Michael Wiciak",
+    title: "Art| Michael Wiciak",
     description:
-      "Generative art and creative coding projects by Michael Wiciak. Beautiful patterns emerging from mathematical chaos.",
+      "Generative art and creative coding projects. Beautiful patterns emerging from mathematical chaos.",
   },
   "/cv": {
     title: "CV | Michael Wiciak",
-    description:
-      "View or download Michael Wiciak's CV. Software Engineer with experience in ROS2, PyTorch, Python, and C++.",
+    description: "View or download my CV.",
   },
   "/courses": {
     title: "Courses | Michael Wiciak",
-    description:
-      "Courses completed by Michael Wiciak. Stanford CS courses, DeepLearning.AI, and more continuous learning.",
+    description: "Courses completed by me.",
   },
   "/contact": {
     title: "Contact | Michael Wiciak",
     description:
-      "Get in touch with Michael Wiciak. Contact form for inquiries about projects, collaborations, or just to say hello.",
+      "Get in touch with me. Contact form for inquiries about projects, collaborations, or just to say hello.",
   },
 };
 
@@ -69,8 +64,14 @@ export const useSEO = (customSEO?: Partial<SEOData>) => {
 
     document.title = title;
 
-    const updateMetaTag = (property: string, content: string, isName = false) => {
-      const selector = isName ? `meta[name="${property}"]` : `meta[property="${property}"]`;
+    const updateMetaTag = (
+      property: string,
+      content: string,
+      isName = false,
+    ) => {
+      const selector = isName
+        ? `meta[name="${property}"]`
+        : `meta[property="${property}"]`;
       let element = document.querySelector(selector) as HTMLMetaElement | null;
       if (!element) {
         element = document.createElement("meta");
@@ -93,10 +94,36 @@ export const useSEO = (customSEO?: Partial<SEOData>) => {
     updateMetaTag("twitter:description", description);
     updateMetaTag("twitter:image", image || "");
 
-    const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    const canonical = document.querySelector(
+      'link[rel="canonical"]',
+    ) as HTMLLinkElement | null;
     if (canonical) {
       canonical.href = `${BASE_URL}${location.pathname}`;
     }
+
+    const existingSchema = document.querySelector(
+      "script[data-webpage-schema]",
+    );
+    if (existingSchema) existingSchema.remove();
+
+    const webPageSchema = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${BASE_URL}${location.pathname}#webpage`,
+      url: `${BASE_URL}${location.pathname}`,
+      name: title,
+      description: description,
+      isPartOf: { "@id": `${BASE_URL}/#website` },
+      about: { "@id": `${BASE_URL}/#person` },
+      datePublished: "2024-01-01T00:00:00Z",
+      dateModified: new Date().toISOString().split("T")[0] + "T00:00:00Z",
+    };
+
+    const schemaScript = document.createElement("script");
+    schemaScript.type = "application/ld+json";
+    schemaScript.setAttribute("data-webpage-schema", "");
+    schemaScript.textContent = JSON.stringify(webPageSchema);
+    document.head.appendChild(schemaScript);
   }, [location.pathname, customSEO]);
 };
 
