@@ -78,17 +78,23 @@ Create a `.env` file based on `.env.example` with the following variables:
 
 In the `personal_website` directory, you can run:
 
-### `npm run dev`
+```bash
+npm run dev
+```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### `npm run build`
+```bash
+npm run build
+```
 
 Builds the app for production to the `dist` folder.\
 The build is minified and the filenames include the hashes.
 
-### `npm run preview`
+```bash
+npm run preview
+```
 
 Preview the production build locally.
 
