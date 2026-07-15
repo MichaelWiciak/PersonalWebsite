@@ -23,6 +23,27 @@ export interface Course {
 export const coursesData: Course[] = [
   // Cloud Certifications
   {
+    "title": "Professional Cloud Architect Certification",
+    "provider": "Google Cloud",
+    "issued": "Jun 2026",
+    "expires": "Jun 2028",
+    "category": "cloud",
+    "credentialUrl": "https://www.credly.com/badges/6105cc4b-849a-4de7-a34f-9a816b411000/public_url",
+    "skills": [
+      "Cloud Architecture",
+      "Cloud Computing",
+      "Cloud Security",
+      "Cloud Storage",
+      "Databases",
+      "GKE",
+      "Google Cloud Platform (GCP)",
+      "Identity And Access Management (IAM)",
+      "Networking",
+      "Scalability",
+      "workload migration"
+    ]
+  },
+  {
     title: "Associate Cloud Engineer Certification",
     provider: "Google Cloud",
     issued: "Mar 2026",
