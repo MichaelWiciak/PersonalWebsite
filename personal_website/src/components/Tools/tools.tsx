@@ -13,7 +13,7 @@ const Tools: React.FC = () => {
       <h1 className="text-4xl md:text-5xl font-semibold mb-8">Tools</h1>
 
       <p className="text-lg md:text-xl text-text-muted text-center mb-12 max-w-[600px]">
-        Tools I have built and use day to day.
+        Links to tools I built and use often (so I can always find them easily, regardless of device (: )
       </p>
 
       <ul className="w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
