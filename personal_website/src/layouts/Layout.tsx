@@ -7,6 +7,7 @@ const breadcrumbSchema: Record<string, { name: string; position: number }[]> = {
   "/": [{ name: "Home", position: 1 }],
   "/projects": [{ name: "Home", position: 1 }, { name: "Projects", position: 2 }],
   "/live-projects": [{ name: "Home", position: 1 }, { name: "Live Projects", position: 2 }],
+  "/tools": [{ name: "Home", position: 1 }, { name: "Tools", position: 2 }],
   "/art": [{ name: "Home", position: 1 }, { name: "Art", position: 2 }],
   "/cv": [{ name: "Home", position: 1 }, { name: "CV", position: 2 }],
   "/courses": [{ name: "Home", position: 1 }, { name: "Courses", position: 2 }],

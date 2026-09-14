@@ -28,6 +28,10 @@ const pageSEO: Record<string, SEOData> = {
     description:
       "Commercial projects built and maintained by me. Real-world applications with active users.",
   },
+  "/tools": {
+    title: "Tools | Michael Wiciak",
+    description: "Quick links to tools I have built and use day to day.",
+  },
   "/art": {
     title: "Art| Michael Wiciak",
     description:
