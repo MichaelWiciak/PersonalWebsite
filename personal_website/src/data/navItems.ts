@@ -16,3 +16,10 @@ export const contactNavItem: NavItem = {
   id: "contact",
   label: "Contact",
 };
+
+export const blogNavItem: NavItem = {
+  id: "blog",
+  label: "Blog",
+};
+
+export const blogUrl = "https://blog.michaelwiciak.com";

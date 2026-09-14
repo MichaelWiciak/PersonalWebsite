@@ -1,6 +1,5 @@
 import { artProjects } from "../../data/artProjects";
 import ArtProjectCard from "./ArtProjectCard";
-import ArtBlogList from "./ArtBlogList";
 
 const Art: React.FC = () => {
   return (
@@ -24,9 +23,6 @@ const Art: React.FC = () => {
         ))}
       </div>
 
-      <div className="w-full max-w-[900px] mx-auto mt-16">
-        <ArtBlogList />
-      </div>
     </section>
   );
 };

@@ -2,7 +2,7 @@ import { useState } from "react";
 import logo from "../../assets/Michael Wiciak-logos_white.png";
 import { NavLink } from "react-router-dom";
 import menu from "../../assets/menu.png";
-import { navItems, contactNavItem } from "../../data/navItems";
+import { navItems, contactNavItem, blogNavItem, blogUrl } from "../../data/navItems";
 import { usePostHog } from "@posthog/react";
 
 const Navbar: React.FC = () => {
@@ -20,6 +20,9 @@ const Navbar: React.FC = () => {
     `py-2 px-12 my-1 rounded-lg transition-colors duration-200 ${
       isActive ? "text-accent font-semibold" : "text-text-primary hover:text-accent"
     }`;
+
+  const mobileExternalLinkClass =
+    "py-2 px-12 my-1 rounded-lg transition-colors duration-200 text-text-primary hover:text-accent";
 
   return (
     <nav className="sticky top-0 z-50 bg-background/50 backdrop-blur-lg border-b border-white/10 h-20 w-full px-6 md:px-8 flex items-center justify-between" role="navigation" aria-label="Main navigation">
@@ -46,18 +49,29 @@ const Navbar: React.FC = () => {
         ))}
       </div>
 
-      <NavLink
-            to={`/${contactNavItem.id}`}
-            className={({ isActive }) =>
-              `inline-flex items-center gap-2 px-4 py-2 rounded-lg transition-colors duration-200 ${
-                isActive
-                  ? "bg-accent text-black font-medium"
-                  : "bg-surface text-text-primary hover:bg-surface-elevated"
-              }`
-            }
-          >
-            {contactNavItem.label}
-          </NavLink>
+      <div className="hidden md:flex items-center gap-3">
+        <a
+          href={blogUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => posthog?.capture('blog_opened', { source: 'navbar' })}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg transition-colors duration-200 bg-surface text-text-primary hover:bg-surface-elevated"
+        >
+          {blogNavItem.label}
+        </a>
+        <NavLink
+          to={`/${contactNavItem.id}`}
+          className={({ isActive }) =>
+            `inline-flex items-center gap-2 px-4 py-2 rounded-lg transition-colors duration-200 ${
+              isActive
+                ? "bg-accent text-black font-medium"
+                : "bg-surface text-text-primary hover:bg-surface-elevated"
+            }`
+          }
+        >
+          {contactNavItem.label}
+        </NavLink>
+      </div>
 
       <button
         type="button"
@@ -87,6 +101,18 @@ const Navbar: React.FC = () => {
               {item.label}
             </NavLink>
           ))}
+          <a
+            href={blogUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => {
+              setShowMenu(false);
+              posthog?.capture('blog_opened', { source: 'mobile_menu' });
+            }}
+            className={mobileExternalLinkClass}
+          >
+            {blogNavItem.label}
+          </a>
           <NavLink
             to={`/${contactNavItem.id}`}
             className={mobileNavLinkClass}
