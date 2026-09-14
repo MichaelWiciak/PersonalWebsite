@@ -24,7 +24,6 @@ const App: React.FC = () => {
             <Route path="projects" element={<ProjectsPage />} />
             <Route path="live-projects" element={<LiveProjectsPage />} />
             <Route path="art" element={<ArtPage />} />
-            <Route path="art/blog/:slug" element={<ArtBlogPostPage />} />
             <Route path="cv" element={<CVPage />} />
             <Route path="courses" element={<CoursesPage />} />
             <Route path="contact" element={<ContactPage />} />
