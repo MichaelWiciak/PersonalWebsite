@@ -1,6 +1,5 @@
 import { artProjects } from "../../data/artProjects";
 import ArtProjectCard from "./ArtProjectCard";
-import ArtBlogList from "./ArtBlogList";
 
 const Art: React.FC = () => {
   return (

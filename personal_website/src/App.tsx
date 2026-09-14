@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import ProjectsPage from "./pages/ProjectsPage";
 import LiveProjectsPage from "./pages/LiveProjectsPage";
 import ArtPage from "./pages/ArtPage";
-import ArtBlogPostPage from "./pages/ArtBlogPostPage";
 import CVPage from "./pages/CVPage";
 import ContactPage from "./pages/ContactPage";
 import CoursesPage from "./pages/CoursesPage";
