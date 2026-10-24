@@ -2,17 +2,12 @@
 
 Deployed at https://michaelwiciak.com/ using Vercel for automated deployment.
 
-This repository contains the code for my personal website, built with React, TypeScript, and Vite. The website features a modern dark theme, smooth animations, and interactive features.
+This repository contains the code for my personal website, built with React, TypeScript, and Vite. The website features a dark theme and animations
 
-It is a Single-Page Application (SPA) website. It loads a single HTML page and dynamically updates content as the user interacts with it, without reloading the entire page.
+It is a Single-Page Application website. It loads a single HTML page and dynamically updates content as the user interacts with it, without reloading the entire page.
 
-Pros:
-
-- Fast loading times and smooth user experience (hopefully)
-
-Cons:
-
-- Initial load time may be longer due to larger bundle sizes
+It comes with a main advantage of fast loading times and smooth user experience (hopefully).
+However, the initial load time may be longer due to larger bundle sizes.
 
 ## Tech Stack
 
@@ -26,30 +21,22 @@ Cons:
 
 ## Features
 
-- **Fully Responsive Layout**: The website adapts seamlessly to both mobile and desktop screens with a responsive navigation bar.
+- The website adapts to both mobile and desktop screens with a responsive navigation bar.
 
-- **Circular Logo Animation**: A smooth animation applied to the website's logo.
+- A custom particle effect with varying depth, sizes, shapes, and colors. Particles fall in 10 different layers, each with unique speeds and properties. (See [How the Particle Animation Works](#how-the-particle-animation-works) for more details.)
 
-- **Particle Animation**: A custom particle effect with varying depth, sizes, shapes, and colors. Particles fall in 10 different layers, each with unique speeds and properties. (See [How the Particle Animation Works](#how-the-particle-animation-works) for more details.)
+- Each section of the website is modularised with its own file and folder. This structure makes the website easily modifiable and maintainable.
 
-- **Hover Highlighting**: Interactive elements such as the navigation bar feature highlighting on mouse hover, enhancing user engagement.
+- Each page has custom meta tags and Open Graph tags for social sharing, managed via a custom `useSEO` hook.
 
-- **Modular Structure**: Each section of the website is modularized, with its own file and folder. This structure makes the website easily modifiable and maintainable.
-
-- **Dynamic SEO**: Each page has custom meta tags and Open Graph tags for social sharing, managed via a custom `useSEO` hook.
-
-- **Working Contact Form**: The contact form is fully functional, powered by EmailJS with Google reCAPTCHA spam protection.
-
-- **Dark Theme**: A custom dark theme with CSS custom properties for consistent theming.
-
-- **And More**: Additional features are in development as I continue to enhance the site.
+- A contact form powered by EmailJS with Google reCAPTCHA spam protection.
 
 ## How the Particle Animation Works
 
-The particle effect on the website is created using a custom script that generates particles with various characteristics such as size, shape, color, and speed. Here's a brief overview of how it works:
+The particle effect on the website is created using a custom script that generates particles with various characteristics such as size, shape, color, and speed.
 
 1. **Particle Characteristics**:
-   - Particles are created with different colors (shades of white and gray) and shapes (circular, oval, etc.).
+   - Particles are created with different colors (shades of white and gray) and shapes (circular, oval, everything in between).
    - Each particle is assigned to one of ten different layers. Each layer has a unique falling speed, creating a sense of depth and perspective.
 
 2. **Spawn and Animation**:
